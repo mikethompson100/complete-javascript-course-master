@@ -29,7 +29,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.number').textContent = secretNumber;
     if (score > highscore) {
       highscore = score;
-      document.querySelector('.highscore').textContent = 'highscore';
+      document.querySelector('.highscore').textContent = highscore;
     }
   } else if (guess > secretNumber) {
     // Too high!
