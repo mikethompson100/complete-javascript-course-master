@@ -75,5 +75,5 @@ There is also a the [updates-and-fixes](https://github.com/jonasschmedtmann/comp
 My course notes:
 Studying the lecture lesson. 
 The browser contains WEB APIs and the Node.js runtime utilizes c++ bindings and a thread pool instead (low level OS multi-thread resources)
-
+9/4/23 - Notes: Scoping types, global, function and block. 
 
