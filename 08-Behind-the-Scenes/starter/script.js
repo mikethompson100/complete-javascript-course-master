@@ -53,7 +53,7 @@ const addExpr = function(a,b) {
 }
 
 const addArrow = (a,b) => a + b; */
-console.log(numProducts);
+/* console.log(numProducts);
 if(!numProducts) deleteShoppingCart();
 
 console.log(numProducts);
@@ -66,9 +66,21 @@ function deleteShoppingCart() {
 
 var x = 1;
 let y = 2;
-const z = 3;
+const z = 3; */
 
+console.log(this);
 
+const calcAge = function(birthyear) {
+    console.log(2037 - birthyear);
+    console.log(this);
+}
+calcAge(1991);
+
+const calcAgeArrow = birthyear => {
+console.log(2037 - birthyear);
+console.log(this);
+}
+calcAgeArrow(1980);
 
 
 
