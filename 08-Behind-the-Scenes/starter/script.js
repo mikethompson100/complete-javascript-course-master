@@ -132,7 +132,7 @@ addExpr(2,5);
 
 var addArrow = (a,b) => a + b;
   */
-const me = {
+/* const me = {
     name:'Jonas',
     age: 30
 }
@@ -140,14 +140,36 @@ const me = {
 const friend = me;
 friend.age = 27;
 console.log('Friend: ' , friend);
-console.log('Me: ' , me)
+console.log('Me: ' , me) */
 
+/* let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName);
+ */
 
+const jessica = {
+    firstNme: 'Jessica',
+    lastName: 'Davis',
+    age: 27
+}
 
+const marriedJessica = jessica;
+//marriedJessica.lastName = 'Davis';
+console.log("Before Marriage: " , jessica);
+ 
 
+const jessica2 = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27
+}
 
+const jessicaCopy = Object.assign({}, jessica2);
+console.log(jessicaCopy)
 
-
+console.log("Before Marriage: " , jessica2);
+console.log("After Marriage: " , jessicaCopy);
 
 
 
