@@ -101,7 +101,7 @@ const f = jonas.calcAge;
 
 f();
  */
-
+/* 
 const jonas = {
     firstName: 'Michael',
     year: 1991,
@@ -112,17 +112,17 @@ const jonas = {
             console.log(self.year >= 1981 && self.year <= 1996);
         }   */
         
-        const isMillenial = () => {
+        /* const isMillenial = () => {
             console.log(this);
             console.log(this.year >= 1981 && this.year <= 1996);
         }
         isMillenial();
-    },
+    }, */
     //greet: () => console.log(`Hey, ${this.firstName}`)
-}
+/* } */
 
-//jonas.greet();
-jonas.calcAge();
+//jonas.greet();/* 
+/* jonas.calcAge();
 
 const addExpr = function (a,b) {
     console.log(arguments);
@@ -131,9 +131,16 @@ const addExpr = function (a,b) {
 addExpr(2,5);
 
 var addArrow = (a,b) => a + b;
+  */
+const me = {
+    name:'Jonas',
+    age: 30
+}
 
-
-
+const friend = me;
+friend.age = 27;
+console.log('Friend: ' , friend);
+console.log('Me: ' , me)
 
 
 
