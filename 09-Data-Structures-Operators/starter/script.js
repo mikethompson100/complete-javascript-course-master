@@ -31,9 +31,20 @@ const restaurant = {
   },
   orderDelivery: function({starterIndex, mainIndex, time, address}) {
     console.log(`Order received!${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
-  }
+  },
+    orderPasta: function(ing1, ing2,ing3) {
+      console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}.`)
+    }
 };
   
+/* const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'),prompt('Let\'s make pasta! Ingredient 2?'),prompt('Let\'s make pasta! Ingredient 3?')]
+console.log(restaurant.orderPasta(...ingredients));
+ */
+const restaurantCopy = {...restaurant};
+restaurantCopy.name = 'Ristorante Molinaro';
+console.log(restaurantCopy);
+
+
 const newMenu = [...restaurant.mainMenu, 'Gnocci'];
 /* console.log(newMenu);
 console.log(...newMenu); */
@@ -44,7 +55,22 @@ const mainMenuCopy = [...restaurant.mainMenu];
 // Join 2 arrays
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+//console.log(menu);
+
+// Iterables
+const str = 'Michael Thompson';
+const letters = [...str, ' ', 'S.'];
+/* console.log(str);
+console.log(letters);
+console.log(...str);
+console.log(...letters); */
+
+
+
+
+
+
+
 
 
 
