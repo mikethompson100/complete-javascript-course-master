@@ -34,8 +34,43 @@ const restaurant = {
   },
     orderPasta: function(ing1, ing2,ing3) {
       console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}.`)
-    }
+    },
+
+  orderPizza: function(mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+
+  }
 };
+
+console.log(restaurant.orderPizza('Mushrooms', 'Pepperoni', 'Meatballs'))
+
+
+
+
+
+
+/* const add = function(...numbers) {
+  console.log(numbers);
+  console.log(arguments);
+  const [a,b,c,d,e,f,g] = numbers;
+  console.log(a,b,c,d,e,f,g);
+}
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8,2,5,3,2,1,4);
+
+const x = [1,2,3];
+add(...x);
+ */
+
+
+
+
+
+
+
 /* 
 const arr = [1,2, ...[3,4]];
 console.log(arr);
@@ -47,10 +82,10 @@ const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.
 console.log(risotto);
 console.log(otherFood); */
 
-
+/* 
 const { sat, ...weekdays} = restaurant.openingHours;
 console.log(sat)
-console.log(weekdays);
+console.log(weekdays); */
 /* const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'),prompt('Let\'s make pasta! Ingredient 2?'),prompt('Let\'s make pasta! Ingredient 3?')]
 console.log(restaurant.orderPasta(...ingredients));
  */
