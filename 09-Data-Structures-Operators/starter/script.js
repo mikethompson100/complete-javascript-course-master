@@ -36,16 +36,30 @@ const restaurant = {
       console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}.`)
     }
 };
-  
+/* 
+const arr = [1,2, ...[3,4]];
+console.log(arr);
+const [a,b,...others] = [1,2,3,4,5];
+console.log(a,b,others); */
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+/* console.log(pizza);
+console.log(risotto);
+console.log(otherFood); */
+
+
+const { sat, ...weekdays} = restaurant.openingHours;
+console.log(sat)
+console.log(weekdays);
 /* const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'),prompt('Let\'s make pasta! Ingredient 2?'),prompt('Let\'s make pasta! Ingredient 3?')]
 console.log(restaurant.orderPasta(...ingredients));
  */
-const restaurantCopy = {...restaurant};
+/* const restaurantCopy = {...restaurant};
 restaurantCopy.name = 'Ristorante Molinaro';
 console.log(restaurantCopy);
 
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+const newMenu = [...restaurant.mainMenu, 'Gnocci']; */
 /* console.log(newMenu);
 console.log(...newMenu); */
 
