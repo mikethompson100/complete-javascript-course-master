@@ -43,10 +43,23 @@ const restaurant = {
   }
 };
 
-console.log(restaurant.orderPizza('Mushrooms', 'Pepperoni', 'Meatballs'))
+restaurant.numGuests = 23;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1)
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
 
 
+/* console.log(restaurant.orderPizza('Mushrooms', 'Pepperoni', 'Meatballs'))
+ */
 
+/// Use any data type, return any data type, short-circuiting
+/* console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(3 && 4); */
 
 
 
