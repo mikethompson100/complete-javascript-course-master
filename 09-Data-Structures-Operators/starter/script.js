@@ -34,14 +34,28 @@ const restaurant = {
   }
 };
   
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+/* console.log(newMenu);
+console.log(...newMenu); */
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+
+// Join 2 arrays
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+
+
+/* 
+
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
   mainIndex: 2,
   starterIndex: 2,
 })
-
-
 
 const {name, openingHours, categories} = restaurant;
 //console.log(name, openingHours, categories);
@@ -66,14 +80,7 @@ console.log(a,b);
 const { fri: {open, close} } = openingHours;
 console.log(open, close);
 
-
-
-
-
-
-
-
-
+ */
 
 
 
