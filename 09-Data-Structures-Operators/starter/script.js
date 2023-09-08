@@ -54,8 +54,9 @@ console.log('==== OR ====');
 
 console.log('==== AND ====');
 
+if (restaurant.orderPizza) {restaurant.orderPizza('mushrooms', 'spinach')}
 
-
+restaurant.orderPizza && restaurant.orderPizza('mushrooms','spinach');
 
 
 
