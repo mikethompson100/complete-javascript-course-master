@@ -49,22 +49,59 @@ const rest1 = {
   numGuests: 0,
 }
 
-const rest2 = {
-  name: 'Antonio Molinaro',
-  owner: 'Antonio Molinaro',
-}
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
 
-rest1.numGuests ??= 10;
-rest2.numGuests ??= 10;
+//rest1.numGuests ??= 10;
+//rest2.numGuests ??= 10;
 /* 
 rest1.owner = rest1.owner && '<ANONYMOUS>';
 rest2.owner = rest2.owner && '<ANONYMOUS>'; */
 
-rest1.owner &&='<ANONYMOUS>';
-rest2.owner &&='<ANONYMOUS>';
+//const [gk, ...fieldPlayers] = players1;
+//console.log(gk);
+//console.log(fieldPlayers);
 
-console.log(rest1);
-console.log(rest2);
+/* console.log(rest1);
+console.log(rest2); */
 
 /* rest1.numGuests = rest1.numGuests ?? 10;
 rest2.numGuests = rest2.numGuests || 10;
@@ -103,80 +140,21 @@ console.log(true || 0);
 console.log(undefined || null);
 console.log(3 && 4); */
 
+const [players1, players2] = game.players;
+const [gk, ...fieldPlayers] = players1;
+//console.log(gk);
+//console.log(fieldPlayers);
 
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+//console.log(players1Final)
+const team1Odds = game.odds.team1;
+const drawOdds = game.odds.x;
+const team2Odds = game.odds.team2;
+console.log(team1Odds, drawOdds, team2Odds);
 
-/* const add = function(...numbers) {
-  console.log(numbers);
-  console.log(arguments);
-  const [a,b,c,d,e,f,g] = numbers;
-  console.log(a,b,c,d,e,f,g);
+const printGoals = function() {
+  
 }
-
-add(2, 3);
-add(5, 3, 7, 2);
-add(8,2,5,3,2,1,4);
-
-const x = [1,2,3];
-add(...x);
- */
-
-
-
-
-
-
-
-/* 
-const arr = [1,2, ...[3,4]];
-console.log(arr);
-const [a,b,...others] = [1,2,3,4,5];
-console.log(a,b,others); */
-
-const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-/* console.log(pizza);
-console.log(risotto);
-console.log(otherFood); */
-
-/* 
-const { sat, ...weekdays} = restaurant.openingHours;
-console.log(sat)
-console.log(weekdays); */
-/* const ingredients = [prompt('Let\'s make pasta! Ingredient 1?'),prompt('Let\'s make pasta! Ingredient 2?'),prompt('Let\'s make pasta! Ingredient 3?')]
-console.log(restaurant.orderPasta(...ingredients));
- */
-/* const restaurantCopy = {...restaurant};
-restaurantCopy.name = 'Ristorante Molinaro';
-console.log(restaurantCopy);
-
-
-const newMenu = [...restaurant.mainMenu, 'Gnocci']; */
-/* console.log(newMenu);
-console.log(...newMenu); */
-
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-
-// Join 2 arrays
-
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-//console.log(menu);
-
-// Iterables
-const str = 'Michael Thompson';
-const letters = [...str, ' ', 'S.'];
-/* console.log(str);
-console.log(letters);
-console.log(...str);
-console.log(...letters); */
-
-
-
-
-
-
-
-
-
 
 /* 
 
