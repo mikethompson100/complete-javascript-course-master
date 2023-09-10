@@ -164,6 +164,8 @@ printGoals(...game.scored);
 (team2 < team1) && console.log("Team2 more likely to win.");
 (team1 === team2) && console.log("Draw")
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
 /* 
 
 restaurant.orderDelivery({
