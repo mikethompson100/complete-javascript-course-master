@@ -54,17 +54,23 @@ const restaurant = {
 
 //console.log(openingHours);
 
-if (restaurant.openingHours && restaurant.openingHours.fri) {
+/* if (restaurant.openingHours && restaurant.openingHours.fri) {
   //console.log(restaurant.openingHours.fri.open + ".");
 }
 
 /// With optional chaining
 
 console.log(restaurant.openingHours.mon?.open);
-console.log(restaurant.openingHours?.mon?.open);
+console.log(restaurant.openingHours?.mon?.open); */
 
 
-
+const days = ['mon','tue','wed','thu','fri','sat','sun'];
+  
+for (const day of days) {
+  console.log(restaurant.openingHours.day);
+  const open =  restaurant.openingHours?.[day]?.open ?? 'closed';
+  console.log(day, open)
+}
 
 const rest1 = {
   name: 'Capri',
