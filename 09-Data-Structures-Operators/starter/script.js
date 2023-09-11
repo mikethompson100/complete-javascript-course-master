@@ -139,7 +139,7 @@ console.log('' || 'Jonas');
 console.log(true || 0);
 console.log(undefined || null);
 console.log(3 && 4); */
-
+/* 
 const [players1, players2] = game.players;
 const [gk, ...fieldPlayers] = players1;
 //console.log(gk);
@@ -158,13 +158,19 @@ const printGoals = function(...e) {
   (game.odds.team1 < game.odds.team2) 
 
 }
-printGoals(...game.scored);
+printGoals(...game.scored); 
 
 (team1 < team2) && console.log("Team1 more likely to win.");
 (team2 < team1) && console.log("Team2 more likely to win.");
-(team1 === team2) && console.log("Draw")
+(team1 === team2) && console.log("Draw")*/
 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+//for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`)
+}
 
 /* 
 
