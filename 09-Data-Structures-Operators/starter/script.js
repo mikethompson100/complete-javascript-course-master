@@ -8,7 +8,7 @@ const flights =
   const days = ['mon','tue','wed','thu','fri','sat','sun'];
   const weekdays = ['mon','tue','wed','thu','fri','sat','sun'];
   const openingHours = {
-    'mon': {
+   /*  'mon': {
       open: 12,
       close: 22,
     },
@@ -19,7 +19,7 @@ const flights =
     'wed': {
       open: 12,
       close: 22,
-    },
+    }, */
     [days[3]]: {
       open: 12,
       close: 22,
@@ -32,10 +32,10 @@ const flights =
       open: 0, // Open 24 hours
       close: 24,
     },
-    [days[`${2 + 4}`]]: {
+/*     [days[`${2 + 4}`]]: {
       open: 1, // Open 24 hours
       close: 24,
-    },
+    }, */
   };
 
 // Data needed for first part of the section
@@ -62,9 +62,28 @@ const restaurant = {
 
   }
 };
+
+const properties = Object.keys(openingHours);
+//console.log(properties);
+
+for (const day of Object.keys(openingHours)) {
+  //console.log(day);
+}
+
+const values = Object.values(openingHours);
+//console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, {open, close}] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+
+
+
+
 //console.log(restaurant);
-
-
 //console.log(openingHours);
 
 /* if (restaurant.openingHours && restaurant.openingHours.fri) {
@@ -76,10 +95,9 @@ const restaurant = {
 console.log(restaurant.openingHours.mon?.open);
 console.log(restaurant.openingHours?.mon?.open); */
 
-
 //const days = ['mon','tue','wed','thu','fri','sat','sun'];
   
-for (const day of days) {
+/* for (const day of days) {
   const open =  restaurant.openingHours[day]?.open || 'closed';
   console.log(`On ${day}, we open at ${open}`);
 }
@@ -136,7 +154,7 @@ const game = {
     x: 3.25,
     team2: 6.5,
   },
-};
+}; */
 
 //rest1.numGuests ??= 10;
 //rest2.numGuests ??= 10;
@@ -199,7 +217,6 @@ const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
 const { odds: { team1, x: draw, team2 }} = game;
 console.log(team1, draw , team2);
 
-
 const printGoals = function(...e) {
     console.log(...e);
   console.log(e.length);
@@ -212,13 +229,13 @@ printGoals(...game.scored);
 (team2 < team1) && console.log("Team2 more likely to win.");
 (team1 === team2) && console.log("Draw")*/
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+/* const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
 //for (const item of menu) console.log(item);
 
 for (const item of menu.entries()) {
   //console.log(`${item[0] + 1}: ${item[1]}`)
-}
+} */
 
 /* 
 
@@ -252,11 +269,7 @@ console.log(a,b);
 const { fri: {open, close} } = openingHours;
 console.log(open, close);
 
- */
-
-
-
-/* const [starter, mainCourse] = restaurant.order(2,0);
+const [starter, mainCourse] = restaurant.order(2,0);
 
 const nested = [2,4,[5,6]];
 //const [i,,j] = nested;
