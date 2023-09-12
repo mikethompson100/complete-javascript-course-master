@@ -86,8 +86,10 @@ for (const day of days) {
 
 console.log(restaurant.order?.(0,1) ?? 'method does not exist')
 
-
-
+const users = [
+  {name: 'Jonas', email: 'mt@mt.com'}
+]
+console.log(users[0]?.name ?? 'nobody home');
 
 const rest1 = {
   name: 'Capri',
