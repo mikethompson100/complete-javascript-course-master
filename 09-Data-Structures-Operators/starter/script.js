@@ -4,11 +4,10 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-
-  const days = ['mon','tue','wed','thu','fri','sat','sun'];
-  const weekdays = ['mon','tue','wed','thu','fri','sat','sun'];
-  const openingHours = {
-   /*  'mon': {
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  /*  'mon': {
       open: 12,
       close: 22,
     },
@@ -20,23 +19,23 @@ const flights =
       open: 12,
       close: 22,
     }, */
-    [days[3]]: {
-      open: 12,
-      close: 22,
-    },
-    [days[4]]: {
-      open: 11,
-      close: 23,
-    },
-    [days[`${2 + 3}`]]: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-/*     [days[`${2 + 4}`]]: {
+  [days[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [days[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [days[`${2 + 3}`]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+  /*     [days[`${2 + 4}`]]: {
       open: 1, // Open 24 hours
       close: 24,
     }, */
-  };
+};
 
 // Data needed for first part of the section
 const restaurant = {
@@ -46,21 +45,22 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
   openingHours,
-  order(starterIndex,mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery({starterIndex, mainIndex, time, address}) {
-    console.log(`Order received!${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+  orderDelivery({ starterIndex, mainIndex, time, address }) {
+    console.log(
+      `Order received!${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+    );
   },
-    orderPasta(ing1, ing2,ing3) {
-      console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}.`)
-    },
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`Here is your pasta with ${ing1}, ${ing2}, ${ing3}.`);
+  },
 
   orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
-
-  }
+  },
 };
 
 const properties = Object.keys(openingHours);
@@ -81,8 +81,6 @@ for (const [key, {open, close}] of entries) {
 }
  */
 
-
-
 //console.log(restaurant);
 //console.log(openingHours);
 
@@ -96,7 +94,7 @@ console.log(restaurant.openingHours.mon?.open);
 console.log(restaurant.openingHours?.mon?.open); */
 
 //const days = ['mon','tue','wed','thu','fri','sat','sun'];
-  
+
 /* for (const day of days) {
   const open =  restaurant.openingHours[day]?.open || 'closed';
   console.log(`On ${day}, we open at ${open}`);
@@ -278,7 +276,6 @@ const [i, , [j,k]] = nested;
 const [p,q,r] = [8,9]
 console.log(p,q,r); */
 
-
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -330,10 +327,7 @@ for (let [key, name] of game.scored.entries()) {
 let average = 0;
 for (const odd of odds) average += odd;
 average /= odds.length; */
-//console.log(average); 
-
-
-// scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//console.log(average);
 
 
 /* const odds = Object.entries(game.odds);
@@ -342,37 +336,31 @@ for (const [odd] of odds) {
   //console.log(`Odds of ${string}`)
 } */
 
-const scorers = {};
+// scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
 
-for (const goalScorer of game.scored) {    // loop through real goal scorers
-  const scorersArray = Object.entries(scorers);
-  console.log(scorersArray);
-      if (scorersArray === []) {
-        console.log("Wow, empty!");
-      for (let [key, value] of scorersArray) {   
-            console.log("key, value: ", key, value); 
-            if (scorersArray === []) {
-              scorers = key;
-              console.log(scorers);
-            }
-            else {
-              scorers[key] = goalScorer;          
-              scorers[value]++;
-            }
-        }
+let winners = {};
+for (const goalScorer of game.scored) {
+  /// IF EMPTY ADD FIRST ONE
+  if (Object.keys(winners).length === 0 && winners.constructor === Object) {
+    console.log(`No need to compare ${goalScorer} to`, winners);
+    winners = [goalScorer, 1];
+    console.log('INITIAL ASSIGNMENT: ', winners);
+    console.log('\n==========================');
+  }
+  else {  // IF NOT EMPTY LOOP THROUGH ALL ELEMENTS AND FIND DUPES
+    
+    for (let winner of winners) {
+      console.log("WINNER LOOP: ", winner);
+      if (goalScorer === winner) {
+          console.log("Hey, a match");
       }
-      else console.log("Not empty!")
+      else {
+          
+      }
+    }
+  }
+
+
 }
 
-//console.log("Scorers Object: ", scorers);
-
-
-
-
-
-
-
-
-
-
-
+console.log('\n\nScorers Object: ', winners);
