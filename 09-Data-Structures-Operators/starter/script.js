@@ -332,14 +332,39 @@ for (const odd of odds) average += odd;
 average /= odds.length; */
 //console.log(average); 
 
-const odds = Object.entries(game.odds);
+
+// scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+
+
+/* const odds = Object.entries(game.odds);
 for (const [odd] of odds) {
   //string = (odd != 'x') ? (`victory ${game[odd]}: ${game.odds[odd]}`) : (`draw ${game.odds[odd]}`);
   //console.log(`Odds of ${string}`)
+} */
+
+const scorers = {};
+
+for (const goalScorer of game.scored) {    // loop through real goal scorers
+  const scorersArray = Object.entries(scorers);
+  console.log(scorersArray);
+      if (scorersArray === []) {
+        console.log("Wow, empty!");
+      for (let [key, value] of scorersArray) {   
+            console.log("key, value: ", key, value); 
+            if (scorersArray === []) {
+              scorers = key;
+              console.log(scorers);
+            }
+            else {
+              scorers[key] = goalScorer;          
+              scorers[value]++;
+            }
+        }
+      }
+      else console.log("Not empty!")
 }
 
-
-
+//console.log("Scorers Object: ", scorers);
 
 
 
