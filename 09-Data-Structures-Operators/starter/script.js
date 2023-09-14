@@ -402,16 +402,22 @@ const xyz = {
 //for (const order of ordersSet) console.log(order);
 
 // Example
-const staff = ['Waiter', 'Manager', 'Chef', 'Manager'];
+/* const staff = ['Waiter', 'Manager', 'Chef', 'Manager'];
 const staffSet = new Set(staff);
 const staffSetArray = [...new Set(staff)];
 const staffSetArraySize = new Set(['Waiter', 'Manager', 'Chef', 'Manager']).size;
 console.log(staff);
 console.log(staffSet);
 console.log(staffSetArray);
-console.log(staffSetArraySize);
+console.log(staffSetArraySize); */
 
+const rest = new Map();
+console.log(rest);
+rest.set('name','Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Lisbon, Portugal');
 
+console.log(rest);
 
 
 
