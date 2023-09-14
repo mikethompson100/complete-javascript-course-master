@@ -349,13 +349,13 @@ for (const goalScorer of game.scored) {
   }
   else {  // IF NOT EMPTY LOOP THROUGH ALL ELEMENTS AND FIND DUPES
     
-    for (let winner of winners) {
-      console.log("WINNER LOOP: ", winner);
-      if (goalScorer === winner) {
-          console.log("Hey, a match");
+    for (let [key , value] of winners.entries()) {
+      console.log("WINNER LOOP: ", key , value);
+      if (goalScorer === value) {
+          
       }
       else {
-          
+        winners = [goalScorer, 1];
       }
     }
   }
@@ -364,3 +364,26 @@ for (const goalScorer of game.scored) {
 }
 
 console.log('\n\nScorers Object: ', winners);
+
+console.log("\n\nX-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-");
+
+const xyz = {
+  arr: ['Michael', 'Victoria'],
+  obj: {'first': 'Alexandra', 'last': 'Loaiza'}
+}
+
+// ARRAY - .entries() is iterable for array element???
+ for (const ent of xyz.arr.entries()) {
+  //console.log(...xyz.arr.keys()); /// numeric index numbers
+  //console.log(...xyz.arr.values());  /// actual values in array
+  console.log(...xyz.arr.entries()); /// array of key value pairs
+  console.log('Individual element', ent);
+} 
+
+// OBJECT with destructured left side and array brackets
+// Object.entries destructures object element into array
+ for (const [a,b] of Object.entries(xyz.obj)) {
+  console.log(xyz.obj); /// Shows the object
+  console.log(a,b);  // the key value pairs of object
+}
+
