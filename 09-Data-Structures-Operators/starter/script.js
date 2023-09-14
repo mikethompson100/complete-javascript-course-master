@@ -338,6 +338,11 @@ for (const [odd] of odds) {
 
 // scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
 
+    /*      const scorers = {};
+            for (const player of game.scored) {
+              scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+            } */
+
 let winners = {};
 for (const goalScorer of game.scored) {
   /// IF EMPTY ADD FIRST ONE
@@ -373,12 +378,12 @@ const xyz = {
 }
 
 // ARRAY - .entries() is iterable for array element???
- for (const ent of xyz.arr.entries()) {
+/*  for (const ent of xyz.arr.entries()) {
   //console.log(...xyz.arr.keys()); /// numeric index numbers
   //console.log(...xyz.arr.values());  /// actual values in array
   console.log(...xyz.arr.entries()); /// array of key value pairs
   console.log('Individual element', ent);
-} 
+}  */
 
 // OBJECT with destructured left side and array brackets
 // Object.entries destructures object element into array
