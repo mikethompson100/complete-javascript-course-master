@@ -337,13 +337,13 @@ for (const [odd] of odds) {
 } */
 
 // scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-
+/* 
     const scorers = {};
         for (const player of game.scored) {
           scorers[player] ? scorers[player]++ : (scorers[player] = 1);
         }
         console.log('\n\nScorers Object: ', scorers);
-
+ */
 
 /* let winners = {};
 for (const goalScorer of game.scored) {
@@ -393,4 +393,37 @@ const xyz = {
   console.log(xyz.obj); /// Shows the object
   console.log(a,b);  // the key value pairs of object
 } */
+
+//const ordersSet = new Set(['Pasta','Pizza','Pizza','Risotto','Pasta','Pizza']);
+//console.log(ordersSet.has('Pizza'));
+
+//console.log(ordersSet.add('Garlic Bread'));
+
+//for (const order of ordersSet) console.log(order);
+
+// Example
+const staff = ['Waiter', 'Manager', 'Chef', 'Manager'];
+const staffSet = new Set(staff);
+const staffSetArray = [...new Set(staff)];
+const staffSetArraySize = new Set(['Waiter', 'Manager', 'Chef', 'Manager']).size;
+console.log(staff);
+console.log(staffSet);
+console.log(staffSetArray);
+console.log(staffSetArraySize);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
