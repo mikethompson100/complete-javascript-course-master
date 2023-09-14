@@ -338,12 +338,14 @@ for (const [odd] of odds) {
 
 // scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
 
-    /*      const scorers = {};
-            for (const player of game.scored) {
-              scorers[player] ? scorers[player]++ : (scorers[player] = 1);
-            } */
+    const scorers = {};
+        for (const player of game.scored) {
+          scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+        }
+        console.log('\n\nScorers Object: ', scorers);
 
-let winners = {};
+
+/* let winners = {};
 for (const goalScorer of game.scored) {
   /// IF EMPTY ADD FIRST ONE
   if (Object.keys(winners).length === 0 && winners.constructor === Object) {
@@ -367,11 +369,11 @@ for (const goalScorer of game.scored) {
 
 
 }
+*/
 
-console.log('\n\nScorers Object: ', winners);
-
+/*
 console.log("\n\nX-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X-");
-
+ 
 const xyz = {
   arr: ['Michael', 'Victoria'],
   obj: {'first': 'Alexandra', 'last': 'Loaiza'}
@@ -386,9 +388,9 @@ const xyz = {
 }  */
 
 // OBJECT with destructured left side and array brackets
-// Object.entries destructures object element into array
+/* // Object.entries destructures object element into array
  for (const [a,b] of Object.entries(xyz.obj)) {
   console.log(xyz.obj); /// Shows the object
   console.log(a,b);  // the key value pairs of object
-}
+} */
 
