@@ -329,7 +329,6 @@ for (const odd of odds) average += odd;
 average /= odds.length; */
 //console.log(average);
 
-
 /* const odds = Object.entries(game.odds);
 for (const [odd] of odds) {
   //string = (odd != 'x') ? (`victory ${game[odd]}: ${game.odds[odd]}`) : (`draw ${game.odds[odd]}`);
@@ -413,18 +412,33 @@ console.log(staffSetArraySize); */
 
 const rest = new Map();
 console.log(rest);
-rest.set('name','Classico Italiano');
+rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
 console.log(rest.set(2, 'Lisbon, Portugal'));
 
-console.log(rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-.set('open', 11).set('close', 23).set(true, 'We are open').set(false, 'We are closed.')
+console.log(
+  rest
+    .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+    .set('open', 11)
+    .set('close', 23)
+    .set(true, 'We are open')
+    .set(false, 'We are closed.')
 );
 
+const a = rest.get('name');
 
+const time = 21;
+console.log(
+  //rest.get( (time >= rest.get('open')) && (time <= rest.get('close')) )
+);
+//console.log(rest.has('categories'));
 
+rest.set([1,2,3], "myArray");
+console.log(rest.get([1,2,3]));
 
-
+const sharedValue = [1,2,3];
+rest.set(sharedValue, "myArray");
+console.log(rest.get(sharedValue));
 
 
 
