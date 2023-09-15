@@ -433,12 +433,13 @@ console.log(
 );
 //console.log(rest.has('categories'));
 
-rest.set([1,2,3], "myArray");
-console.log(rest.get([1,2,3]));
+//rest.set([1,2,3], "myArray");
+//console.log(rest.get([1,2,3]));
 
 const sharedValue = [1,2,3];
 rest.set(sharedValue, "myArray");
-console.log(rest.get(sharedValue));
+rest.set(document.querySelector("h1").innerHTML, 'Heading');
+console.log(rest.get('Data Structures and Modern Operators'));
 
 
 
