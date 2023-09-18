@@ -410,13 +410,13 @@ console.log(staffSet);
 console.log(staffSetArray);
 console.log(staffSetArraySize); */
 
-const rest = new Map();
+/* const rest = new Map();
 console.log(rest);
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze, Italy');
 console.log(rest.set(2, 'Lisbon, Portugal'));
-
-console.log(
+ */
+/* console.log(
   rest
     .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
     .set('open', 11)
@@ -429,19 +429,28 @@ const a = rest.get('name');
 
 const time = 21;
 console.log(
-  //rest.get( (time >= rest.get('open')) && (time <= rest.get('close')) )
-);
+  rest.get( (time >= rest.get('open')) && (time <= rest.get('close')) )
+); */
 //console.log(rest.has('categories'));
 
 //rest.set([1,2,3], "myArray");
 //console.log(rest.get([1,2,3]));
 
-const sharedValue = [1,2,3];
+/* const sharedValue = [1,2,3];
 rest.set(sharedValue, "myArray");
 rest.set(document.querySelector("h1").innerHTML, 'Heading');
-console.log(rest.get('Data Structures and Modern Operators'));
+console.log(rest.get('Data Structures and Modern Operators')); */
 
-
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again!']
+]);
+console.log(question);
 
 
 
