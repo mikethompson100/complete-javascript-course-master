@@ -441,7 +441,7 @@ rest.set(sharedValue, "myArray");
 rest.set(document.querySelector("h1").innerHTML, 'Heading');
 console.log(rest.get('Data Structures and Modern Operators')); */
 
-const question = new Map([
+ const question = new Map([
   ['question', 'What is the best programming language in the world?'],
   [1, 'C'],
   [2, 'Java'],
@@ -450,12 +450,12 @@ const question = new Map([
   [true, 'Correct!'],
   [false, 'Try again!']
 ]);
-console.log(question); 
-
+//console.log(question); 
+ /* 
 console.log(Object.entries(openingHours));
 
-const hoursMap = new Map(Object.entries(openingHours));
-console.log(hoursMap);
+const hoursMap = new Map(Object.entries(openingHours)); */
+/* console.log(hoursMap);
 
 console.log(question.get('question'));
 for (const [key, value] of question) {
@@ -467,5 +467,17 @@ for (const [key, value] of question) {
 const answer = Number(prompt("Your answer?"));
 console.log(answer);
 
-console.log(question.get((question.get('correct') === answer)));
+console.log(question.get((question.get('correct') === answer))); */
  
+/* console.log(...hoursMap);
+console.log([...hoursMap]); */
+console.log([...[...question.entries()]]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
+
+
+
+
+
+
