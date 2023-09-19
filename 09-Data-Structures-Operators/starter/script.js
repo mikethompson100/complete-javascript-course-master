@@ -501,19 +501,26 @@ const gameEvents = new Map([
   [92, '🔶 Yellow card'],
 ]);
 
-const events = new Set([...gameEvents]);
+/* const events = new Set([...gameEvents]);
 let counter = 0; let runningTotal =0; let total = 0;
-for (const event of events) {
-  runningTotal += Number(event[0]);
-  if(event[0] === 64) {
-    events.delete(event);
-  }
-}
-total = runningTotal / events.size;
+let half = "";
+
+gameEvents.delete(64);
+console.log(gameEvents);
+
+const time = Math.max(...gameEvents.keys());
+console.log(time);
+
+total = time / events.size;
 console.log(`An event happened, on average, every ${total} minutes,`);
 
-
-
+ */
+let half;
+for (const [min, event] of gameEvents) {
+  (min < 45) ? half = "FIRST" : half = "SECOND";
+  console.log(`${half} HALF: `, min, event) 
+  //(gameEvent[0] < 45 ) ? console.log(`FIRST HALF: `, gameEvent[0], gameEvent[1]) : console.log(`SECOND HALF: `, gameEvent[0], gameEvent[1]);
+}
 
 
 
