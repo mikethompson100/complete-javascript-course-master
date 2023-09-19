@@ -522,12 +522,16 @@ for (const [min, event] of gameEvents) {
   //(gameEvent[0] < 45 ) ? console.log(`FIRST HALF: `, gameEvent[0], gameEvent[1]) : console.log(`SECOND HALF: `, gameEvent[0], gameEvent[1]);
 } */
 
+const airline = 'TAP Air Portugal';
+const plane = "A320";
+console.log('Mike'[0]);
+console.log(airline.length);
+console.log('B737'.length)
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
 
-
-
-
-
-
+const extraction = airline.slice((airline.lastIndexOf(' ')+1));
+console.log(extraction);
 
 
 
