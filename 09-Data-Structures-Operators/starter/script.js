@@ -487,7 +487,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
       [FIRST HALF] 17: ⚽️ GOAL
 GOOD LUCK 😀
 */
-const gameEvents = new Map([
+/* const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
   [47, '⚽️ GOAL'],
@@ -499,7 +499,7 @@ const gameEvents = new Map([
   [76, '⚽️ GOAL'],
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
-]);
+]); */
 
 /* const events = new Set([...gameEvents]);
 let counter = 0; let runningTotal =0; let total = 0;
@@ -515,12 +515,20 @@ total = time / events.size;
 console.log(`An event happened, on average, every ${total} minutes,`);
 
  */
-let half;
+/* let half;
 for (const [min, event] of gameEvents) {
   (min < 45) ? half = "FIRST" : half = "SECOND";
   console.log(`${half} HALF: `, min, event) 
   //(gameEvent[0] < 45 ) ? console.log(`FIRST HALF: `, gameEvent[0], gameEvent[1]) : console.log(`SECOND HALF: `, gameEvent[0], gameEvent[1]);
-}
+} */
+
+
+
+
+
+
+
+
 
 
 
