@@ -522,7 +522,7 @@ for (const [min, event] of gameEvents) {
   //(gameEvent[0] < 45 ) ? console.log(`FIRST HALF: `, gameEvent[0], gameEvent[1]) : console.log(`SECOND HALF: `, gameEvent[0], gameEvent[1]);
 } */
 
-const airline = 'TAP Air Portugal';
+/* const airline = 'TAP Air Portugal';
 //const plane = "A320";
 console.log('Mike'[0]);
 console.log(airline.length);
@@ -539,7 +539,7 @@ const checkMiddleSeat = function(seat) {
   (seat.indexOf('B') !== -1 || seat.indexOf('E') !== -1) ? console.log("Found middle seat") : console.log("Not middle seat");
 }
 
-checkMiddleSeat('11E');
+checkMiddleSeat('11E'); */
 /* 
 console.log(airline.toLowerCase());
 console.log(airline.toUpperCase());
@@ -571,7 +571,7 @@ console.log(announcement.replace('door','gate'));
 console.log(announcement.replace(/door/g,'gate'));   // Regex */
 
 // Booleans
-const plane = 'A320neo';
+/* const plane = 'A320neo';
 console.log(plane.includes('A320'));
 console.log(plane.startsWith('A320n'));
 
@@ -586,16 +586,31 @@ const checkBaggage = function(items) {
 
 checkBaggage('I have a laptop, some Food and a pocket Knife.');
 checkBaggage('I have a socks and a camera.');
-checkBaggage('Got some snacks and a gun for protection.');
+checkBaggage('Got some snacks and a gun for protection.'); */
 
+/* console.log('a+very+nice'.split('+'));
+console.log('Michael Thompson'.split(' '));
 
+const [first, last] = 'Michael Thompson'.split(' ');
 
+console.log(first);
+console.log(last); */
 
+const capName = function (name) {
+  
+  const split = name.split(' ');
+  const namesUpper = [];
 
+  for (const n of split) {
+    namesUpper.push((n[0].toUpperCase() + n.slice(1)));
+  }
 
+  console.log(namesUpper);
 
+}
 
-
+capName("jessica ann smith davis");
+//capName("michael thompson");
 
 
 
