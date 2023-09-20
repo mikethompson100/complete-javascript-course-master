@@ -596,21 +596,52 @@ const [first, last] = 'Michael Thompson'.split(' ');
 console.log(first);
 console.log(last); */
 
-const capName = function (name) {
-  
-  const split = name.split(' ');
+/*   const split = name.split(' ');
   const namesUpper = [];
 
   for (const n of split) {
     namesUpper.push((n[0].toUpperCase() + n.slice(1)));
   }
 
-  console.log(namesUpper);
+  console.log(namesUpper); 
 
 }
 
-capName("jessica ann smith davis");
+capName("jessica ann smith davis");*/
 //capName("michael thompson");
+
+
+const maskCreditCard = function(number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+
+
+
+}
+console.log(maskCreditCard(12));
+console.log(maskCreditCard(1234567812345678));
+console.log(maskCreditCard('1234567812345678'));
+
+const message2 = "Bad weather ... All departures delayed.";
+console.log(message2.repeat(5));
+
+const planesInLine = function(n) {
+  console.log(`There are ${n} planes in line ${'✈'.repeat(5)} \n`);
+}
+planesInLine(5);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
