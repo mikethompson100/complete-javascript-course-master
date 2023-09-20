@@ -554,11 +554,29 @@ test("MIcHaEL"); */
 
 /// Comparing emails
 
-const email = "hello@jonas.io";
+/* const email = "hello@jonas.io";
 let loginEmail = '  Hello@Jonas.Io \n';
 
 const trimmedEmail = loginEmail.toLowerCase().trim();
 (trimmedEmail === email) ? console.log("match") : console.log("non-match, try again");
+ */
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',','.');
+console.log(priceUS);
+
+const announcement = "All passengers come to boarding door 123, boarding door 123!";
+
+console.log(announcement.replace('door','gate'));
+console.log(announcement.replace(/door/g,'gate'));   // Regex
+
+// Booleans
+
+
+
+
+
+
 
 
 
