@@ -611,7 +611,7 @@ capName("jessica ann smith davis");*/
 //capName("michael thompson");
 
 
-const maskCreditCard = function(number) {
+/* const maskCreditCard = function(number) {
   const str = number + '';
   const last = str.slice(-4);
   return last.padStart(str.length, '*');
@@ -630,12 +630,21 @@ const planesInLine = function(n) {
   console.log(`There are ${n} planes in line ${'✈'.repeat(5)} \n`);
 }
 planesInLine(5);
+ */
 
+/// coding challenge #4
 
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
+const data = document.querySelector('textarea');
+const but = document.querySelector('button');
+data.innerHTML = "Test";
+console.log(data);
 
-
-
+but.addEventListener("click", function() {
+  console.log(data);
+});
 
 
 
