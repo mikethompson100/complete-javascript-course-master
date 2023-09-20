@@ -521,7 +521,7 @@ for (const [min, event] of gameEvents) {
   console.log(`${half} HALF: `, min, event) 
   //(gameEvent[0] < 45 ) ? console.log(`FIRST HALF: `, gameEvent[0], gameEvent[1]) : console.log(`SECOND HALF: `, gameEvent[0], gameEvent[1]);
 } */
-/* 
+
 const airline = 'TAP Air Portugal';
 const plane = "A320";
 console.log('Mike'[0]);
@@ -533,13 +533,33 @@ console.log(airline.lastIndexOf('r'));
 const extraction = airline.slice((airline.lastIndexOf(' ')+1));
 console.log(extraction);
 
-console.log(airline.slice(1,-1)) */
+console.log(airline.slice(1,-1)) 
 /// ABC DEF
 const checkMiddleSeat = function(seat) {
   (seat.indexOf('B') !== -1 || seat.indexOf('E') !== -1) ? console.log("Found middle seat") : console.log("Not middle seat");
 }
 
 checkMiddleSeat('11E');
+/* 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+function test(string) {
+  const lower = string.toLowerCase();
+  let string2 = lower.slice(0, 1).toUpperCase();
+  console.log('New string:', string2 + lower.slice(1));
+}
+
+test("MIcHaEL"); */
+
+/// Comparing emails
+
+const email = "hello@jonas.io";
+let loginEmail = '  Hello@Jonas.Io \n';
+
+const trimmedEmail = loginEmail.toLowerCase().trim();
+(trimmedEmail === email) ? console.log("match") : console.log("non-match, try again");
+
 
 
 
