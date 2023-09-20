@@ -523,7 +523,7 @@ for (const [min, event] of gameEvents) {
 } */
 
 const airline = 'TAP Air Portugal';
-const plane = "A320";
+//const plane = "A320";
 console.log('Mike'[0]);
 console.log(airline.length);
 console.log('B737'.length)
@@ -561,16 +561,37 @@ const trimmedEmail = loginEmail.toLowerCase().trim();
 (trimmedEmail === email) ? console.log("match") : console.log("non-match, try again");
  */
 
-const priceGB = '288,97£';
+/* const priceGB = '288,97£';
 const priceUS = priceGB.replace('£', '$').replace(',','.');
 console.log(priceUS);
 
 const announcement = "All passengers come to boarding door 123, boarding door 123!";
 
 console.log(announcement.replace('door','gate'));
-console.log(announcement.replace(/door/g,'gate'));   // Regex
+console.log(announcement.replace(/door/g,'gate'));   // Regex */
 
 // Booleans
+const plane = 'A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.startsWith('A320n'));
+
+const checkBaggage = function(items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log("You are not allowed on board!");
+  }
+  else console.log("Welcome aboard");
+
+}
+
+checkBaggage('I have a laptop, some Food and a pocket Knife.');
+checkBaggage('I have a socks and a camera.');
+checkBaggage('Got some snacks and a gun for protection.');
+
+
+
+
+
 
 
 
