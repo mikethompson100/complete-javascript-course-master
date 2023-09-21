@@ -637,14 +637,43 @@ planesInLine(5);
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-const data = document.querySelector('textarea');
-const but = document.querySelector('button');
-data.innerHTML = "Test";
-console.log(data);
+const initiallData = document.querySelector('textarea').innerHTML = 'Paste text here';
 
+const but = document.querySelector('button');
 but.addEventListener("click", function() {
-  console.log(data);
+  const gatheredData = document.querySelector('textarea').value;
+  runConversion(gatheredData);
 });
+
+function runConversion(data) {
+  const words = data.split('\n');
+  for (let word of words) {
+    word = word.toLowerCase().trim();    
+
+    const underscore_Index = word.indexOf('_')+1;          /// Find location of the letter needing capitalization after the _ 8
+    const first = word.slice(0,underscore_Index);
+    const second = word.slice(underscore_Index);
+
+    const targetChar = second[0];             /// Store the old lowercase version c
+    const target = second[0].toUpperCase();   /// Store that letter as the capitalized version C
+
+    const replaced = second.replace(targetChar, target);  /// Replace the lowercase with the uppercase version in the second string
+    const absoluteFinalString = first + replaced;
+    const display = absoluteFinalString.replace('_', '');     /// Replace the _ with a ''
+    console.log(display, '\n');
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
