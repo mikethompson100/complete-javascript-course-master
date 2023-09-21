@@ -640,13 +640,13 @@ document.body.append(document.createElement('button'));
 document.querySelector('textarea').innerHTML = 'Paste text here';
 
 document.querySelector('button').addEventListener("click", function() {
-  for (let row of document.querySelector('textarea').value.split('\n')) {
+  const rows = document.querySelector('textarea').value.split('\n');
+  for (let [index,row] of rows.entries()) {
     const [first,second] = row.toLowerCase().trim().split('_');
     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
-    console.log(output);
+    console.log(`${output.padEnd(20)} ${'✅'.repeat(index+1)}`);
   }
 });
-
 
 
 /* function runConversion(data) {
