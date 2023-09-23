@@ -15,7 +15,7 @@ const createBooking = function(flightNum = 123, numPassengers = 1, price = 0) {
 createBooking('test', undefined , 5);
 
 console.log(bookings); */
-
+/* 
 const flight = 'LH123';
 const jonas = {
     name: 'Jonas Schmedtmann',
@@ -35,7 +35,7 @@ const checkIn = function (flightNum, passenger) {
 checkIn(flight, jonas);
 /* 
 console.log(flight);
-console.log(jonas); */
+console.log(jonas); 
 
 const newPassport = function(person) {
     person.passport = Math.trunc(Math.random() * 10000000000);
@@ -44,9 +44,22 @@ const newPassport = function(person) {
 
 newPassport(jonas);
 checkIn(flight, jonas);
-console.log(jonas);
+console.log(jonas); */
 
+// section 10;
 
+const oneWord = function(str) {
+    return str.replace(/ /g, '').toLowerCase();
+}
+
+console.log(oneWord("Mike Thompson"));
+
+const upperFirstWord = function(str) {
+    const [first, ...others] = str.split(' ');
+    return [first.toUpperCase(), ...others].join(' ');
+}
+
+console.log(upperFirstWord("Mike John Thompson"));
 
 
 
