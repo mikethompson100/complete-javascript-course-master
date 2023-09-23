@@ -48,21 +48,26 @@ console.log(jonas); */
 
 // section 10;
 
-const oneWord = function(str) {
+/* const oneWord = function(str) {
     return str.replace(/ /g, '').toLowerCase();
 }
 
-console.log(oneWord("Mike Thompson"));
+console.log(oneWord("Mike Thompson")); */
 
 const upperFirstWord = function(str) {
     const [first, ...others] = str.split(' ');
     return [first.toUpperCase(), ...others].join(' ');
 }
+//console.log(upperFirstWord("Mike John Thompson"));
 
-console.log(upperFirstWord("Mike John Thompson"));
+// Higher order function
+const transformer = function(str, fn) {
+    console.log(fn(str));
+    console.log(`${fn.name}`)
 
+}
 
-
+transformer('Javascript is the best!', upperFirstWord);
 
 
 
