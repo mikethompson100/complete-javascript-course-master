@@ -68,7 +68,13 @@ const transformer = function(str, fn) {
 }
 
 transformer('Javascript is the best!', upperFirstWord);
+const high5 = function() {
+    console.log('click');
+}
+document.body.addEventListener('click', high5);
 
+/// for each
+['Jonas', 'Martha', 'Adam'].forEach(high5); /// called 3 times
 
 
 
