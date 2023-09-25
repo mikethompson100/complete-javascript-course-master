@@ -86,8 +86,13 @@ function higher(str, fn) {
 
 console.log(higher('MichaelThompson', lower)) */
 
-const greet = function(greeting) {
+/* const greet = function(greeting) {
     return function(name) {
+        console.log(`${greeting} ${name}`)
+    }
+} */
+const greet = (greeting) => {
+    return (name) => {
         console.log(`${greeting} ${name}`)
     }
 }
