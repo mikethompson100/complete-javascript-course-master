@@ -53,7 +53,7 @@ console.log(jonas); */
 }
 
 console.log(oneWord("Mike Thompson")); */
-
+/* 
 const upperFirstWord = function(str) {
     const [first, ...others] = str.split(' ');
     return [first.toUpperCase(), ...others].join(' ');
@@ -75,6 +75,28 @@ document.body.addEventListener('click', high5);
 
 /// for each
 ['Jonas', 'Martha', 'Adam'].forEach(high5); /// called 3 times
+
+function lower(e) {
+    return e.slice(2);
+}
+
+function higher(str, fn) {
+    return fn(str);
+}
+
+console.log(higher('MichaelThompson', lower)) */
+
+const greet = function(greeting) {
+    return function(name) {
+        console.log(`${greeting} ${name}`)
+    }
+}
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+
+greet('Hello')('Art');
+
+
 
 
 
