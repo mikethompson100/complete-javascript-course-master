@@ -103,13 +103,13 @@ greet('Hello')('Art'); */
 
 const lufthansa = {
     airline: 'Lufthansa',
-    iatCode: 'LM',
+    iataCode: 'LM',
     bookings: [], 
     book(flightNum, name) {
         console.log(
-            `${name} booked a seat on ${this.airline} flight ${this.iatCode}${flightNum}`
+            `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
         );
-        this.bookings.push({ flight: `${this.iatCode}${flightNum}`, name});
+        this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name});
         console.log(this.bookings);
     }
 };
@@ -118,19 +118,22 @@ lufthansa.book(239, 'Jonas Schmedtmann');
 lufthansa.book(130, 'Michael J. Thompson');
 
 const eurowings = {
-    name: 'Eurowings',
+    airline: 'Eurowings',
     iataCode: 'EW',
-    bookings: [],
-
+    bookings: []
 }
 
 const book = lufthansa.book;
 
-book(239, 'Jonas Schmedtmann');
+//Does not work
+//book(239, 'Jonas Schmedtmann!');
 
+book.call(eurowings, 23, 'Sarah Williams');
 
-
-
+// apply
+const flightData = [583, 'George Cooper'];
+book.apply(eurowings, flightData);
+console.log(eurowings);
 
 
 
