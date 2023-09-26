@@ -101,7 +101,7 @@ greeterHey('Jonas');
 
 greet('Hello')('Art'); */
 
-const lufthansa = {
+/* const lufthansa = {
     airline: 'Lufthansa',
     iataCode: 'LM',
     bookings: [], 
@@ -112,12 +112,12 @@ const lufthansa = {
         this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name});
         //console.log(this.bookings);
     }
-};
+}; */
 /* 
 lufthansa.book(239, 'Jonas Schmedtmann');
 lufthansa.book(130, 'Michael J. Thompson'); */
 
-const eurowings = {
+/* const eurowings = {
     airline: 'Eurowings',
     iataCode: 'EW',
     bookings: []
@@ -129,7 +129,7 @@ const swiss = {
     bookings: []
 }
 
-const book = lufthansa.book;
+const book = lufthansa.book; */
 
 //Does not work
 //book(239, 'Jonas Schmedtmann!');
@@ -141,9 +141,9 @@ const book = lufthansa.book;
 book.apply(eurowings, flightData);
 console.log(eurowings); */
 
-const bookEW = book.bind(eurowings);
+/* const bookEW = book.bind(eurowings);
 const bookLH = book.bind(lufthansa);
-const bookSW = book.bind(swiss);
+const bookSW = book.bind(swiss); */
 //console.log(bookEW);
 /* bookEW(25, "Adam Thompson")
 bookLH(25, "Brandon Thompson")
@@ -154,18 +154,18 @@ bookEW23('Karin Thompson');
 bookEW23('Victoria Thompson'); */
 
 // Event listeners
-lufthansa.planes = 300;
+/* lufthansa.planes = 300;
 lufthansa.buyPlane = function() {
-    //console.log(this);
+    console.log(this);
     this.planes++;
-    //console.log(this.planes);
+    console.log(this.planes);
 }
 
-document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa)); */
 
 // Partial application
 
-const addTax = (rate, value) => value + value * rate;
+/* const addTax = (rate, value) => value + value * rate;
 const addVAT = addTax.bind(null, .23);
 //console.log(addVAT(100));
 
@@ -175,9 +175,81 @@ function addTaxRate(rate) {
     }
 }
 const addVAT2 = addTaxRate(.23);
-console.log(addVAT2) 
+console.log(addVAT2)  */
 
 /* const test2 = () => (rate,value) => value + value * rate;
 console.log(test2()(.1,100)); */
+
+let answer = '';
+
+const poll = {
+    question: 'What is your favourite programming language?',
+    options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+    // This generates [0, 0, 0, 0]. More in the next section 😃
+    answers: new Array(4).fill(0),
+    registerNewAnswer() {
+      // Get answer
+      const answer = Number(
+        prompt(
+          `${this.question}\n${this.options.join('\n')}\n(Write option number)`
+        )
+      );
+      console.log(answer);
+  
+      // Register answer
+      typeof answer === 'number' &&
+        answer < this.answers.length &&
+        this.answers[answer]++;
+  
+      this.displayResults();
+      this.displayResults('string');
+    },
+  
+    displayResults(type = 'array') {
+      if (type === 'array') {
+        console.log(this.answers);
+      } else if (type === 'string') {
+        // Poll results are 13, 2, 4, 1
+        console.log(`Poll results are ${this.answers.join(', ')}`);
+      }
+    },
+  };
+  
+  poll.registerNewAnswer = function() {        
+            let answer = prompt(`What is your favorite programming language?
+            0: JavaScript
+            1: Python
+            2: Rust
+            3: C++
+            (write option number)
+            4: End.
+            `);
+            answer = Number(answer);
+            console.log("typeof answer: ", typeof answer);
+            console.log("answer >= 0 && answer <= 3: ", (answer >= 0 && answer <= 3));
+            
+        (answer !=4) ? poll.answers[answer]++ : answer = answer;
+        console.log(poll.answers)
+    }
+
+   const pollbutton = document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer);
+   
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
