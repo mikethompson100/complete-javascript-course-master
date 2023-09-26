@@ -113,9 +113,9 @@ const lufthansa = {
         //console.log(this.bookings);
     }
 };
-
+/* 
 lufthansa.book(239, 'Jonas Schmedtmann');
-lufthansa.book(130, 'Michael J. Thompson');
+lufthansa.book(130, 'Michael J. Thompson'); */
 
 const eurowings = {
     airline: 'Eurowings',
@@ -145,25 +145,39 @@ const bookEW = book.bind(eurowings);
 const bookLH = book.bind(lufthansa);
 const bookSW = book.bind(swiss);
 //console.log(bookEW);
-bookEW(25, "Adam Thompson")
+/* bookEW(25, "Adam Thompson")
 bookLH(25, "Brandon Thompson")
 bookSW(25, "Chris Thompson")
 
 const bookEW23 = book.bind(eurowings, 23);
 bookEW23('Karin Thompson');
-bookEW23('Victoria Thompson');
+bookEW23('Victoria Thompson'); */
 
+// Event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function() {
+    //console.log(this);
+    this.planes++;
+    //console.log(this.planes);
+}
 
+document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
 
+// Partial application
 
+const addTax = (rate, value) => value + value * rate;
+const addVAT = addTax.bind(null, .23);
+//console.log(addVAT(100));
 
+function addTaxRate(rate) {
+    return function(value) {
+        return value + value * rate;
+    }
+}
+const addVAT2 = addTaxRate(.23);
+console.log(addVAT2) 
 
-
-
-
-
-
-
-
+/* const test2 = () => (rate,value) => value + value * rate;
+console.log(test2()(.1,100)); */
 
 
