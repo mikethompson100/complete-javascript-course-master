@@ -183,61 +183,61 @@ console.log(test2()(.1,100)); */
 let answer = '';
 
 const poll = {
-    question: 'What is your favourite programming language?',
+    question: 'What is your favorite programming language?',
     options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
     // This generates [0, 0, 0, 0]. More in the next section 😃
     answers: new Array(4).fill(0),
     registerNewAnswer() {
       // Get answer
-      const answer = Number(
-        prompt(
-          `${this.question}\n${this.options.join('\n')}\n(Write option number)`
-        )
-      );
+      const answer = Number(prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`));
       console.log(answer);
   
       // Register answer
-      typeof answer === 'number' &&
-        answer < this.answers.length &&
-        this.answers[answer]++;
-  
+      typeof answer === 'number' && answer < this.answers.length && this.answers[answer]++;
+      console.log(`answer: ${answer}`);
       this.displayResults();
-      this.displayResults('string');
+      this.displayResults('string'); 
     },
-  
-    displayResults(type = 'array') {
-      if (type === 'array') {
-        console.log(this.answers);
-      } else if (type === 'string') {
-        // Poll results are 13, 2, 4, 1
-        console.log(`Poll results are ${this.answers.join(', ')}`);
-      }
-    },
-  };
-  
-  poll.registerNewAnswer = function() {        
-            let answer = prompt(`What is your favorite programming language?
-            0: JavaScript
-            1: Python
-            2: Rust
-            3: C++
-            (write option number)
-            4: End.
-            `);
-            answer = Number(answer);
-            console.log("typeof answer: ", typeof answer);
-            console.log("answer >= 0 && answer <= 3: ", (answer >= 0 && answer <= 3));
-            
-        (answer !=4) ? poll.answers[answer]++ : answer = answer;
-        console.log(poll.answers)
+    displayResults(type) {
+        if (type === 'array') { console.log(`ARRAY ANSWER: Poll results are:`, this.answers);
+        }
+        else if (type === 'string') {
+            const output = [...this.answers].join(',');
+            console.log(`STRING ANSWER: Poll results are: ${output}`);
+        }
+        else console.log(`Hmm, this is neither an array nor string.`)
     }
-
-   const pollbutton = document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer);
+  };
+  /* registerNewAnswer = function() {        
+    let answer = prompt(`What is your favorite programming language?
+    0: JavaScript
+    1: Python
+    2: Rust
+    3: C++
+    (write option number)
+    4: End.
+    `);
+    answer = Number(answer);
+    //console.log("answer >= 0 && answer <= 3: ", (answer >= 0 && answer <= 3));
+    
+(answer !=4) ? poll.answers[answer]++ : answer = answer;
+} */
+const testVar = poll.registerNewAnswer;
+testVar.bind(poll);
+   const pollbutton = document.querySelector('.poll').addEventListener('click', testVar);
    
 
  
-
-
+/* 
+   displayResults(type = 'array') {
+    if (type === 'array') {
+      console.log(this.answers);
+    } else if (type === 'string') {
+      // Poll results are 13, 2, 4, 1
+      console.log(`Poll results are ${this.answers.join(', ')}`);
+    }
+  },
+ */
 
 
 
