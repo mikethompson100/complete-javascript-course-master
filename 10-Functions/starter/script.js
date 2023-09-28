@@ -259,7 +259,7 @@ poll.displayResults.call({answers: myArray}, 'string');
 
 // CLOSURES
 
-const secureBooking = function() {
+/* const secureBooking = function() {
     let passengerCount = 0;
     return function() {
         passengerCount++;
@@ -268,8 +268,31 @@ const secureBooking = function() {
 }
 const booker = secureBooking();
 booker();
-console.dir(booker);
+console.dir(booker); */
 
+/// more closures 
+
+let f;
+
+const g = function() {
+    const a = 23;
+    f = function() {
+        console.log(a * 2);
+    }
+}
+
+const h = function() {
+    const b = 777;
+    f = function() {
+        console.log(b * 2);
+    }
+};
+
+g();
+f();
+h();
+f();
+console.dir(f);
 
 
 
