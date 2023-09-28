@@ -197,6 +197,7 @@ const poll = {
       console.log(`answer: ${answer}`);
       this.displayResults();
       this.displayResults('string'); 
+      this.displayResults('huh?'); 
     },
     displayResults(type = 'array') {
         if (type === 'array') { console.log(`ARRAY ANSWER: Poll results are:`, this.answers);
