@@ -272,7 +272,9 @@ console.dir(booker); */
 
 /// more closures 
 
-let f;
+/// Example 1
+
+/* let f;
 
 const g = function() {
     const a = 23;
@@ -292,12 +294,23 @@ g();
 f();
 h();
 f();
-console.dir(f);
+console.dir(f); */
+
+/// Example 2
+
+const boardPassengers = function(n, wait) {
+    const perGroup = n / 3;
+
+    setTimeout(function(){
+        console.log(`We are now boarding ${n} passengers.`);
+        console.log(`There are three groups each with ${perGroup} passengers.`);
+    }, wait * 1000);
 
 
+    console.log(`Will start boarding in ${wait} seconds.`)
+}
 
-
-
+boardPassengers(30, 5);
 
 
 
