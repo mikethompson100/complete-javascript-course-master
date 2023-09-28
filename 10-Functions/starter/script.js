@@ -198,7 +198,7 @@ const poll = {
       this.displayResults();
       this.displayResults('string'); 
     },
-    displayResults(type) {
+    displayResults(type = 'array') {
         if (type === 'array') { console.log(`ARRAY ANSWER: Poll results are:`, this.answers);
         }
         else if (type === 'string') {
@@ -222,9 +222,9 @@ const poll = {
     
 (answer !=4) ? poll.answers[answer]++ : answer = answer;
 } */
-const testVar = poll.registerNewAnswer;
-testVar.bind(poll);
-   const pollbutton = document.querySelector('.poll').addEventListener('click', testVar);
+poll.registerNewAnswer()
+//testVar.bind(poll);
+   const pollbutton = document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
    
 
  
