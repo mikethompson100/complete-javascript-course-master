@@ -187,24 +187,38 @@ const poll = {
     options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
     // This generates [0, 0, 0, 0]. More in the next section 😃
     answers: new Array(4).fill(0),
-    registerNewAnswer() {
-      // Get answer
-      const answer = Number(prompt(`${this.question}\n${this.options.join('\n')}\n(Write option number)`));
-      console.log(answer);
-  
-      // Register answer
-      typeof answer === 'number' && answer < this.answers.length && this.answers[answer]++;
-      console.log(`answer: ${answer}`);
-      this.displayResults();
-      this.displayResults('string'); 
-      this.displayResults('huh?'); 
+    registerNewAnswer(arr) {
+        console.log("ARR:", arr);
+        let answer = '';
+        if (typeof arr != 'array') {
+          // Get answer
+          answer = Number(
+            prompt(
+              `${this.question}\n${this.options.join(
+                '\n'
+              )}\n(Write option number)`
+            )
+          );
+          console.log(answer);
+        } else {
+          answer = [...arr];
+          console.log('answer-', answer);
+          // Register answer, answer
+          typeof answer === 'number' &&
+            answer < this.answers.length &&
+            this.answers[answer]++;
+          console.log(`answer: ${answer}`);
+          this.displayResults();
+          this.displayResults('string');
+          this.displayResults('huh?');
+        }
     },
     displayResults(type = 'array') {
         if (type === 'array') { console.log(`ARRAY ANSWER: Poll results are:`, this.answers);
         }
         else if (type === 'string') {
-            const output = [...this.answers].join(',');
-            console.log(`STRING ANSWER: Poll results are: ${output}`);
+            //const output = [...this.answers].join(',');
+            console.log(`STRING ANSWER: Poll results are: ${this.answers.join(', ')}`);
         }
         else console.log(`Hmm, this is neither an array nor string.`)
     }
@@ -223,10 +237,11 @@ const poll = {
     
 (answer !=4) ? poll.answers[answer]++ : answer = answer;
 } */
-poll.registerNewAnswer()
+const myArray = [5,2,3];
+//poll.registerNewAnswer(myArray);
 //testVar.bind(poll);
-   const pollbutton = document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
-   
+document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
+poll.displayResults.call({answers: myArray}, 'string');
 
  
 /* 
