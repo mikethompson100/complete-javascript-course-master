@@ -179,7 +179,7 @@ console.log(addVAT2)  */
 
 /* const test2 = () => (rate,value) => value + value * rate;
 console.log(test2()(.1,100)); */
-
+/* 
 let answer = '';
 
 const poll = {
@@ -222,7 +222,7 @@ const poll = {
         }
         else console.log(`Hmm, this is neither an array nor string.`)
     }
-  };
+  }; */
   /* registerNewAnswer = function() {        
     let answer = prompt(`What is your favorite programming language?
     0: JavaScript
@@ -237,12 +237,12 @@ const poll = {
     
 (answer !=4) ? poll.answers[answer]++ : answer = answer;
 } */
-const myArray = [5,2,3];
+/* const myArray = [5,2,3];
 //poll.registerNewAnswer(myArray);
 //testVar.bind(poll);
 document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
 poll.displayResults.call({answers: myArray}, 'string');
-
+ */
  
 /* 
    displayResults(type = 'array') {
@@ -254,6 +254,17 @@ poll.displayResults.call({answers: myArray}, 'string');
     }
   },
  */
+
+// IIFE
+
+
+
+
+
+
+
+
+
 
 
 
