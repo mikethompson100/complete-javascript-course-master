@@ -257,9 +257,18 @@ poll.displayResults.call({answers: myArray}, 'string');
 
 // IIFE
 
+// CLOSURES
 
-
-
+const secureBooking = function() {
+    let passengerCount = 0;
+    return function() {
+        passengerCount++;
+        console.log(`${passengerCount} passengers`);
+    }
+}
+const booker = secureBooking();
+booker();
+console.dir(booker);
 
 
 
