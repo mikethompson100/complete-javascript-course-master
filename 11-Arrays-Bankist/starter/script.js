@@ -96,16 +96,21 @@ console.log(...letters);
 console.log(letters);
  */
 
-const arr = [1,2,3];
+/* const arr = [1,2,3];
 console.log(arr[0]);
 console.log(arr.at(0));
 
 console.log(arr[arr.length-1]);
 console.log(arr.at(-1));
 console.log(arr.slice(-1)[0]);
+ */
 
+const arr = [1,2,-3];
 
-
+arr.forEach(function(a) {
+  if (a > 0) console.log("DEP");
+  else console.log('WD');
+})
 
 
 
