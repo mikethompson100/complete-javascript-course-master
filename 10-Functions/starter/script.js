@@ -298,7 +298,7 @@ console.dir(f); */
 
 /// Example 2
 
-const boardPassengers = function(n, wait) {
+/* const boardPassengers = function(n, wait) {
     const perGroup = n / 3;
 
     setTimeout(function(){
@@ -310,11 +310,17 @@ const boardPassengers = function(n, wait) {
     console.log(`Will start boarding in ${wait} seconds.`)
 }
 
-boardPassengers(30, 5);
+boardPassengers(30, 5); */
 
 
+(function () {
+    const header = document.querySelector('h1');
+    header.style.color = 'red';
+    document.querySelector('body').addEventListener('click', function() {header.style.color = 'blue';});
+})();
 
-
+// document.querySelector('.buy').addEventListener('click', lufthansa.buyPlane.bind(lufthansa)); */
+// document.querySelector('.poll').addEventListener('click', poll.registerNewAnswer.bind(poll));
 
 
 
