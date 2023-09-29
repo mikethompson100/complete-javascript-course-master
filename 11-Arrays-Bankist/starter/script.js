@@ -85,16 +85,24 @@ console.log(arr.slice(1, -1)); */
 /* console.log(arr.splice(-1));
 console.log(arr); */
 
-let arr = ['a', 'b', 'c', 'd', 'e'];
+/* let arr = ['a', 'b', 'c', 'd', 'e'];
 const arr2 = ['j','i','h','g','f']
-/* console.log(arr2); */
+/* console.log(arr2); 
 console.log(arr2.reverse());
 //console.log(arr2);  
 const letters = arr.concat(arr2)
 console.log(letters);
 console.log(...letters);
 console.log(letters);
+ */
 
+const arr = [1,2,3];
+console.log(arr[0]);
+console.log(arr.at(0));
+
+console.log(arr[arr.length-1]);
+console.log(arr.at(-1));
+console.log(arr.slice(-1)[0]);
 
 
 
