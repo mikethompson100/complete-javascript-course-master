@@ -107,7 +107,8 @@ console.log(arr.slice(-1)[0]);
 
 const arr = [1,2,-3];
 
-arr.forEach(function(a) {
+arr.forEach(function(a, index, array) {
+  console.log("Array=", (index + 1) + " " + array)
   if (a > 0) console.log("DEP");
   else console.log('WD');
 })
