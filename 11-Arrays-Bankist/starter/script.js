@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-
+/*
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -79,7 +79,7 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
-
+ */
 
 
 
@@ -152,3 +152,45 @@ currenciesUnique.forEach(function(value,_,set) {
 console.log(`Value: ${value} - Set: ${[...set]}`);
 })
  */
+
+// CODING CHALLENGE:
+
+function checkDogs(dogsJulia,dogsKate) {
+    const dogsJuliaAlt = [...dogsJulia.slice(1,3)];
+    const myArray = [dogsJuliaAlt, dogsKate];
+    myArray.forEach(function(ele,index) {
+      ele.forEach(function(elem,index) {
+      console.log((elem) <= 3 ? `Dog#${index+1}- ${elem} is a puppy` : `Dog#${index+1}- ${elem} is an adult dog.`);
+      })
+
+    })
+/*     dogsJuliaAlt.forEach(function(ele,index) {
+      console.log((ele) < 3 ? `Dog ${ele} is a puppy` : `Dog ${ele} is an adult dog.`);
+    })
+    dogsKate.forEach(function(ele,index) {      
+      console.log((ele) < 3 ? `Dog ${ele} is a puppy` : `Dog ${ele} is an adult dog.`);
+    }) */
+}
+
+/* const dogsJulia = [3,5,2,12,7];
+const dogsKate = [4,1,15,8,3]; */
+const dogsJulia = [9,16,6,8,3];
+const dogsKate = [10,5,6,1,4];
+checkDogs(dogsJulia, dogsKate);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
