@@ -157,20 +157,12 @@ console.log(`Value: ${value} - Set: ${[...set]}`);
 
 function checkDogs(dogsJulia,dogsKate) {
     const dogsJuliaAlt = [...dogsJulia.slice(1,3)];
-    const myArray = [dogsJuliaAlt, dogsKate];
-    myArray.forEach(function(ele,index) {
-      ele.forEach(function(elem,index) {
+    const myArray = dogsJuliaAlt.concat(dogsKate);
+    myArray.forEach(function(elem,index) {
       console.log((elem) <= 3 ? `Dog#${index+1}- ${elem} is a puppy` : `Dog#${index+1}- ${elem} is an adult dog.`);
       })
+    };
 
-    })
-/*     dogsJuliaAlt.forEach(function(ele,index) {
-      console.log((ele) < 3 ? `Dog ${ele} is a puppy` : `Dog ${ele} is an adult dog.`);
-    })
-    dogsKate.forEach(function(ele,index) {      
-      console.log((ele) < 3 ? `Dog ${ele} is a puppy` : `Dog ${ele} is an adult dog.`);
-    }) */
-}
 
 /* const dogsJulia = [3,5,2,12,7];
 const dogsKate = [4,1,15,8,3]; */
