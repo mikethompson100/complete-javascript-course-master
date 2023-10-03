@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-/*
+
 // Data
 const account1 = {
   owner: 'Jonas Schmedtmann',
@@ -79,8 +79,9 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
- */
 
+const user = 'Steven Thomas Williams';
+const username = user.toLowerCase().split(' ');
 
 
 /////////////////////////////////////////////////
@@ -170,7 +171,7 @@ const dogsJulia = [9,16,6,8,3];
 const dogsKate = [10,5,6,1,4];
 checkDogs(dogsJulia, dogsKate);
  */
-
+/* 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
@@ -196,6 +197,6 @@ else {
 });
 
 console.log(movementsDescriptions);
-
+ */
 
 
