@@ -155,7 +155,7 @@ console.log(`Value: ${value} - Set: ${[...set]}`);
 
 // CODING CHALLENGE:
 
-function checkDogs(dogsJulia,dogsKate) {
+/* function checkDogs(dogsJulia,dogsKate) {
     const dogsJuliaAlt = [...dogsJulia.slice(1,3)];
     const myArray = dogsJuliaAlt.concat(dogsKate);
     myArray.forEach(function(elem,index) {
@@ -165,17 +165,23 @@ function checkDogs(dogsJulia,dogsKate) {
 
 
 /* const dogsJulia = [3,5,2,12,7];
-const dogsKate = [4,1,15,8,3]; */
+const dogsKate = [4,1,15,8,3]; 
 const dogsJulia = [9,16,6,8,3];
 const dogsKate = [10,5,6,1,4];
 checkDogs(dogsJulia, dogsKate);
+ */
 
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+const eurToUsd = 1.1;
 
+const movementsUSD = movements.map(function(mov){
+  console.log(mov, eurToUsd);
+  return mov * eurToUsd;
+})
 
-
-
-
+console.log(movements);
+console.log(movementsUSD);
 
 
 
