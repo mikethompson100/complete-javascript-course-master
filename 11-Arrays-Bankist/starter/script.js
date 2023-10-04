@@ -80,13 +80,17 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
-const user = 'Steven Thomas Williams';
-const username = user
-.toLowerCase()
-.split(' ')
-.map(name => name[0])
-  .join('');
+const createUsernames = function(user){
+  const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
   console.log(username);
+}
+
+accounts.forEach(function(e) {
+  createUsernames(e.owner);
+})
+
+/* const result = createUsernames('Michael Thompson');*/
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
