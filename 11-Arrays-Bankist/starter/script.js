@@ -80,17 +80,14 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
-const createUsernames = function(user){
-  const username = user.toLowerCase().split(' ').map(name => name[0]).join('');
-  console.log(username);
+const createUsernames = function(accs){
+  accs.forEach(function(acc) {
+    acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
+  });
 }
 
-accounts.forEach(function(e) {
-  createUsernames(e.owner);
-})
-
-/* const result = createUsernames('Michael Thompson');*/
-
+createUsernames(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
