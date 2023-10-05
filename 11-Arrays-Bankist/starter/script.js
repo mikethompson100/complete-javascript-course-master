@@ -88,6 +88,12 @@ const createUsernames = function(accs){
 
 createUsernames(accounts);
 console.log(accounts);
+const movements = account1.movements;
+const deposits = movements.filter(function(mov) { 
+  return (mov > 0);
+})
+console.log(deposits);
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
