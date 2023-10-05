@@ -93,9 +93,7 @@ const deposits = movements.filter(function(mov) {
   return (mov > 0);
 })
 console.log(deposits);
-const withdrawals = movements.filter(function(mov) { 
-  return (mov < 0);
-})
+const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
 
 /////////////////////////////////////////////////
