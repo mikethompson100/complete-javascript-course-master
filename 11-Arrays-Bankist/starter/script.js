@@ -116,8 +116,8 @@ maxVal(movements); */
 
 const maxVal = movements.reduce(function(acc, cur) { 
   console.log(`CUR: ${cur} - ACC: ${acc}`);
-  return (acc < cur) ? acc = cur : acc = acc;
-},0);
+  return (acc > cur) ? acc : cur;
+},movements[0]);
 console.log(maxVal);
 
 
