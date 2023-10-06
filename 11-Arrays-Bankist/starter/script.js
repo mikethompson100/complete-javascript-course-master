@@ -87,11 +87,18 @@ const createUsernames = function(accs){
 }
 
 createUsernames(accounts);
+
+const calcPrintBalance = function(movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+}
+
 console.log(accounts);
 const movements = account1.movements;
 const deposits = movements.filter(function(mov) { 
   return (mov > 0);
 })
+calcPrintBalance(movements);
 console.log(deposits);
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
