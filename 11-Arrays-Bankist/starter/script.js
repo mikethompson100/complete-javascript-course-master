@@ -106,10 +106,19 @@ console.log(withdrawals);
 const balance = movements.reduce((acc,cur) => acc + cur, 0);
 console.log(balance);
 
+// Max value
 
+//const maxVal = function(movements, i) {
+ /*   const balance = movements.reduce((acc, mov) => (acc > acc[i-1]) ? acc = mov : acc = acc, 0);
+}
+maxVal(movements); */
+//console.log(maxVal);
 
-
-
+const maxVal = movements.reduce(function(acc, cur) { 
+  console.log(`CUR: ${cur} - ACC: ${acc}`);
+  return (acc < cur) ? acc = cur : acc = acc;
+},0);
+console.log(maxVal);
 
 
 
