@@ -114,11 +114,11 @@ console.log(balance);
 maxVal(movements); */
 //console.log(maxVal);
 
-const maxVal = movements.reduce(function(acc, cur) { 
+/* const maxVal = movements.reduce(function(acc, cur) { 
   console.log(`CUR: ${cur} - ACC: ${acc}`);
   return (acc > cur) ? acc : cur;
 },movements[0]);
-console.log(maxVal);
+console.log(maxVal); */
 
 
 
@@ -193,6 +193,20 @@ console.log(`Value: ${value} - Set: ${[...set]}`);
  */
 
 // CODING CHALLENGE:
+
+function calcAverageHumanAge(ages) {
+  const humanYears = ages.map(age => {
+    return (age <= 2) ? age * 2 : age * 4 + 16;
+  }).filter(age => {
+    return (age >= 18);
+  });
+  console.log(humanYears);
+}
+
+calcAverageHumanAge([5,2,4,1,15,8,3]);
+
+
+
 
 /* function checkDogs(dogsJulia,dogsKate) {
     const dogsJuliaAlt = [...dogsJulia.slice(1,3)];
