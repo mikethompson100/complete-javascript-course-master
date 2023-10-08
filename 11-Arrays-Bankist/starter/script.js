@@ -199,7 +199,10 @@ function calcAverageHumanAge(ages) {
     return (age <= 2) ? age * 2 : age * 4 + 16;
   }).filter(age => {
     return (age >= 18);
-  });
+  }).reduce((acc, age) => {
+    acc = acc + age;
+    return acc / 3;
+  })
   console.log(humanYears);
 }
 
