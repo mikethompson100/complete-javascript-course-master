@@ -193,19 +193,19 @@ console.log(`Value: ${value} - Set: ${[...set]}`);
  */
 
 // CODING CHALLENGE:
+console.log("==============");
 
 function calcAverageHumanAge(ages) {
-  const humanYears = ages.map(age => {
-    return (age <= 2) ? age * 2 : age * 4 + 16;
-  }).filter(age => {
-    return (age >= 18);
-  }).reduce((acc, age) => {
-    acc = acc + age;
-    return acc / 3;
-  })
-  console.log(humanYears);
-}
+  const humanYears = ages.map(age => (age <= 2) ? age * 2 : age * 4 + 16
+  ).filter(age => age >= 18)
+  .reduce(function(acc, age, i, total) {
+    acc = acc + age / total.length;
+    return acc;
+  }, 0);
+  console.log("HUMAN YEARS: ", humanYears);
+};
 
+//calcAverageHumanAge([3,10]);
 calcAverageHumanAge([5,2,4,1,15,8,3]);
 calcAverageHumanAge([16,6,10,5,6,1,4]);
 
