@@ -93,7 +93,7 @@ const calcPrintBalance = function(movements) {
   labelBalance.textContent = `${balance} EUR`;
 }
 
-console.log(accounts);
+/* console.log(accounts);
 const movements = account1.movements;
 const deposits = movements.filter(function(mov) { 
   return (mov > 0);
@@ -106,7 +106,8 @@ console.log(withdrawals);
 const balance = movements.reduce((acc,cur) => acc + cur, 0);
 console.log(balance);
 
-// Max value
+
+// Max value */
 
 //const maxVal = function(movements, i) {
  /*   const balance = movements.reduce((acc, mov) => (acc > acc[i-1]) ? acc = mov : acc = acc, 0);
@@ -193,7 +194,7 @@ console.log(`Value: ${value} - Set: ${[...set]}`);
  */
 
 // CODING CHALLENGE:
-console.log("==============");
+/* console.log("==============");
 
 function calcAverageHumanAge(ages) {
   const humanYears = ages.map(age => (age <= 2) ? age * 2 : age * 4 + 16
@@ -207,7 +208,7 @@ function calcAverageHumanAge(ages) {
 
 //calcAverageHumanAge([3,10]);
 calcAverageHumanAge([5,2,4,1,15,8,3]);
-calcAverageHumanAge([16,6,10,5,6,1,4]);
+calcAverageHumanAge([16,6,10,5,6,1,4]); */
 
 
 
@@ -227,7 +228,7 @@ const dogsJulia = [9,16,6,8,3];
 const dogsKate = [10,5,6,1,4];
 checkDogs(dogsJulia, dogsKate);
  */
-/* 
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
@@ -237,7 +238,7 @@ const movementsUSD = movements.map(function(mov){
 })
 
 console.log(movements);
-console.log(movementsUSD);
+/* console.log(movementsUSD);
 
 const movementsUSDnew = movements.map(mov => mov * eurToUsd);
 
@@ -252,7 +253,11 @@ else {
 }
 });
 
-console.log(movementsDescriptions);
- */
+console.log(movementsDescriptions); */
+ 
 
+const totalDepositsUSD = movements.filter(mov => mov > 0)
+.map(mov => mov * eurToUsd)
+.reduce((acc, mov) => (acc + mov, 0));
+console.log("totalDepositsUSD: ", totalDepositsUSD);
 
