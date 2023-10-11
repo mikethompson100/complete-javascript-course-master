@@ -283,3 +283,9 @@ const totalDepositsUSD = movements.filter(mov => mov > 0)
 .reduce((acc, mov, arr) => (acc + mov), 0);
 console.log("totalDepositsUSD: ", totalDepositsUSD);
 
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+
+
