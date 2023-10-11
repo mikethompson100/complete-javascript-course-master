@@ -80,6 +80,12 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+const calcDisplaySummary = function(movements) {
+  const incomes = movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes}##`;
+}
+calcDisplaySummary(account1.movements);
+
 const createUsernames = function(accs){
   accs.forEach(function(acc) {
     acc.username = acc.owner.toLowerCase().split(' ').map(name => name[0]).join('');
@@ -237,7 +243,7 @@ const movementsUSD = movements.map(function(mov){
   return mov * eurToUsd;
 })
 
-console.log(movements);
+//console.log(movements);
 /* console.log(movementsUSD);
 
 const movementsUSDnew = movements.map(mov => mov * eurToUsd);
@@ -259,6 +265,6 @@ console.log(movementsDescriptions); */
 
 const totalDepositsUSD = movements.filter(mov => mov > 0)
 .map(mov => mov * eurToUsd)
-.reduce((acc, mov) => acc + mov, 0);
+.reduce((acc, mov, arr) => {(acc + mov)}, 0);
 console.log("totalDepositsUSD: ", totalDepositsUSD);
 
