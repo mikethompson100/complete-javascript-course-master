@@ -100,6 +100,21 @@ const createUsernames = function(accs){
 
 createUsernames(accounts);
 
+// Event handler
+let currentAccount;
+btnLogin.addEventListener('click', function(e) {
+  e.preventDefault();
+  currentAccount = accounts.find(acc => acc.username === inputLoginUsername.value);
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    console.log("Login");
+  }
+});
+
+
+
+
 const calcPrintBalance = function(movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} EUR`;
@@ -287,8 +302,8 @@ const firstWithdrawal = movements.find(mov => mov < 0);
 console.log(movements);
 console.log(firstWithdrawal);
 
-const account = accounts.find(acc => acc.owner === "Jessica Davis");
-console.log(account);
+/* const account = accounts.find(acc => acc.owner === "Jessica Davis");
+console.log(account); */
 
 
 
