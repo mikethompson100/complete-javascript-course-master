@@ -89,9 +89,7 @@ const calcDisplayBalance = function (acc) {
   labelSumIn.textContent = `${incomes}##`;
   const outcomes = account.movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${outcomes}##`;
-  const interest = account.movements.filter(mov => mov > 0).map(function(deposit) {
-   return deposit * account.interestRate / 100;
-  })
+  const interest = account.movements.filter(mov => mov > 0).map(deposit => deposit * account.interestRate / 100)
   .filter((int, i, arr) => (int >= 1))
   .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}##`;
