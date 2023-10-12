@@ -79,13 +79,12 @@ const displayMovements = function (movements) {
 };
 
 //displayMovements(account1.movements);
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance}€`;
+};
 
-const calcDisplayBalance = function(movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
-}
-
-const calcDisplayBalance = function(movements) {
+ const calcDisplaySummary = function(movements) {
   const incomes = movements.filter(mov => mov > 0).reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes}##`;
   const outcomes = movements.filter(mov => mov < 0).reduce((acc, mov) => acc + mov, 0);
@@ -94,7 +93,7 @@ const calcDisplayBalance = function(movements) {
   .filter((int, i, arr) => (int >= 1))
   .reduce((acc, int) => acc + int, 0);
   labelSumInterest.textContent = `${interest}##`;
-}
+} 
 //calcDisplayBalance(account1.movements);
 
 const createUsernames = function(accs){
@@ -118,7 +117,7 @@ btnLogin.addEventListener('click', function(e) {
     // Display movements
     displayMovements(currentAccount.movements);
     // Display balance
-    calcDisplayBalance(currentAccount.movements);
+    calcDisplayBalance(currentAccount);
     // Display summary
     calcDisplaySummary(currentAccount.movements);
   }
@@ -245,7 +244,7 @@ calcAverageHumanAge([5,2,4,1,15,8,3]);
 calcAverageHumanAge([16,6,10,5,6,1,4]); */
 
 
-const calcAverageHumanAge2 = ages => ages
+/* const calcAverageHumanAge2 = ages => ages
     .map(age => (age <= 2) ? age * 2 : age * 4 + 16)
     .filter(age => age >= 18)
     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
@@ -254,7 +253,7 @@ const calcAverageHumanAge2 = ages => ages
 const a = calcAverageHumanAge2([5,2,4,1,15,8,3]);
 calcAverageHumanAge2([16,6,10,5,6,1,4]); 
 
-console.log("HUMAN YEARS: ", a);
+console.log("HUMAN YEARS: ", a); */
 
 /* function checkDogs(dogsJulia,dogsKate) {
     const dogsJuliaAlt = [...dogsJulia.slice(1,3)];
@@ -303,7 +302,7 @@ console.log(movementsDescriptions); */
 const totalDepositsUSD = movements.filter(mov => mov > 0)
 .map(mov => mov * eurToUsd)
 .reduce((acc, mov, arr) => (acc + mov), 0);
-console.log("totalDepositsUSD: ", totalDepositsUSD);
+//console.log("totalDepositsUSD: ", totalDepositsUSD);
 
 const firstWithdrawal = movements.find(mov => mov < 0);
 console.log(movements);
