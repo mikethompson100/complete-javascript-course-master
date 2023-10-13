@@ -375,16 +375,32 @@ const arrDeep = [[[1,2] ,3], [4,5,6], 7, 8];
 console.log(arrDeep);
 console.log(arrDeep.flat(2)); */
 
-console.log(accounts);
+//console.log(accounts);
 
 const accountMovements = accounts.map(acc => acc.movements).flat().reduce((acc, mov) => acc + mov, 0);
 
-console.log(accountMovements);
+//console.log(accountMovements);
 
+/* const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners);
+owners.sort();
+console.log(owners); */
 
+// Ascending
+//console.log(movements);
+/* movements.sort((a,b) => {
+   if (a > b) return 1;
+   if (b > a) return -1;   
+})
+console.log(movements); */
+movements.sort((a,b) => a-b);
+console.log(movements);
 
-
-
-
+// Descending
+movements.sort((a,b) => {
+   if (a > b) return -1;
+   if (b > a) return 1;   
+})
+//console.log(movements);
 
 
