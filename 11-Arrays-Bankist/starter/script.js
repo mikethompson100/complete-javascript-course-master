@@ -412,7 +412,19 @@ movements.sort((a,b) => {
 const z = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * 6) + 1);
 console.log(z);
 
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI);
 
+labelBalance.addEventListener('click', function() {
+  const movementsUI = Array.from(document.querySelectorAll('.movements__value'), ele => Number(ele.textContent.replace('£', '')));
+console.log(movementsUI);
+});
+
+labelBalance.addEventListener('click', function() {
+const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+const movementsUI2a = movementsUI2.map(ele => Number(ele.textContent.replace('£', '')));
+console.log(movementsUI2a);
+});
 
 
 
