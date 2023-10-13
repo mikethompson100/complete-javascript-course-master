@@ -147,6 +147,21 @@ btnTransfer.addEventListener('click', function(e) {
     updateUI(currentAccount);
 });
 
+btnLoan.addEventListener('click', function(e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+
+  if(amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+  }
+
+  updateUI(currentAccount);
+  inputLoanAmount.value = '';
+});
+
+
+
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   if ((currentAccount.username === inputCloseUsername.value) && 
@@ -347,7 +362,9 @@ console.log(firstWithdrawal);
 
 /* const account = accounts.find(acc => acc.owner === "Jessica Davis");
 console.log(account); */
-
+ 
+/// Every 
+console.log(movements.every(mov => mov > 0));
 
 
 
