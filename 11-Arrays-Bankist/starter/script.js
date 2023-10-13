@@ -409,4 +409,11 @@ movements.sort((a,b) => {
 }) */
 //console.log(movements);
 
+const z = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * 6) + 1);
+console.log(z);
+
+
+
+
+
 
