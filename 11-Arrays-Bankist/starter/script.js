@@ -426,9 +426,26 @@ const movementsUI2a = movementsUI2.map(ele => Number(ele.textContent.replace('£
 console.log(movementsUI2a);
 });
 
-const aa = [1,2,3,4];
-const bb = aa.splice(1,3);
-console.log("AA: " , aa);
-console.log("BB: " , bb);
+/// #166  #3  Create an object which contains the sum of the deposits and the withdrawals.
+// Reduce boils down an array to just one value, in this case object.
+
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum,cur) => sum + cur, 0);
+console.log(bankDepositSum);
+
+/* const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count,cur) => (cur >= 1000 ? count + 1: count), 0);
+console.log(numDeposits1000);
+ */
 
 
+const sums = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((sums,cur) => {
+    cur > 0 ? sums.deposits += cur : sums.withdrawals += cur;
+    return sums;
+  }, {deposits: 0, withdrawals: 0});
+console.log("Sum:", sums);
