@@ -426,6 +426,9 @@ const movementsUI2a = movementsUI2.map(ele => Number(ele.textContent.replace('£
 console.log(movementsUI2a);
 });
 
-
+const aa = [1,2,3,4];
+const bb = aa.splice(1,3);
+console.log("AA: " , aa);
+console.log("BB: " , bb);
 
 
