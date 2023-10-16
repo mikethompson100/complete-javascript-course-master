@@ -328,14 +328,14 @@ const dogsJulia = [9,16,6,8,3];
 const dogsKate = [10,5,6,1,4];
 checkDogs(dogsJulia, dogsKate);
  */
-
+/* 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
 
 const movementsUSD = movements.map(function(mov){
   return mov * eurToUsd;
-})
+}) */
 
 //console.log(movements);
 /* console.log(movementsUSD);
@@ -357,14 +357,14 @@ console.log(movementsDescriptions); */
  
 // PIPELINE
 
-const totalDepositsUSD = movements.filter(mov => mov > 0)
+/* const totalDepositsUSD = movements.filter(mov => mov > 0)
 .map(mov => mov * eurToUsd)
 .reduce((acc, mov, arr) => (acc + mov), 0);
 //console.log("totalDepositsUSD: ", totalDepositsUSD);
 
 const firstWithdrawal = movements.find(mov => mov < 0);
 console.log(movements);
-console.log(firstWithdrawal);
+console.log(firstWithdrawal); */
 
 /* const account = accounts.find(acc => acc.owner === "Jessica Davis");
 console.log(account); */
@@ -383,7 +383,7 @@ console.log(arrDeep.flat(2)); */
 
 //console.log(accounts);
 
-const accountMovements = accounts.map(acc => acc.movements).flat().reduce((acc, mov) => acc + mov, 0);
+//const accountMovements = accounts.map(acc => acc.movements).flat().reduce((acc, mov) => acc + mov, 0);
 
 //console.log(accountMovements);
 
@@ -408,7 +408,7 @@ movements.sort((a,b) => {
    if (b > a) return 1;   
 }) */
 //console.log(movements);
-
+/* 
 const z = Array.from({length: 100}, (_, i) => Math.floor(Math.random() * 6) + 1);
 console.log(z);
 
@@ -424,16 +424,16 @@ labelBalance.addEventListener('click', function() {
 const movementsUI2 = [...document.querySelectorAll('.movements__value')];
 const movementsUI2a = movementsUI2.map(ele => Number(ele.textContent.replace('£', '')));
 console.log(movementsUI2a);
-});
+}); */
 
 /// #166  #3  Create an object which contains the sum of the deposits and the withdrawals.
 // Reduce boils down an array to just one value, in this case object.
-
+/* 
 const bankDepositSum = accounts
   .flatMap(acc => acc.movements)
   .filter(mov => mov > 0)
   .reduce((sum,cur) => sum + cur, 0);
-console.log(bankDepositSum);
+console.log(bankDepositSum); */
 
 /* const numDeposits1000 = accounts
   .flatMap(acc => acc.movements)
@@ -441,7 +441,7 @@ console.log(bankDepositSum);
 console.log(numDeposits1000);
  */
 
-
+/* 
 const {deposits, withdrawals} = accounts
   .flatMap(acc => acc.movements)
   .reduce((sums,cur) => {
@@ -452,10 +452,10 @@ const {deposits, withdrawals} = accounts
 
 console.log(deposits, withdrawals);
 
-
+ */
 //4 
 
-const convertTitleCase = function (title) {
+/* const convertTitleCase = function (title) {
 const capitalize = str => str[0].toUpperCase() + str.slice(1);
 
   const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with', 'at'];
@@ -467,7 +467,7 @@ const capitalize = str => str[0].toUpperCase() + str.slice(1);
   return capitalize(titleCase);
 };
 console.log(convertTitleCase('My name is Michael Thompson and I am a Software Developer at Capgemini.'));
-
+ */
 /*const convertTitleCase = function(string) {
 
 
@@ -479,6 +479,42 @@ console.log(convertTitleCase('My name is Michael Thompson and I am a Software De
 }; */
 //const valueA = convertTitleCase('My name is Michael Thompson and I am a Software Developer at Capgemini.');
 //console.log(valueA);
+
+const dogs = [
+  { weight: 22, curFood: 250, owners: ['Alice', 'Bob'] },
+  { weight: 8, curFood: 200, owners: ['Matilda'] },
+  { weight: 13, curFood: 275, owners: ['Sarah', 'John'] },
+  { weight: 32, curFood: 340, owners: ['Michael'] },
+];
+
+// #1
+const recFoodPortion = function(dogs) { dogs
+  .forEach(doggie => { doggie.recFoodPortion = Math.round(doggie.weight ** .75) * 28; }); return dogs };
+const func1 = recFoodPortion(dogs);
+console.log(func1)
+
+// #2
+ function findSarahsDog(dogs) {
+    dogs
+    .forEach(function(dog) { dog.owners
+    .find(function(owner) {
+      if (owner === 'Sarah') {
+        const dogReco = dog.recFoodPortion;
+        const lowReco = dogReco * .9;
+        const highReco = dogReco * 1.1;
+        if (dog.curFood < lowReco) { console.log(`Dog is underfed`); }
+        else if (dog.curFood > highReco) { console.log(`Dog is overfed`); }
+        else { console.log(`Dog is fine.`); }
+
+         }      
+    })
+    })
+}
+
+findSarahsDog(dogs); 
+
+
+
 
 
 
