@@ -455,15 +455,30 @@ console.log(deposits, withdrawals);
 
 //4 
 
-const convertCamel = function(string) {
-  const toArrayToString = string.split(' ').reduce(function(acc,ele) {
+const convertTitleCase = function (title) {
+const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with', 'at'];
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word: capitalize(word)))
+    .join(' ');
+  return capitalize(titleCase);
+};
+console.log(convertTitleCase('My name is Michael Thompson and I am a Software Developer at Capgemini.'));
+
+/*const convertTitleCase = function(string) {
+
+
+   const toArrayToString = string.split(' ').reduce(function(acc,ele) {
     acc = (ele.length > 1) ? acc += ele.slice(0, 1).toUpperCase() + ele.slice(1) : acc += ele.slice(0);
     return acc + ' ';
   }, '').trim();
   return toArrayToString;
-};
-const valueA = convertCamel('My name is Michael Thompson and I am a Software Developer.');
-console.log(valueA);
+}; */
+//const valueA = convertTitleCase('My name is Michael Thompson and I am a Software Developer at Capgemini.');
+//console.log(valueA);
 
 
 
