@@ -453,3 +453,21 @@ const {deposits, withdrawals} = accounts
 console.log(deposits, withdrawals);
 
 
+//4 
+
+const convertCamel = function(string) {
+  const toArrayToString = string.split(' ').reduce(function(acc,ele) {
+    acc = (ele.length > 1) ? acc += ele.slice(0, 1).toUpperCase() + ele.slice(1) : acc += ele.slice(0);
+    return acc + ' ';
+  }, '').trim();
+  return toArrayToString;
+};
+const valueA = convertCamel('My name is Michael Thompson and I am a Software Developer.');
+console.log(valueA);
+
+
+
+
+
+
+
