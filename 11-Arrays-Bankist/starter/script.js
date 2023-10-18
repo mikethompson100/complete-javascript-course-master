@@ -488,13 +488,17 @@ const dogs = [
 ];
 
 // #1
-const recFoodPortion = function(dogs) { dogs
-  .forEach(doggie => { doggie.recFoodPortion = Math.round(doggie.weight ** .75) * 28; }); return dogs };
+const recFoodPortion = function(dogs) { 
+  dogs.forEach(doggie => { doggie.recFoodPortion = Math.round(doggie.weight ** .75) * 28; }); return dogs };
 const func1 = recFoodPortion(dogs);
 console.log(func1)
 
 // #2
- /* function findSarahsDog(dogs) {
+const dogSarah = dogs.find(dog => dog.owners.includes('Sarah'));
+console.log(`${dogSarah.owners[0]}'s dog is eating too ${dogSarah.curFood > dogSarah.recFood ? 'much' : 'little'}`)
+
+
+  function findSarahsDog(dogs) {
     dogs.forEach(function(dog) { 
       dog.owners.find(function(owner) {
       if (owner === 'Sarah') {
@@ -508,8 +512,7 @@ console.log(func1)
     })
     })
 }
-findSarahsDog(dogs);  */
-
+findSarahsDog(dogs);
 
 // #3
 
@@ -551,10 +554,7 @@ const number7 = dogs.filter(dog => ((dog.curFood > dog.recFoodPortion * .9) && (
 console.log(number7);
 
 //#8
-const shallow = [...dogs].sort(function(a, b) {
-  if (a.recFoodPortion > b.recFoodPortion) return 1;
-  else return -1;
-})
+const shallow = dogs.slice().sort((a, b) => a.recFoodPortion - b.recFoodPortion);
 
 console.log("DOGS shallow: ", ...shallow);
 console.log("DOGS ORIGINAL: ", ...dogs); 
