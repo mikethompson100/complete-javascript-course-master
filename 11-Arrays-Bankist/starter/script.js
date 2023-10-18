@@ -534,12 +534,17 @@ console.log(array2);
 
 //#4
 
-
- 
-
-/* console.log(`${array1.join(' and ')}'s dogs eat too little!`);
+console.log(`${array1.join(' and ')}'s dogs eat too little!`);
 console.log(`${array2.join(' and ')}'s dogs eat too much!`);
- */
+
+// #5
+const number5 = dogs.some(function(dog){
+  return ((dog.curFood > dog.recFoodPortion * .9) && (dog.curFood < dog.recFoodPortion * 1.1));
+});
+
+console.log(number5);
+
+
 
 
 
