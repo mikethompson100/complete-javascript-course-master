@@ -516,18 +516,30 @@ findSarahsDog(dogs);  */
 const arraysMuchLittle = dogs.reduce(function(acc, dog) {  
   if (dog.curFood < dog.recFoodPortion * .9) acc.ownersEatTooLittle.push(...dog.owners);
   else if (dog.curFood > dog.recFoodPortion * 1.1) acc.ownersEatTooMuch.push(...dog.owners);
-  else console.log(`${dog.owner}'s dog is within the healthy range.`); 
+  else {    
+    dog.owners.forEach(function(ele,index) {
+      let stringMulti = dog.owners[index];
+      console.log(`${stringMulti}'s dog is within the healthy range.`);
+    });
+  }
   return acc;       
 }, {ownersEatTooLittle: [], ownersEatTooMuch: []});
 
+const object1 = arraysMuchLittle;
 const array1 = arraysMuchLittle.ownersEatTooLittle;
 const array2 = arraysMuchLittle.ownersEatTooMuch;
+console.log(object1);
 console.log(array1);
 console.log(array2);
 
 //#4
 
 
+ 
+
+/* console.log(`${array1.join(' and ')}'s dogs eat too little!`);
+console.log(`${array2.join(' and ')}'s dogs eat too much!`);
+ */
 
 
 
