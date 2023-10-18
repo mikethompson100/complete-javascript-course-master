@@ -509,32 +509,23 @@ console.log(func1)
     })
 }
 findSarahsDog(dogs);  */
-const arraysMuchLittle = dogs.reduce(function(acc, dog) {  
-           if (dog.curFood < dog.recFoodPortion * .9) { 
-            acc.ownersEatTooLittle.push(...dog.owners);
-            console.log(`${dog.owners}'s dog is Underfed. ${acc.ownersEatTooLittle}`);
-            console.log(acc);
-            return acc;
-          }
-          else if (dog.curFood > dog.recFoodPortion * 1.1) { 
-            acc.ownersEatTooMuch.push(...dog.owners);
-            console.log(`${dog.owners}'s dog is Overfed. ${acc.ownersEatTooMuch}`);
-            console.log(acc);
-            return acc;
-          }
-          else { 
-            console.log(`${dog.owner}'s dog is within the healthy range.`); 
-            return acc; 
-          };          
-  }, {ownersEatTooLittle: [], ownersEatTooMuch: []});
-  
 
-console.log("END: ", arraysMuchLittle);
 
 // #3
-//underfed
-//overfed
 
+const arraysMuchLittle = dogs.reduce(function(acc, dog) {  
+  if (dog.curFood < dog.recFoodPortion * .9) acc.ownersEatTooLittle.push(...dog.owners);
+  else if (dog.curFood > dog.recFoodPortion * 1.1) acc.ownersEatTooMuch.push(...dog.owners);
+  else console.log(`${dog.owner}'s dog is within the healthy range.`); 
+  return acc;       
+}, {ownersEatTooLittle: [], ownersEatTooMuch: []});
+
+const array1 = arraysMuchLittle.ownersEatTooLittle;
+const array2 = arraysMuchLittle.ownersEatTooMuch;
+console.log(array1);
+console.log(array2);
+
+//#4
 
 
 
