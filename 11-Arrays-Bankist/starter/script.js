@@ -537,12 +537,29 @@ console.log(array2);
 console.log(`${array1.join(' and ')}'s dogs eat too little!`);
 console.log(`${array2.join(' and ')}'s dogs eat too much!`);
 
-// #5
-const number5 = dogs.some(function(dog){
-  return ((dog.curFood > dog.recFoodPortion * .9) && (dog.curFood < dog.recFoodPortion * 1.1));
-});
 
-console.log(number5);
+// #5
+
+console.log(dogs.some(dog => (dog.curFood === dog.recFoodPortion)));
+
+// #6
+const number6 = dogs.some(dog => ((dog.curFood > dog.recFoodPortion * .9) && (dog.curFood < dog.recFoodPortion * 1.1)));
+console.log(number6);
+
+// #7
+const number7 = dogs.filter(dog => ((dog.curFood > dog.recFoodPortion * .9) && (dog.curFood < dog.recFoodPortion * 1.1)));
+console.log(number7);
+
+//#8
+const shallow = [...dogs].sort(function(a, b) {
+  if (a.recFoodPortion > b.recFoodPortion) return 1;
+  else return -1;
+})
+
+console.log("DOGS shallow: ", ...shallow);
+console.log("DOGS ORIGINAL: ", ...dogs); 
+
+
 
 
 
