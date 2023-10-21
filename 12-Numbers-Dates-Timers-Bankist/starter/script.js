@@ -297,19 +297,12 @@ console.log(Math.min(5,18,23,11,2));
 
 // Constant
 console.log(Math.PI);
+console.log(Math.PI * Number.parseFloat('10px')** 2);
 
+console.log(Math.trunc(Math.random() * 6) + 1);
+const randomInt = (min, max) => Math.trunc(Math.random() * (max-min) + 1 + min);
 
-
-
-
-
-
-
-
-
-
-
-
+console.log(randomInt(1,21));
 
 
 
