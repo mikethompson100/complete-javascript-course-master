@@ -262,18 +262,26 @@ console.log(Number.parseFloat('2.5'));
 console.log(Number.isNaN(+'20x')); 
 console.log(Number.isNaN(20/0)); */
 
-console.log("isNaN");
-console.log(Number.isNaN(20));
-console.log(Number.isNaN('20'));
-console.log(Number.isNaN(+'20X'));
-console.log(Number.isNaN(23/0));
 
-console.log("\nisFinite");
-console.log(Number.isFinite(20));
-console.log(Number.isFinite('20'));
-console.log(Number.isFinite(+'20x'));
-console.log(Number.isFinite(23/0));
+console.log("isNaN --");
+console.log("Number.isNaN(20)--", Number.isNaN(20));
+console.log("Number.isNaN('20')--", Number.isNaN('20'));
+console.log("Number.isNaN(+'20X'))--", Number.isNaN(+'20X'));
+console.log("Number.isNaN(23/0)--", Number.isNaN(23/0));
 
+
+console.log("\nisFinite --");
+console.log("Number.isFinite(20)--", Number.isFinite(20));
+console.log("Number.isFinite('20')--", Number.isFinite('20'));
+console.log("Number.isFinite(+'20x')--", Number.isFinite(+'20x'));
+console.log("Number.isFinite(23/0)--", Number.isFinite(23/0));
+
+
+console.log("\nisInteger --");
+console.log("Number.isInteger(20)--", Number.isInteger(20));
+console.log("Number.isInteger('20')--", Number.isInteger('20'));
+console.log("Number.isInteger(+'20x')--", Number.isInteger(+'20x'));
+console.log("Number.isInteger(23/0)--", Number.isInteger(23/0));
 
 
 
