@@ -283,6 +283,8 @@ console.log("Number.isInteger('20')--", Number.isInteger('20'));
 console.log("Number.isInteger(+'20x')--", Number.isInteger(+'20x'));
 console.log("Number.isInteger(23/0)--", Number.isInteger(23/0));
 
+/// Lesson 171 - Math and Rounding
+
 
 
 
