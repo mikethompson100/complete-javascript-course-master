@@ -316,12 +316,22 @@ console.log(Math.ceil(135500.99));
 console.log(Math.floor(135500.19));
 console.log(Math.floor('135500.99'));
 
+// Remainder
+console.log(5 % 2);  // 1
+console.log(5 / 2);  // 5 = 2 * 2 + 1
 
+console.log(8 % 3);  // 2
+console.log(8 / 3);  // 8 = 3 * 2 + 2
 
+const isEven = n => n % 2 ===0;
+console.log(isEven(2));
 
-
-
-
+labelBalance.addEventListener('click', function() {
+[...document.querySelectorAll('.movements__row')].forEach(function(row,i){
+    if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+    if (i % 3 === 0) row.style.backgroundColor = 'blue';
+  })
+});
 
 
 
