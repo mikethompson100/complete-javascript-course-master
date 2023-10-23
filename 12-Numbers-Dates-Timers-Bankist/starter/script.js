@@ -333,5 +333,24 @@ labelBalance.addEventListener('click', function() {
   })
 });
 
+/// 173 - Numeric operators
+
+const diameter = 287_460_000_000;
+console.log(diameter);
+
+const test1 = 15_00;
+const test2 = 1_500;
+const test3 = 150_0;
+console.log(test1,test2,test3);
+
+
+
+
+
+
+
+
+
+
 
 
