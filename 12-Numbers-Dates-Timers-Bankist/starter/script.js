@@ -343,6 +343,23 @@ const test2 = 1_500;
 const test3 = 150_0;
 console.log(test1,test2,test3);
 
+// BigInt
+
+console.log(2 ** 53 - 1);
+console.log(Number.MAX_SAFE_INTEGER);
+
+console.log(12345678901234567890123456789n);
+console.log(BigInt(12345678901234567890123456789));
+
+// operators
+console.log(10000n + 10000n);
+console.log(10000n + 10000n);
+console.log(123654123654123654123654123654123n + 11111111111111n);
+
+// Divisions
+
+
+
 
 
 
