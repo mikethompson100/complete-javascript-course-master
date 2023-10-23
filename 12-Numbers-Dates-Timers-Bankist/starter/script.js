@@ -304,6 +304,22 @@ const randomInt = (min, max) => Math.trunc(Math.random() * (max-min) + 1 + min);
 
 console.log(randomInt(1,21));
 
+/// Rounding integers
+console.log(Math.trunc(135500.99));
+
+console.log(Math.round(135500.19));
+console.log(Math.round(135500.99));
+
+console.log(Math.ceil(135500.19));
+console.log(Math.ceil(135500.99));
+
+console.log(Math.floor(135500.19));
+console.log(Math.floor(135500.99));
+
+
+
+
+
 
 
 
