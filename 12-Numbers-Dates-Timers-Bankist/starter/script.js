@@ -358,8 +358,13 @@ console.log(123654123654123654123654123654123n + 11111111111111n);
 
 // Divisions
 
+console.log(11n/3n);
+console.log(11/3);
 
+// Create dates (4 ways)
 
+const now = new Date();
+console.log(now);
 
 
 
