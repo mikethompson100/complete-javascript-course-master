@@ -303,7 +303,7 @@ console.log(Number.parseFloat('2.5'));
 console.log(Number.isNaN(+'20x')); 
 console.log(Number.isNaN(20/0)); */
 
-
+/* 
 console.log("isNaN --");
 console.log("Number.isNaN(20)--", Number.isNaN(20));
 console.log("Number.isNaN('20')--", Number.isNaN('20'));
@@ -395,7 +395,7 @@ console.log(BigInt(12345678901234567890123456789));
 // operators
 console.log(10000n + 10000n);
 console.log(10000n + 10000n);
-console.log(123654123654123654123654123654123n + 11111111111111n);
+console.log(123654123654123654123654123654123n + 11111111111111n); */
 
 // Divisions
 
@@ -412,7 +412,7 @@ console.log(new Date('December 24, 2015'));
 console.log(new Date(account1.movementsDates[0]));
 console.log(new Date(2037, 10, 19, 15, 23, 5));
  */
-
+/* 
 const future = new Date(2037, 10, 19, 15, 23);
 console.log(future);
 console.log(future.getFullYear());
@@ -427,10 +427,24 @@ console.log(future.getTime());
 
 console.log(new Date(2142256980000));
 
-console.log(Date.now());
+console.log(Date.now()); */
 
+// #177
 
+/* const future = new Date(2037, 10, 19,15,23);
+console.log(future);
+console.log(+future); */
 
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+
+const calcDaysPassed = (date1, date2) => (date2 - date1);
+
+const days1 = calcDaysPassed(new Date(2037, 3, 14), new Date(2037, 3, 24));
+console.log(days1);
+
+const milliToDays = days1 / (1000 * 60 * 60 * 24);
+console.log(milliToDays);
 
 
 
