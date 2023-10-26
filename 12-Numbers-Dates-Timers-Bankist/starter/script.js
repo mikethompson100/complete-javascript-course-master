@@ -196,7 +196,7 @@ labelDate.textContent = Intl.DateTimeFormat(locale, options).format(nowTest); */
 
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
 /// FAKE ALWAYS LOGGED in
 
@@ -231,6 +231,7 @@ let time = 30;
 // call the timer every second 
 tick();
 const timer = setInterval(tick, 1000);
+return timer;
 };
 
 
@@ -265,7 +266,9 @@ btnLogin.addEventListener('click', function (e) {
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
-    startLogoutTimer();
+
+    if (timer) clearInterval(timer);
+    timer = startLogoutTimer();
     // Update UI
     updateUI(currentAccount);
   }
@@ -293,16 +296,15 @@ btnTransfer.addEventListener('click', function (e) {
     currentAccount.movementsDates.push(new Date().toISOString());
     receiverAcc.movementsDates.push(new Date().toISOString());
 
-
-
     // Update UI
     updateUI(currentAccount);
+    clearInterval(timer);
+    timer = startLogoutTimer();
   }
 });
 
 btnLoan.addEventListener('click', function (e) {
   e.preventDefault();
-
   const amount = Math.floor(+inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
@@ -317,11 +319,13 @@ btnLoan.addEventListener('click', function (e) {
     updateUI(currentAccount);}, 5000);
   }
   inputLoanAmount.value = '';
+  clearInterval(timer);  
+  timer = startLogoutTimer();
 });
 
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
-
+  clearInterval(timer);
   if (
     inputCloseUsername.value === currentAccount.username &&
     +inputClosePin.value === currentAccount.pin
