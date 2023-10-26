@@ -178,8 +178,9 @@ const nowTest = new Date();const options = {
   year: 'numeric',
   weekday: 'long'
 }
-
-labelDate.textContent = Intl.DateTimeFormat('en-US', options).format(nowTest);
+const locale = navigator.language;
+console.log(locale);
+labelDate.textContent = Intl.DateTimeFormat(locale, options).format(nowTest);
 
 
 
