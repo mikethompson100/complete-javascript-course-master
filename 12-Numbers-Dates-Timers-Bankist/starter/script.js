@@ -84,7 +84,7 @@ const inputClosePin = document.querySelector('.form__input--pin');
 const formatMovementDate = function(date, locale) { 
   const calcDaysPassed = (date1, date2) => Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
   const daysPassed = calcDaysPassed(new Date(), date);
-  console.log(daysPassed);
+  //console.log(daysPassed);
   
   if (daysPassed === 0) return 'Today';
   if (daysPassed === 1) return 'Yesterday';
@@ -107,13 +107,19 @@ const displayMovements = function (acc, sort = false) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const date = new Date(acc.movementsDates[i]);    
     const displayDate = formatMovementDate(date, acc.locale);
+
+    const formattedMov = new Intl.NumberFormat(acc.locale, {
+      style: 'currency',
+      currency: 'USD'
+    }).format(mov);
+
     const html = `
       <div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
         <div class="movements__date">${displayDate}</div>
-        <div class="movements__value">${mov.toFixed(2)}€</div>
+        <div class="movements__value">${formattedMov}</div>
       </div>
     `;
 
@@ -212,7 +218,7 @@ btnLogin.addEventListener('click', function (e) {
   currentAccount = accounts.find(
     acc => acc.username === inputLoginUsername.value
   );
-  console.log(currentAccount);
+  //console.log(currentAccount);
 
   if (currentAccount?.pin === +inputLoginPin.value) {
     // Display UI and message
@@ -299,7 +305,7 @@ btnClose.addEventListener('click', function (e) {
     const index = accounts.findIndex(
       acc => acc.username === currentAccount.username
     );
-    console.log(index);
+    //console.log(index);
     // .indexOf(23)
 
     // Delete account
@@ -478,8 +484,12 @@ console.log(days1);
 const milliToDays = days1 / (1000 * 60 * 60 * 24);
 console.log(milliToDays); */
 
+/* const num = 3884764.23;
 
-
+console.log('US     : ', new Intl.NumberFormat('en-US').format(num));
+console.log('Germany: ', new Intl.NumberFormat('de-DE').format(num));
+console.log('Syria  : ', new Intl.NumberFormat('ar-SY').format(num));
+ */
 
 
 
