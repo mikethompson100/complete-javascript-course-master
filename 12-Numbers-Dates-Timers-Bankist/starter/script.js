@@ -213,6 +213,26 @@ const min = `${now.getMinutes()}`.padStart(2,0);
 
 labelDate.textContent = `${month}/${day}/${year}, ${hour}:${min}`;
 
+const startLogoutTimer = function() {
+  const tick =  function() {
+    const min = String(Math.trunc(time / 60)).padStart(2,0);
+    const sec = String(time % 60).padStart(2,0);
+  labelTimer.textContent = `${min}:${sec}`;
+  if (time === 0) {    
+      labelTimer.textContent = `${min}:${sec}`;      
+        containerApp.style.opacity = 0; 
+        clearInterval(timer); 
+        labelWelcome.textContent = `You have been logged out. Please enter your credentials`;   
+    }
+    time--;
+  }
+// set time to 30 getMinutes
+let time = 30;
+// call the timer every second 
+tick();
+const timer = setInterval(tick, 1000);
+};
+
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
@@ -245,7 +265,7 @@ btnLogin.addEventListener('click', function (e) {
     // Clear input fields
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
-
+    startLogoutTimer();
     // Update UI
     updateUI(currentAccount);
   }
