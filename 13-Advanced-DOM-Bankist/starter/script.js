@@ -36,9 +36,14 @@ document.addEventListener('keydown', function (e) {
 
 console.log(document.querySelector('.header'));
 const allSections = document.querySelectorAll('.section');
-console.log(allSections);
 
 
+document.getElementById('section--1');
+const allButtons = document.getElementsByTagName('button');
+console.log(allButtons);
+const allSectionsArray = Array.from(allButtons);
+
+console.log(document.getElementsByClassName('btn'));
 
 
 
