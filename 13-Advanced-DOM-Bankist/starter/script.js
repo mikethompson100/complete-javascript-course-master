@@ -32,3 +32,16 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+console.log(document.querySelector('.header'));
+const allSections = document.querySelectorAll('.section');
+console.log(allSections);
+
+
+
+
+
+
+
+
