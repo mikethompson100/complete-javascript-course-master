@@ -67,6 +67,23 @@ message.style.padding = "10px 0";
 
 console.log(getComputedStyle(message).color);
 
+// Attributes
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+
+// data Attributes
+console.log(logo.getAttribute('data-version-number'));
+console.log(logo.dataset);
+console.log(logo.dataset.versionNumber);
+
+// classList
+
+logo.classList.add('test');
+
+
+
+
 
 
 
