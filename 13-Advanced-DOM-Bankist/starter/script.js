@@ -60,8 +60,10 @@ addEventListener('click', function() {
   message.remove();
 });
 
-
-
+// Styles
+message.style.backgroundColor = "#37383d";
+message.style.width = '120%';
+message.style.padding = "10px 0";
 
 
 
