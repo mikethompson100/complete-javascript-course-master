@@ -82,7 +82,7 @@ console.log(logo.dataset.versionNumber);
 logo.classList.add('test');
 
 // # 188
-
+/* 
 const btnScrollTo = document.querySelector('.btn--scroll-to')
 const section1 = document.getElementById('section--1');
 
@@ -100,14 +100,34 @@ window.scrollTo({
   left: s1coords.left + window.pageXOffset,
   top: s1coords.top + window.pageYOffset,
   behavior: 'smooth'
-}) */
-
-section1.scrollIntoView({behavior: 'smooth'});
-
-
-
-
+}) 
 });
+ 
+
+section1.scrollIntoView({behavior: 'smooth'});*/
+
+const h1 = document.querySelector('h1');
+
+/* h1.addEventListener('mouseenter', function (e) {
+alert('HI!');
+}); */
+
+/* h1.onmouseenter = function (e) {
+  alert('HI!');
+}; */
+
+const func = function() {
+  alert("test");
+  h1.removeEventListener('mouseenter', func);
+}
+
+h1.addEventListener('mouseenter', func);
+
+
+
+
+
+
 
 
 
