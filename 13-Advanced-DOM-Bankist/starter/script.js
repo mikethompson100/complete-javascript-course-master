@@ -143,6 +143,8 @@ document.querySelector('.nav').addEventListener('click', function(e) {
   console.log('LINK: ', e.target, e.currentTarget);
 });
 
+/// #192  Event delegation 
+
 
 
 
