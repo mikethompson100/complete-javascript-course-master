@@ -46,6 +46,11 @@ const h1 = document.querySelector('h1');
 console.log(h1.querySelectorAll('.highlight'));
 console.log(h1.childNodes); // Not really used
 console.log(h1.children);  // Works for direct children
+h1.firstElementChild.style.color = 'white';
+
+// Going upwards: selecting parents
+console.log(h1.parentNode);
+
 
 
 
