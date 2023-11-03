@@ -79,11 +79,14 @@ tabsContainer.addEventListener('click', function(e) {
   console.log(clicked);
 
   if (!clicked) return;
-  console.log("make active tab");
   tabs.forEach(t => t.classList.remove('operations__tab--active'));
   clicked.classList.add('operations__tab--active');
 
   // Active content 
+  console.log(clicked.dataset.tab);
+
+  tabs.forEach(t => t.classList.remove('operations__content--active'));
+  tabs.forEach(t => t.classList.add('operations__content'));
   document.querySelector(`.operations__content--${clicked.dataset.tab}`)
   .classList.add('operations__content--active');
 
