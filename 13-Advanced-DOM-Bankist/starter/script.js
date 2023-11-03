@@ -42,8 +42,10 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 // 2. Find out which element origined the event
 
 const h1 = document.querySelector('h1');
-// Going fownward child
+// Going downwards: child
 console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes); // Not really used
+console.log(h1.children);  // Works for direct children
 
 
 
