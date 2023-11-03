@@ -77,8 +77,13 @@ console.log(tabsContent);
 tabsContainer.addEventListener('click', function(e) {
   const clicked = e.target.closest('.operations__tab');
   console.log(clicked);
-  
-})
+
+  if (!clicked) return;
+  console.log("make active tab");
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+
+});
 
 
 
