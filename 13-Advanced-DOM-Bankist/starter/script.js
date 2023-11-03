@@ -66,6 +66,21 @@ console.log(h1.parentElement.children);
   if(el !== h1) el.style.transform = 'scale(0.5)';
 })
 
+// Tabbed component
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+console.log("TABS: ", tabs);
+console.log(tabsContainer);
+console.log(tabsContent);
+
+tabsContainer.addEventListener('click', function(e) {
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+  
+})
+
+
 
 
 ///////////////////////////////////////
