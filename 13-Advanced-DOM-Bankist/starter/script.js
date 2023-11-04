@@ -80,17 +80,18 @@ tabsContainer.addEventListener('click', function(e) {
 
   if (!clicked) return;
   tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c=>c.classList.remove(''));
   clicked.classList.add('operations__tab--active');
 
   // Active content 
   console.log(clicked.dataset.tab);
 
-  tabs.forEach(t => t.classList.remove('operations__content--active'));
-  tabs.forEach(t => t.classList.add('operations__content'));
   document.querySelector(`.operations__content--${clicked.dataset.tab}`)
   .classList.add('operations__content--active');
 
 
+  //tabs.forEach(t => t.classList.remove('operations__content--active'));
+  //tabs.forEach(t => t.classList.add('operations__content'));
 });
 
 
