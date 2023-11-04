@@ -76,8 +76,7 @@ console.log(tabsContent);
 
 tabsContainer.addEventListener('click', function(e) {
   const clicked = e.target.closest('.operations__tab');
-  console.log(clicked);
-
+  
   // Guard clause
   if (!clicked) return;
 
@@ -87,14 +86,10 @@ tabsContainer.addEventListener('click', function(e) {
   clicked.classList.add('operations__tab--active');
 
   // Activate tab content 
-  console.log(clicked.dataset.tab);
-
+  
   document.querySelector(`.operations__content--${clicked.dataset.tab}`)
   .classList.add('operations__content--active');
 
-
-  //tabs.forEach(t => t.classList.remove('operations__content--active'));
-  //tabs.forEach(t => t.classList.add('operations__content'));
 });
 
 
