@@ -16,6 +16,11 @@ console.log('Current scroll X/Y: ', window.pageXOffset, window.pageYOffset);
 console.log('height/width viewport: ', document.documentElement.clientHeight, document.documentElement.clientWidth);
 });
 
+const nav = document.querySelector('.nav');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content');
+
 // Page navigation
 
 /* document.querySelectorAll('.nav__link').forEach(function(el) {
@@ -51,8 +56,8 @@ h1.firstElementChild.style.color = 'white';
 // Going upwards: selecting parents
 console.log(h1.parentNode);
 console.log(h1.parentElement);
-h1.closest('.header').style.background = 'red';  // Closest parent element
-h1.closest('h1').style.background = 'blue';
+/* h1.closest('.header').style.background = 'red';  // Closest parent element
+h1.closest('h1').style.background = 'blue'; */
 
 // Siblings
 console.log(h1.previousElementSibling);
@@ -67,9 +72,6 @@ console.log(h1.parentElement.children);
 })
 
 // Tabbed component
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
 console.log("TABS: ", tabs);
 console.log(tabsContainer);
 console.log(tabsContent);
@@ -91,6 +93,57 @@ tabsContainer.addEventListener('click', function(e) {
   .classList.add('operations__content--active');
 
 });
+
+// Menu fade animation
+/* nav.addEventListener('mouseover', function(e) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+    siblings.forEach(el => {
+      if (el !== link) {
+        el.style.opacity = 0.5;
+        }
+      logo.style.opacity = 0.5;
+    });
+  };
+});
+
+nav.addEventListener('mouseout', function(e) {
+  const link = e.target;
+  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+  const logo = link.closest('.nav').querySelector('img');
+  siblings.forEach(el => {
+    if (el !== link) {
+      el.style.opacity = 1;
+      }
+    logo.style.opacity = 1;
+  });
+}); */
+  
+const handleHover = function (e, opacity) {
+  if(e.target.classList.contains('nav__link')) {
+  const link = e.target;
+  const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+  const logo = link.closest('.nav').querySelector('img');
+  siblings.forEach(el => {
+        if (el !== link) el.style.opacity = opacity;
+        });
+        logo.style.opacity = opacity;
+  };
+};
+
+
+nav.addEventListener('mouseover', function(e) {
+  handleHover(e, .5);
+});
+nav.addEventListener('mouseout',  function(e) {
+  handleHover(e, 1);
+});
+
+
+
+
 
 
 
