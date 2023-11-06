@@ -48,33 +48,33 @@ document.querySelector('.nav__links').addEventListener('click', function(e) {
 
 const h1 = document.querySelector('h1');
 // Going downwards: child
-console.log(h1.querySelectorAll('.highlight'));
+/* console.log(h1.querySelectorAll('.highlight'));
 console.log(h1.childNodes); // Not really used
-console.log(h1.children);  // Works for direct children
+console.log(h1.children);  // Works for direct children */
 h1.firstElementChild.style.color = 'white';
 
 // Going upwards: selecting parents
-console.log(h1.parentNode);
-console.log(h1.parentElement);
+/* console.log(h1.parentNode);
+console.log(h1.parentElement); */
 /* h1.closest('.header').style.background = 'red';  // Closest parent element
 h1.closest('h1').style.background = 'blue'; */
 
 // Siblings
-console.log(h1.previousElementSibling);
+/* console.log(h1.previousElementSibling);
 console.log(h1.nextElementSibling);
 console.log(h1.previousSibling);
-console.log(h1.nextSibling);
+console.log(h1.nextSibling); */
 
-console.log(h1.parentElement.children);
+//console.log(h1.parentElement.children);
 
 [...h1.parentElement.children].forEach(function(el) {
   if(el !== h1) el.style.transform = 'scale(0.5)';
 })
 
 // Tabbed component
-console.log("TABS: ", tabs);
+/* console.log("TABS: ", tabs);
 console.log(tabsContainer);
-console.log(tabsContent);
+console.log(tabsContent); */
 
 tabsContainer.addEventListener('click', function(e) {
   const clicked = e.target.closest('.operations__tab');
@@ -141,6 +141,7 @@ nav.addEventListener('mouseout',  function(e) {
   handleHover(e, 1);
 }); */
 
+/* 
 nav.addEventListener('mouseout', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
@@ -151,10 +152,24 @@ console.log(initialCoords);
 window.addEventListener('scroll', function(e) {
   if(window.scrollY > initialCoords.top) nav.classList.add('sticky')
   else nav.classList.remove('sticky');
-});
+}); */
 
+/// Intersection Observer API
 
+const obsCallback = function(entries, observer) {
+  entries.forEach(entry=> {
+    console.log(entry);
+  });
+};
 
+const obsOptions = {
+  root: null,
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver
+  (obsCallback,obsOptions);
+observer.observe(section1);
 
 
 ///////////////////////////////////////
