@@ -144,7 +144,10 @@ nav.addEventListener('mouseout',  function(e) {
 nav.addEventListener('mouseout', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
 
+// Sticky nav
+window.addEventListener('scroll', function(e) {
 
+});
 
 
 
