@@ -163,8 +163,8 @@ const obsCallback = function(entries, observer) {
 };
 
 const obsOptions = {
-  root: null,
-  threshold: 0.1
+  root: null,      // Default = viewport
+  threshold: 0.1   // Percent we want to have visible in our root
 };
 
 const observer = new IntersectionObserver
