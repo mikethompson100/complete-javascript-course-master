@@ -156,7 +156,7 @@ window.addEventListener('scroll', function(e) {
 
 /// Intersection Observer API
 
-const obsCallback = function(entries, observer) {
+/* const obsCallback = function(entries, observer) {
   entries.forEach(entry=> {
     console.log(entry);
   });
@@ -169,7 +169,32 @@ const obsOptions = {
 
 const observer = new IntersectionObserver
   (obsCallback,obsOptions);
-observer.observe(section1);
+observer.observe(section1); */
+
+const header = document.querySelector('.header');
+
+const stickyNav = function(entries) {
+  const [entry] = entries;
+  console.log(entry);
+}
+
+const headerObserver = new IntersectionObserver(
+  stickyNav, {
+    root: null,
+    threshold: 0
+  }
+);
+headerObserver.observe(header);
+
+
+
+
+
+
+
+
+
+
 
 
 ///////////////////////////////////////
