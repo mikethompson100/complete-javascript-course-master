@@ -171,7 +171,7 @@ const observer = new IntersectionObserver
   (obsCallback,obsOptions);
 observer.observe(section1); */
 
-const header = document.querySelector('.header');
+/* const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;;
 
 const stickyNav = function(entries) {
@@ -188,7 +188,34 @@ const headerObserver = new IntersectionObserver(
     rootMargin: `-${navHeight}px` /// 90 pixels applied outside the target element
   }
 );
-headerObserver.observe(header);
+headerObserver.observe(header); */
+
+// Reveal sections     
+
+const allSections = document.querySelectorAll('.section');
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;;
+
+const revealSection = function(entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+  entry.target.classList.remove('section--hidden');
+};
+
+const sectionObserver = new IntersectionObserver(
+  revealSection, {
+    root: null,
+    threshold: 0.15
+  })
+  allSections.forEach(function(section) {
+  sectionObserver.observe(section); 
+  section.classList.add('section-hidden');
+});
+
+
+
+
 
 
 
