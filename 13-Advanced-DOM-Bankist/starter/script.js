@@ -215,6 +215,8 @@ const sectionObserver = new IntersectionObserver(
   section.classList.add('section--hidden');
 });
 
+/// Lazy loading images
+
 
 
 
