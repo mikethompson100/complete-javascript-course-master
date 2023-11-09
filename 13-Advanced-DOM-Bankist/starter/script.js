@@ -217,6 +217,8 @@ const sectionObserver = new IntersectionObserver(
 
 /// Lazy loading images
 
+const imgTargets = document.querySelectorAll('img[data-src]');
+console.log(imgTargets);
 
 
 
