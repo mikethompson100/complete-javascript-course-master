@@ -218,10 +218,18 @@ const sectionObserver = new IntersectionObserver(
 /// Lazy loading images
 
 const imgTargets = document.querySelectorAll('img[data-src]');
-console.log(imgTargets);
 
+const loadImg = function(entries, observer) {
+  const [entry] = entries;
+  console.log(entry);
+}
 
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0
+});
 
+imgTargets.forEach(img => imgObserver.observe(img));
 
 
 
