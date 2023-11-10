@@ -221,7 +221,8 @@ const loadImg = function(entries, observer) {
   entry.target.src = entry.target.dataset.src; // Replace image with data-src
   entry.target.addEventListener('load', function() {
   entry.target.classList.remove('lazy-img');
-  })
+  });
+  entry.unobserve(entry.target);
 }
 const imgObserver = new IntersectionObserver(loadImg, { root: null, threshold: 0 });
 imgTargets.forEach(img => imgObserver.observe(img));
