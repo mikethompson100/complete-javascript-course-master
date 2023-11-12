@@ -191,7 +191,7 @@ const headerObserver = new IntersectionObserver(
 headerObserver.observe(header); */
 
 // Reveal sections     
-
+/* 
 const allSections = document.querySelectorAll('.section');
 
 const header = document.querySelector('.header');
@@ -204,12 +204,11 @@ const revealSection = function(entries, observer) {
   observer.unobserve(entry.target);
 };
 
-const sectionObserver = new IntersectionObserver(revealSection, 
-  { root: null, threshold: 0.15 })
+const sectionObserver = new IntersectionObserver(revealSection, { root: null, threshold: 0.15 });
   allSections.forEach(function(section) {
-  sectionObserver.observe(section); 
-  section.classList.add('section--hidden');
-});
+    sectionObserver.observe(section); 
+    section.classList.add('section--hidden');
+  }); */
 
 /// Lazy loading images
 
@@ -227,11 +226,9 @@ const loadImg = function(entries, observer) {
 const imgObserver = new IntersectionObserver(loadImg, { root: null, threshold: 0 });
 imgTargets.forEach(img => imgObserver.observe(img));
 
+// Building a slider component Part 1
 
-
-
-
-
+const slides = document.querySelectorAll('slide');
 
 
 
