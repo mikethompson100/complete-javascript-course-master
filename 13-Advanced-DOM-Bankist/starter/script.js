@@ -238,21 +238,29 @@ const slider = document.querySelector('.slider');
 slider.style.transform = 'scale(0.4) translateX(-800px)';
 slider.style.overflow = 'visible';
 
-slides.forEach((s,i) => s.style.transform = `translateX(${100 * i}%)`);
+const sliderFunc = function(curSlide) {
+  slides.forEach( function(s,i) { 
+    console.log(s,i);
+    s.style.transform = `translateX(${(curSlide === 0) ? (100 * i) : (100 * (i - curSlide))}%)`;
+  });
+};
+
+sliderFunc(0);
 
 // Next slide
 btnRight.addEventListener('click', function() {
+
   if (curSlide === maxSlide - 1) {
     curSlide = 0;
+    console.log("reset to 0");
+    sliderFunc(curSlide);
   }
   else {
     curSlide++;
+    console.log("Incremented to: ", curSlide);
+    sliderFunc(curSlide);
   }
- 
-
-  slides.forEach((s,i) => s.style.transform 
-  = `translateX(${100 * (i - curSlide)}%)`);
-
+  
 });
 
 
