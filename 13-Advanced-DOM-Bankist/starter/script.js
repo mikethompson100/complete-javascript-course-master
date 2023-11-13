@@ -221,7 +221,7 @@ const loadImg = function(entries, observer) {
   entry.target.addEventListener('load', function() {
   entry.target.classList.remove('lazy-img');
   });
-  entry.unobserve(entry.target);
+  observer.unobserve(entry.target);
 }
 const imgObserver = new IntersectionObserver(loadImg, { root: null, threshold: 0 });
 imgTargets.forEach(img => imgObserver.observe(img));
@@ -444,11 +444,19 @@ document.querySelector('.nav').addEventListener('click', function(e) {
  */
 /// #192  Event delegation 
 
+document.addEventListener('DOMContentLoaded', function(e) {
+  console.log("HTML parsed and DOM tree built!");
+});
 
+window.addEventListener('load', function(e) {
+  console.log("Loaded!");
+});
 
-
-
-
+/* window.addEventListener('beforeunload', function(e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = "";
+}); */
 
 
 
