@@ -234,35 +234,34 @@ const btnRight = document.querySelector('.slider__btn--right');
 let curSlide = 0;
 const maxSlide = slides.length;
 
-const slider = document.querySelector('.slider');
+/* const slider = document.querySelector('.slider');
 slider.style.transform = 'scale(0.4) translateX(-800px)';
-slider.style.overflow = 'visible';
+slider.style.overflow = 'visible'; */
 
-const sliderFunc = function(curSlide) {
+const goToSlide = function(curSlide) {
   slides.forEach( function(s,i) { 
     console.log(s,i);
     s.style.transform = `translateX(${(curSlide === 0) ? (100 * i) : (100 * (i - curSlide))}%)`;
   });
 };
 
-sliderFunc(0);
+goToSlide(0);
+
+const nextSlide = function() {
+  (curSlide === maxSlide - 1) ? curSlide = 0 : curSlide++;
+  goToSlide(curSlide);
+};
+
+const prevSlide = function() {
+  (curSlide === 0) ? curSlide = maxSlide - 1 : curSlide--;
+  goToSlide(curSlide);
+};
 
 // Next slide
-btnRight.addEventListener('click', function() {
+btnRight.addEventListener('click', nextSlide);
 
-  if (curSlide === maxSlide - 1) {
-    curSlide = 0;
-    console.log("reset to 0");
-    sliderFunc(curSlide);
-  }
-  else {
-    curSlide++;
-    console.log("Incremented to: ", curSlide);
-    sliderFunc(curSlide);
-  }
-  
-});
-
+// Prev slide
+btnLeft.addEventListener('click', prevSlide);
 
 ///////////////////////////////////////
 // Modal window
