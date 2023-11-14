@@ -3,10 +3,12 @@
 // Object Oriented Programming
 
 const Person = function(firstName, birthYear) {
-console.log(this);
+this.firstName = firstName;
+this.birthYear = birthYear;
 };
 
-new Person('Jonas', 1991);
+const jonas = new Person('Jonas', 1991);
+console.log(jonas);
 
 // 1. New empty object is created
 // 2. function is called, this = newly create {}
