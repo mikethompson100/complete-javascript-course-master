@@ -27,5 +27,9 @@ console.log(jonas);
 console.log(jonas.calcAge());
 console.log(jonas.__proto__);
 
+Person.prototype.species = "Human";
+
+console.log(jonas.hasOwnProperty('firstName'));
+console.log(jonas.hasOwnProperty('species'));
 
 
