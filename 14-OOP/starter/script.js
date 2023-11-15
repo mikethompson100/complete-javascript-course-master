@@ -13,9 +13,9 @@ const jonas = new Person('Jonas', 1991);
 // 2. function is called, this = newly create {}
 // 3. {} linked to prototype
 // 4. function automatically returns {} from the beginning
-
+/* 
 console.log(jonas);
-console.log(jonas instanceof Person);
+console.log(jonas instanceof Person); */
 
 Person.prototype.calcAge = function() {    
     return 2037 - this.birthYear;
@@ -23,8 +23,9 @@ Person.prototype.calcAge = function() {
 
 console.log(Person.prototype);
 
+console.log(jonas);
 console.log(jonas.calcAge());
-
+console.log(jonas.__proto__);
 
 
 
