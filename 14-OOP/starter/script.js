@@ -5,6 +5,10 @@
 const Person = function(firstName, birthYear) {
 this.firstName = firstName;
 this.birthYear = birthYear;
+
+/* this.calcAge = function() {
+    return 2037 - this.birthYear;
+} */
 };
 
 const jonas = new Person('Jonas', 1991);
@@ -22,7 +26,7 @@ console.log(matilda);
 console.log(jack);
 
 console.log(jonas instanceof Person);
-
+console.log("Z: ", jonas.calcAge());
 
 
 
