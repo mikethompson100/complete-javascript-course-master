@@ -32,4 +32,5 @@ Person.prototype.species = "Human";
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
 
+/// Lecture on Prototypal Inheritance and the Prototypal Chain
 
