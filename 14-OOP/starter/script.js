@@ -40,7 +40,13 @@ console.log(jonas.__proto__.__proto__.__proto__);
 
 console.dir(Person.prototype.constructor);
 
-const arr = [3,4,6,1,8,2,9];
+const arr = [3,4,6,6,8,2,9,9];
+const arr2 = [1,1,1,2,2,2,3,3,3];
 console.log(arr.__proto__);
 
+Array.prototype.unique = function() {
+    return [...new Set(this)];
+};
 
+console.log(arr.unique());
+console.log(arr2.unique());
