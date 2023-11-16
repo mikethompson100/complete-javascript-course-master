@@ -34,3 +34,13 @@ console.log(jonas.hasOwnProperty('species'));
 
 /// Lecture on Prototypal Inheritance and the Prototypal Chain
 
+console.log(jonas.__proto__);
+console.log(jonas.__proto__.__proto__);
+console.log(jonas.__proto__.__proto__.__proto__);
+
+console.dir(Person.prototype.constructor);
+
+const arr = [3,4,6,1,8,2,9];
+console.log(arr.__proto__);
+
+
