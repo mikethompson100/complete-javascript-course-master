@@ -54,3 +54,21 @@ console.log(arr2.unique());
 const h1 = document.querySelector('h1');
 console.dir(h1);
 console.dir(x=>x*y);
+
+// Coding challenge #1 OOP 
+
+const Car = function(make, speed) {
+    this.make = make;
+    this.speed = speed;
+    this.accelerate = function() {
+        this.speed += 10;
+        console.log("New speed: ", this.speed);
+    };    
+    this.brake = function() {
+        this.speed -= 5;
+        console.log("New speed: ", this.speed);
+    }
+}
+
+const mikeCar = new Car('Jeep', 55);
+console.log(mikeCar);
