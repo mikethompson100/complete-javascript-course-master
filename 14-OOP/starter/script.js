@@ -50,3 +50,6 @@ Array.prototype.unique = function() {
 
 console.log(arr.unique());
 console.log(arr2.unique());
+
+const h1 = document.querySelector('h1');
+console.dir(h1);
