@@ -60,15 +60,25 @@ console.dir(x=>x*y);
 const Car = function(make, speed) {
     this.make = make;
     this.speed = speed;
-    this.accelerate = function() {
-        this.speed += 10;
-        console.log("New speed: ", this.speed);
-    };    
-    this.brake = function() {
-        this.speed -= 5;
-        console.log("New speed: ", this.speed);
-    }
-}
+};
+
+Car.prototype.accelerate = function() {
+    this.speed += 10;
+    console.log("New speed: ", this.speed);
+};
+
+Car.prototype.brake = function() {
+    this.speed -= 5;
+    console.log("New speed: ", this.speed);
+};
 
 const mikeCar = new Car('Jeep', 55);
 console.log(mikeCar);
+
+const bmw = new Car('BMW', 120);
+const mercedes = new Car('Mercedes', 95);
+console.log(bmw, mercedes);
+
+
+
+
