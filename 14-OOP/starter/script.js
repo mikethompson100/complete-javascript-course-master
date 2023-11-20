@@ -79,7 +79,21 @@ const bmw = new Car('BMW', 120);
 const mercedes = new Car('Mercedes', 95);
 console.log(bmw, mercedes);
 
+// ES 6 classes
+class PersonCL {
+    constructor(firstName,birthyear){
+        this.firstName = firstName;
+        this.birthYear = birthyear;
+    }
 
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    }
+}
+const jessica = new PersonCL('Jessica', 1996);
+console.log(jessica);
+jessica.calcAge();
+console.log(jessica);
 
 
 
