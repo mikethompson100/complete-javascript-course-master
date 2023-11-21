@@ -95,8 +95,12 @@ console.log(jessica);
 jessica.calcAge();
 console.log(jessica);
 
+console.log(jessica.__proto__ === PersonCL.prototype);
 
-
+PersonCL.prototype.greet = function() {
+    console.log(`${this.firstName}`);
+};
+jessica.greet();
 
 
 
