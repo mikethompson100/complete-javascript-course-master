@@ -81,19 +81,32 @@ console.log(bmw, mercedes);
 
 // ES 6 classes
 class PersonCL {
-    constructor(firstName,birthyear){
-        this.firstName = firstName;
+    constructor(fullName, birthyear){
+        this.fullName = fullName;
         this.birthYear = birthyear;
     }
 
     calcAge() {
         console.log(2037 - this.birthYear);
     }
+
+    get age() {
+        return 2037 - this.birthYear;
+    }
+
+    set fullName(name) {
+        if (name.includes(' ')) {
+            this._fullName = name;
+        }
+        else console.log("Missing last name");
+    }
 }
-const jessica = new PersonCL('Jessica', 1996);
-console.log(jessica);
+const jessica = new PersonCL('Jessica Simpson', 1996);
+const mike = new PersonCL('Michael Thompson', 1970);
+/* console.log(jessica);
 jessica.calcAge();
-console.log(jessica);
+console.log(jessica); */
+console.log(jessica.age);
 
 console.log(jessica.__proto__ === PersonCL.prototype);
 
