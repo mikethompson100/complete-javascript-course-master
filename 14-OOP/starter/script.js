@@ -135,6 +135,8 @@ console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
 
+// Static methods
+
 
 
 
