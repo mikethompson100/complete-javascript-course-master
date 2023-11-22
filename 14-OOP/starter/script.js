@@ -100,12 +100,14 @@ class PersonCL {
         }
         else console.log("Missing last name");
     }
+    get fullName() { return this._fullName }
 }
 const jessica = new PersonCL('Jessica Simpson', 1996);
 const mike = new PersonCL('Michael Thompson', 1970);
-console.log(jessica.age);
+const walter = new PersonCL('Walter Thompson', 1965);
+//console.log(jessica.age);
 
-console.log(jessica.__proto__ === PersonCL.prototype);
+//console.log(jessica.__proto__ === PersonCL.prototype);
 
 PersonCL.prototype.greet = function() {
     console.log(`${this.firstName}`);
@@ -113,6 +115,8 @@ PersonCL.prototype.greet = function() {
 jessica.greet();
 
 // Object getters and setters
+
+
 
 const account = {
     owner: 'Jonas',
