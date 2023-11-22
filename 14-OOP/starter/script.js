@@ -103,9 +103,6 @@ class PersonCL {
 }
 const jessica = new PersonCL('Jessica Simpson', 1996);
 const mike = new PersonCL('Michael Thompson', 1970);
-/* console.log(jessica);
-jessica.calcAge();
-console.log(jessica); */
 console.log(jessica.age);
 
 console.log(jessica.__proto__ === PersonCL.prototype);
