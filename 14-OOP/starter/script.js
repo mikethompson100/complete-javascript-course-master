@@ -150,10 +150,14 @@ console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
 
-// Static methods
+const PersonProto = {
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    }
+}
 
-
-
+const steven = Object.create(PersonProto);
+console.log(steven);
 
 
 
