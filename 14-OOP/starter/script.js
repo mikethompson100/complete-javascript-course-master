@@ -17,6 +17,13 @@ const jonas = new Person('Jonas', 1991);
 console.log(jonas);
 console.log(jonas instanceof Person); */
 
+Person.hey = function() {
+    console.log("Hey there!!!!!!!!!!!");
+    console.log(this);
+};
+
+Person.hey();
+
 Person.prototype.calcAge = function() {    
     return 2037 - this.birthYear;
 };
@@ -86,6 +93,7 @@ class PersonCL {
         this.birthYear = birthyear;
     }
 
+    // Methods will be added to the .prototype property
     calcAge() {
         console.log(2037 - this.birthYear);
     }
@@ -101,7 +109,14 @@ class PersonCL {
         else console.log("Missing last name");
     }
     get fullName() { return this._fullName }
-}
+
+    // static method
+    static hey() {        
+        console.log("Hey there!!!!!!!!!!!");
+        console.log(this);
+    };
+};
+
 const jessica = new PersonCL('Jessica Simpson', 1996);
 const mike = new PersonCL('Michael Thompson', 1970);
 const walter = new PersonCL('Walter Thompson', 1965);
