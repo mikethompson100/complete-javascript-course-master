@@ -158,7 +158,9 @@ const PersonProto = {
 
 const steven = Object.create(PersonProto);
 console.log(steven);
-
+steven.name = "steven";
+steven.birthYear = 2002;
+steven.calcAge();
 
 
 
