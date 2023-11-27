@@ -167,7 +167,8 @@ steven.birthYear = 2002;
 steven.calcAge();
 
 const sarah = Object.create(PersonProto);
-
+sarah.init('Sarah', 1996);
+sarah.calcAge();
 
 
 
