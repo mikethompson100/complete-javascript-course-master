@@ -170,6 +170,7 @@ const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1996);
 sarah.calcAge();
 
+/// Starting Coding Challenge #2
 
 
 
