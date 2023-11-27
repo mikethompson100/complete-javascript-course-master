@@ -153,6 +153,10 @@ console.log(account.movements);
 const PersonProto = {
     calcAge() {
         console.log(2037 - this.birthYear);
+    },
+    init(firstName, birthYear){
+        this.firstName = firstName;
+        this.birthYear = birthYear;
     }
 }
 
@@ -162,7 +166,7 @@ steven.name = "steven";
 steven.birthYear = 2002;
 steven.calcAge();
 
-
+const sarah = Object.create(PersonProto);
 
 
 
