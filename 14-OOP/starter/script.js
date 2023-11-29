@@ -170,8 +170,41 @@ const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1996);
 sarah.calcAge();
 
-/// Starting Coding Challenge #2
+// Starting Coding Challenge #2
 // Same as first challenge but with ES6 class
+
+class CarCL {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+    accelerate() {
+        this.speed += 10;
+        console.log('Speed increased by 10 to ', this.speed);
+    }
+    brake() {
+        this.speed -= 5;
+        console.log('Speed decreased by 5 to ', this.speed);
+    }
+    get speedUS() {
+        let converted = this.speed / 1.6;
+        return converted
+    }
+    set speedUS(speed) {
+        console.log('Input: ', speed);
+        let converted = speed * 1.6;
+        console.log('Converted to kilometers: ', converted);
+        this.speed = converted.toFixed(0);
+        return converted
+    }
+};
+
+const subaru = new CarCL('Outback', 120);
+console.log(subaru);
+
+
+
+
 
 
 
