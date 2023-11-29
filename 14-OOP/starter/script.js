@@ -2,12 +2,12 @@
 
 // Object Oriented Programming
 
-const Person = function(firstName, birthYear) {
+/* const Person = function(firstName, birthYear) {
 this.firstName = firstName;
 this.birthYear = birthYear;
 };
 
-const jonas = new Person('Jonas', 1991);
+const jonas = new Person('Jonas', 1991); */
 
 // 1. New empty object is created
 // 2. function is called, this = newly create {}
@@ -17,7 +17,7 @@ const jonas = new Person('Jonas', 1991);
 console.log(jonas);
 console.log(jonas instanceof Person); */
 
-Person.hey = function() {
+/* Person.hey = function() {
     console.log("Hey there!!!!!!!!!!!");
     console.log(this);
 };
@@ -60,7 +60,7 @@ console.log(arr2.unique());
 
 const h1 = document.querySelector('h1');
 console.dir(h1);
-console.dir(x=>x*y);
+console.dir(x=>x*y); */
 
 // Coding challenge #1 OOP 
 
@@ -131,8 +131,6 @@ jessica.greet();
 
 // Object getters and setters
 
-
-
 const account = {
     owner: 'Jonas',
     movements: [200, 530, 120, 300],
@@ -173,7 +171,7 @@ sarah.calcAge();
 // Starting Coding Challenge #2
 // Same as first challenge but with ES6 class
 
-class CarCL {
+/* class CarCL {
     constructor(make, speed) {
         this.make = make;
         this.speed = speed;
@@ -195,13 +193,21 @@ class CarCL {
 };
 
 const subaru = new CarCL('Outback', 120);
-console.log(subaru);
+console.log(subaru); */
 
 
+const Person = function(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+    };
+        
+    Person.prototype.calcAge = function() {    
+        return 2037 - this.birthYear;
+    };
 
 
-
-
+    const michael = new Person('Michael Thompson', 1970);
+    console.log(michael);
 
 
 
