@@ -171,7 +171,7 @@ sarah.init('Sarah', 1996);
 sarah.calcAge();
 
 /// Starting Coding Challenge #2
-
+// Same as first challenge but with ES6 class
 
 
 
