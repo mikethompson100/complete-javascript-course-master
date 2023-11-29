@@ -187,15 +187,10 @@ class CarCL {
         console.log('Speed decreased by 5 to ', this.speed);
     }
     get speedUS() {
-        let converted = this.speed / 1.6;
-        return converted
+        return this.speed / 1.6;
     }
     set speedUS(speed) {
-        console.log('Input: ', speed);
-        let converted = speed * 1.6;
-        console.log('Converted to kilometers: ', converted);
-        this.speed = converted.toFixed(0);
-        return converted
+         this.speed = speed * 1.6;
     }
 };
 
