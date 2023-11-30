@@ -214,7 +214,8 @@ const Person = function(firstName, birthYear) {
         this.course = course;
     }
 
-
+    const mikeT = new Student('Mike', 1970, 'Computer Science');
+console.log(mikeT);
 
 
 
