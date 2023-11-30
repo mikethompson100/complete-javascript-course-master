@@ -205,9 +205,17 @@ const Person = function(firstName, birthYear) {
         return 2037 - this.birthYear;
     };
 
-
     const michael = new Person('Michael Thompson', 1970);
     console.log(michael);
+
+    const Student = function(firstName, birthYear, course) {
+        this.firstName = firstName;
+        this.birthYear = birthYear;
+        this.course = course;
+    }
+
+
+
 
 
 
