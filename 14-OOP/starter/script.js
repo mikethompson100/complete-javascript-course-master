@@ -118,7 +118,7 @@ class PersonCL {
 };
 
 const jessica = new PersonCL('Jessica Simpson', 1996);
-const mike = new PersonCL('Michael Thompson', 1970);
+//const mike = new PersonCL('Michael Thompson', 1970);
 const walter = new PersonCL('Walter Thompson', 1965);
 //console.log(jessica.age);
 
@@ -205,17 +205,21 @@ const Person = function(firstName, birthYear) {
         return 2037 - this.birthYear;
     };
 
-    const michael = new Person('Michael Thompson', 1970);
-    console.log(michael);
-
     const Student = function(firstName, birthYear, course) {
-        this.firstName = firstName;
-        this.birthYear = birthYear;
+        Person.call(this, firstName, birthYear);
         this.course = course;
     }
+    
+    //const michael = new Person('Michael Thompson', 1970);
+    //console.log(michael);
 
-    const mikeT = new Student('Mike', 1970, 'Computer Science');
-console.log(mikeT);
+    Student.prototype.introduce = function() {
+        console.log(`My name is ${this.firstName} and I studied ${this.course}`);
+    };
+
+    const mike = new Student('Mike', 1970, 'Computer Science');
+    console.log(mike);
+
 
 
 
