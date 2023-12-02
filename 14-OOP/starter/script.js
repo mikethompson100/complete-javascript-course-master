@@ -210,7 +210,8 @@ const Person = function(firstName, birthYear) {
         this.course = course;
     }
     
-    Student.prototype = Object.create(Person. Protoype);
+    Student.prototype = Object.create(Person.protoype);
+
     //const michael = new Person('Michael Thompson', 1970);
     //console.log(michael);
 
