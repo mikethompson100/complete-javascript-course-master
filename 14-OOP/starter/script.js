@@ -210,8 +210,8 @@ const Person = function(firstName, birthYear) {
         this.course = course;
     }
     
-    Student.prototype = Object.create(Person.protoype);
-
+    Student.prototype = Object.create(Person.prototype);  // Empty object initially
+ 
     //const michael = new Person('Michael Thompson', 1970);
     //console.log(michael);
 
@@ -220,10 +220,12 @@ const Person = function(firstName, birthYear) {
     };
 
     const mike = new Student('Mike', 1970, 'Computer Science');
-    console.log(mike);
-
-
-
+    console.log("mike", mike);
+    mike.introduce();
+    console.log(mike.__proto__);
+    console.log(mike.__proto__.__proto__);
+    Student.prototype.constructor = Student;
+    console.log(Student.prototype.constructor); // This almost showed Person and not Student
 
 
 
