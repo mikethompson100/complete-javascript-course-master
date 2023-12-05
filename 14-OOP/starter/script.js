@@ -295,10 +295,13 @@ class PersonCL {
 
 class StudentCL extends PersonCL {    
     constructor(fullName, birthyear, course){
+        super(fullName, birthyear); // First. Creates this keyword
         this.course = course;
+    }    
+    introduce() {
+        console.log(`My name is ${this.fullName} and I studied ${this.course}`);
     }
 };
-
 
 const mikey = new StudentCL('Michael Thompson', 1970, "Computer Science");
 console.log(mikey);
