@@ -229,12 +229,6 @@ const Person = function(firstName, birthYear) {
 
 // Coding challenge #3 - #219
 
-
-
-const EV =  function() {
-    charge: 100
-}
-
 class Car {
     constructor(make, speed) {
         this.make = make;
@@ -256,15 +250,14 @@ class Car {
     }
 };
 
-EV.prototype = Object.create(Car.prototype);
+const EV = function(make, speed, charge) {
+    Car.call(this, make, speed);
+    this.charge = charge;
+};
 
-console.log("EV.prototype: \n", EV.prototype);
-console.log("EV: \n", EV);
-const test = new EV('Moto', 120);
-console.log(test);
-
-
-
+// const testCar = new EV('Ferrari', 200, 100)
+console.log(Car.prototype);
+console.log(EV.prototype);
 
 
 
