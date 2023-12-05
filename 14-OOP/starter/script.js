@@ -245,7 +245,7 @@ EV.prototype.chargeBattery = function(chargeTo) {  // Then add methods
 };
 EV.prototype.accelerate = function() {  // Then add methods 
     this.speed += 20;
-    this.charge *= .99;
+    this.charge--;
     console.log(`The car sped up to ${this.speed} and decreased its charge to ${this.charge}`)
 };
 
@@ -258,9 +258,10 @@ console.log(Car.prototype);
 console.log(EV.prototype);
 
 const kit = new EV("Kit", 120, 99);
-kit.chargeBattery(98);
+kit.chargeBattery(100);
 console.log("kit- ", kit);
-
+kit.brake();
+kit.accelerate();
 
 
 
