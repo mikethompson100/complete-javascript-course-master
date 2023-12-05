@@ -199,71 +199,90 @@ console.log(subaru); */
 const Person = function(firstName, birthYear) {
     this.firstName = firstName;
     this.birthYear = birthYear;
-    };
-        
-    Person.prototype.calcAge = function() {    
-        return 2037 - this.birthYear;
-    };
-
-    const Student = function(firstName, birthYear, course) {
-        Person.call(this, firstName, birthYear);
-        this.course = course;
-    }
+};
     
-    Student.prototype = Object.create(Person.prototype);  // Empty object initially
- 
-    //const michael = new Person('Michael Thompson', 1970);
-    //console.log(michael);
+Person.prototype.calcAge = function() {    
+    return 2037 - this.birthYear;
+};
 
-    Student.prototype.introduce = function() {
-        console.log(`My name is ${this.firstName} and I studied ${this.course}`);
-    };
+const Student = function(firstName, birthYear, course) {
+    Person.call(this, firstName, birthYear);
+    this.course = course;
+}
 
-    const mike = new Student('Mike', 1970, 'Computer Science');
-    console.log("mike", mike);
-    mike.introduce();
-    console.log(mike.__proto__);
-    console.log(mike.__proto__.__proto__);
-    Student.prototype.constructor = Student;
-    console.log(Student.prototype.constructor); // This almost showed Person and not Student
+Student.prototype = Object.create(Person.prototype);  // Empty object initially
+
+//const michael = new Person('Michael Thompson', 1970);
+//console.log(michael);
+
+Student.prototype.introduce = function() {
+    console.log(`My name is ${this.firstName} and I studied ${this.course}`);
+};
+
+const mike = new Student('Mike', 1970, 'Computer Science');
+console.log("mike", mike);
+mike.introduce();
+console.log(mike.__proto__);
+console.log(mike.__proto__.__proto__);
+Student.prototype.constructor = Student;
+console.log(Student.prototype.constructor); // This almost showed Person and not Student
 
 // Coding challenge #3 - #219
 
-class Car {
-    constructor(make, speed) {
-        this.make = make;
-        this.speed = speed;
-    }
-    accelerate() {
-        this.speed += 10;
-        console.log('Speed increased by 10 to ', this.speed);
-    }
-    brake() {
-        this.speed -= 5;
-        console.log('Speed decreased by 5 to ', this.speed);
-    }
-    get speedUS() {
-        return this.speed / 1.6;
-    }
-    set speedUS(speed) {
-         this.speed = speed * 1.6;
-    }
+const Car = function(make, speed) {
+    this.make = make;
+    this.speed = speed;
+};
+
+const EV = function(make, speed, charge) {
+    Car.call(this, make, speed);
+    this.charge = charge;
+};
+
+EV.prototype = Object.create(Car.prototype);  // Empty object initially
+EV.prototype.chargeBattery = function(chargeTo) {  // Then add methods 
+    this.charge = chargeTo;
 };
 
 
-class EV { 
-    constructor(make, speed, charge) {
-        Car.call(this, make, speed);
-        this.charge = charge;
-    };
-};
 
-// const testCar = new EV('Ferrari', 200, 100)
-console.log(Car.prototype);
-console.log(EV.prototype);
+/* const kit = new EV("Kit", 120, 99);
+kit.chargeBattery(98);
+console.log("kit- ", kit); */
 
-const newCar = new EV('Ferrari', 120, 100);
-console.log(newCar.constructor);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
