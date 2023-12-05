@@ -250,15 +250,20 @@ class Car {
     }
 };
 
-const EV = function(make, speed, charge) {
-    Car.call(this, make, speed);
-    this.charge = charge;
+
+class EV { 
+    constructor(make, speed, charge) {
+        Car.call(this, make, speed);
+        this.charge = charge;
+    };
 };
 
 // const testCar = new EV('Ferrari', 200, 100)
 console.log(Car.prototype);
 console.log(EV.prototype);
 
+const newCar = new EV('Ferrari', 120, 100);
+console.log(newCar.constructor);
 
 
 
