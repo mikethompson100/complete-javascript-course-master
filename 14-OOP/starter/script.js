@@ -63,7 +63,7 @@ console.dir(h1);
 console.dir(x=>x*y); */
 
 // Coding challenge #1 OOP 
-
+/* 
 const Car = function(make, speed) {
     this.make = make;
     this.speed = speed;
@@ -77,14 +77,14 @@ Car.prototype.accelerate = function() {
 Car.prototype.brake = function() {
     this.speed -= 5;
     console.log("New speed: ", this.speed);
-};
-
+}; */
+/* 
 const mikeCar = new Car('Jeep', 55);
 console.log(mikeCar);
 
 const bmw = new Car('BMW', 120);
 const mercedes = new Car('Mercedes', 95);
-console.log(bmw, mercedes);
+console.log(bmw, mercedes); */
 
 // ES 6 classes
 class PersonCL {
@@ -226,6 +226,41 @@ const Person = function(firstName, birthYear) {
     console.log(mike.__proto__.__proto__);
     Student.prototype.constructor = Student;
     console.log(Student.prototype.constructor); // This almost showed Person and not Student
+
+// Coding challenge #3 - #219
+
+
+
+const EV =  function() {
+    charge: 100
+}
+
+class Car {
+    constructor(make, speed) {
+        this.make = make;
+        this.speed = speed;
+    }
+    accelerate() {
+        this.speed += 10;
+        console.log('Speed increased by 10 to ', this.speed);
+    }
+    brake() {
+        this.speed -= 5;
+        console.log('Speed decreased by 5 to ', this.speed);
+    }
+    get speedUS() {
+        return this.speed / 1.6;
+    }
+    set speedUS(speed) {
+         this.speed = speed * 1.6;
+    }
+};
+
+EV.prototype = Car;
+
+console.log("EV.prototype: \n", EV.prototype);
+
+
 
 
 
