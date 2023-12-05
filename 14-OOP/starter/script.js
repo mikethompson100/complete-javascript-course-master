@@ -256,11 +256,12 @@ class Car {
     }
 };
 
-EV.prototype = Car;
+EV.prototype = Object.create(Car.prototype);
 
 console.log("EV.prototype: \n", EV.prototype);
-
-
+console.log("EV: \n", EV);
+const test = new EV('Moto', 120);
+console.log(test);
 
 
 
