@@ -243,12 +243,23 @@ EV.prototype = Object.create(Car.prototype);  // Empty object initially
 EV.prototype.chargeBattery = function(chargeTo) {  // Then add methods 
     this.charge = chargeTo;
 };
+EV.prototype.accelerate = function() {  // Then add methods 
+    this.speed += 20;
+    this.charge *= .99;
+    console.log(`The car sped up to ${this.speed} and decreased its charge to ${this.charge}`)
+};
 
+EV.prototype.brake = function() {
+    this.speed -= 5;
+    console.log('Speed decreased by 5 to ', this.speed);
+};
 
+console.log(Car.prototype);
+console.log(EV.prototype);
 
-/* const kit = new EV("Kit", 120, 99);
+const kit = new EV("Kit", 120, 99);
 kit.chargeBattery(98);
-console.log("kit- ", kit); */
+console.log("kit- ", kit);
 
 
 
