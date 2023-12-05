@@ -87,7 +87,7 @@ const mercedes = new Car('Mercedes', 95);
 console.log(bmw, mercedes); */
 
 // ES 6 classes
-class PersonCL {
+/* class PersonCL {
     constructor(fullName, birthyear){
         this.fullName = fullName;
         this.birthYear = birthyear;
@@ -115,19 +115,19 @@ class PersonCL {
         console.log("Hey there!!!!!!!!!!!");
         console.log(this);
     };
-};
+}; */
 
-const jessica = new PersonCL('Jessica Simpson', 1996);
-//const mike = new PersonCL('Michael Thompson', 1970);
+/* const jessica = new PersonCL('Jessica Simpson', 1996);
+const mike = new PersonCL('Michael Thompson', 1970);
 const walter = new PersonCL('Walter Thompson', 1965);
-//console.log(jessica.age);
+console.log(jessica.age);
 
-//console.log(jessica.__proto__ === PersonCL.prototype);
-
+console.log(jessica.__proto__ === PersonCL.prototype); */
+/* 
 PersonCL.prototype.greet = function() {
     console.log(`${this.firstName}`);
 };
-jessica.greet();
+jessica.greet(); */
 
 // Object getters and setters
 
@@ -263,12 +263,45 @@ console.log("kit- ", kit);
 kit.brake();
 kit.accelerate();
 
+class PersonCL {
+    constructor(fullName, birthyear){
+        this.fullName = fullName;
+        this.birthYear = birthyear;
+    }
+
+    // Methods will be added to the .prototype property
+    calcAge() {
+        console.log(2037 - this.birthYear);
+    }
+
+    get age() {
+        return 2037 - this.birthYear;
+    }
+
+    set fullName(name) {
+        if (name.includes(' ')) {
+            this._fullName = name;
+        }
+        else console.log("Missing last name");
+    }
+    get fullName() { return this._fullName }
+
+    // static method
+    static hey() {        
+        console.log("Hey there!!!!!!!!!!!");
+        console.log(this);
+    };
+};
+
+class StudentCL extends PersonCL {    
+    constructor(fullName, birthyear, course){
+        this.course = course;
+    }
+};
 
 
-
-
-
-
+const mikey = new StudentCL('Michael Thompson', 1970, "Computer Science");
+console.log(mikey);
 
 
 
