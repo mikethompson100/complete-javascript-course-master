@@ -159,14 +159,14 @@ const PersonProto = {
 }
 
 const steven = Object.create(PersonProto); */
-console.log(steven);
+/* console.log(steven);
 steven.name = "steven";
 steven.birthYear = 2002;
 steven.calcAge();
-
-const sarah = Object.create(PersonProto);
+ */
+/* const sarah = Object.create(PersonProto);
 sarah.init('Sarah', 1996);
-sarah.calcAge();
+sarah.calcAge(); */
 
 // Starting Coding Challenge #2
 // Same as first challenge but with ES6 class
@@ -322,6 +322,8 @@ const PersonProto = {
 
 const steven = Object.create(PersonProto);
 
+const StudentProto = Object.create(PersonProto);
+const jay = Object.create(StudentProto);
 
 
 
