@@ -308,6 +308,7 @@ console.log(mikey);
 mikey.introduce();
 mikey.calcAge();
 
+// Finished lesson 220
 
 
 
