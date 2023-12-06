@@ -304,7 +304,7 @@ class StudentCL extends PersonCL {
 };
 
 const mikey = new StudentCL('Michael Thompson', 1970, "Computer Science");
-console.log(mikey);
+//console.log(mikey);
 mikey.introduce();
 mikey.calcAge();
 
@@ -323,7 +323,14 @@ const PersonProto = {
 const steven = Object.create(PersonProto);
 
 const StudentProto = Object.create(PersonProto);
+
+StudentProto.init = function(firstName, birthYear, course) {
+    PersonProto.init.call(this, firstName, birthYear);
+    this.course = course;
+};
+
 const jay = Object.create(StudentProto);
+jay.init('Jay', 2010, 'Computer Science');
 
 
 
