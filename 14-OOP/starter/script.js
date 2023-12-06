@@ -305,7 +305,8 @@ class StudentCL extends PersonCL {
 
 const mikey = new StudentCL('Michael Thompson', 1970, "Computer Science");
 console.log(mikey);
-
+mikey.introduce();
+mikey.calcAge();
 
 
 
