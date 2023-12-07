@@ -348,14 +348,21 @@ class Account {
 
         console.log(`Thanks for opening and account ${owner}`);
     }
+    deposit(val) {
+        this.movements.push(val);
+    }
+    withdrawal(val) {
+        this.deposit(-val);
+    }
+    approveLoan(val) {
+        // Various loan criterias
+        return true;
+    }
 
 
 
 
 
-
-
-    
 }
 
 
