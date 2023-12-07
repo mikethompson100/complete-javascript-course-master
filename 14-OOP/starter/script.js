@@ -336,7 +336,27 @@ StudentProto.introduce = function() {
 const jay = Object.create(StudentProto);
 jay.init('Jay', 2010, 'Computer Science');
 
+// Beginning Ecapsulation/Protected Properties lesson
 
+class Account {
+    constructor(owner, currency, pin) {
+        this.owner = owner;
+        this.currency = currency;
+        this.pin = pin;
+        this.movements = [];
+        this.locale = navigator.language;
+
+        console.log(`Thanks for opening and account ${owner}`);
+    }
+
+
+
+
+
+
+
+    
+}
 
 
 
