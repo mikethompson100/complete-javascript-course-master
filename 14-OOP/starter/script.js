@@ -338,14 +338,23 @@ jay.init('Jay', 2010, 'Computer Science');
 
 // Beginning Ecapsulation/Protected Properties lesson
 
+// 1) Public fields
+// 2) Private fields
+// 3) Public methods
+// 4) Private methods
+
 class Account {
+    // 1) Public fields
+    locale = navigator.language;
+    _movements = [];
+
     constructor(owner, currency, pin) {
         this.owner = owner;
         this.currency = currency;
         this._pin = pin;
         // protected property
-        this._movements = [];
-        this.locale = navigator.language;
+        //this._movements = [];
+        //this.locale = navigator.language;
 
         console.log(`Thanks for opening and account ${owner}`);
     }
