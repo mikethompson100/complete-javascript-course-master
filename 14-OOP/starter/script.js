@@ -342,7 +342,7 @@ class Account {
     constructor(owner, currency, pin) {
         this.owner = owner;
         this.currency = currency;
-        this.pin = pin;
+        this._pin = pin;
         // protected property
         this._movements = [];
         this.locale = navigator.language;
