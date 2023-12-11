@@ -362,7 +362,8 @@ class Account {
 
         console.log(`Thanks for opening and account ${owner}`);
     }
-
+    
+    // 3) Private fields
     // PUBLIC INTERFACE
     getMovements() {
         return this.#movements;
@@ -384,6 +385,11 @@ class Account {
             console.log('Loan approved');
         }
     }
+    // 4) Private methods
+    // not available yet
+    
+
+
 }
 
 const acc1 = new Account('Jonas', 'EUR', 1111);
