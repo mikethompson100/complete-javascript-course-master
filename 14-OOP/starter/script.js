@@ -363,31 +363,38 @@ class Account {
         console.log(`Thanks for opening and account ${owner}`);
     }
     
-    // 3) Private fields
+    // 3) Public methods
+
     // PUBLIC INTERFACE
     getMovements() {
         return this.#movements;
-    }
+    };
 
     deposit(val) {
         this.#movements.push(val);
-    }
+        return this;
+    };
+
     withdrawal(val) {
         this.deposit(-val);
-    }
+        return this;
+    };
+
     approveLoan(val) {
         // Various loan criterias
         return true;
-    }
+    };
+
     requestLoan(val) {
         if(this.approveLoan(val)) {
             this.deposit(val);
             console.log('Loan approved');
         }
-    }
+        return this;
+    };
     // 4) Private methods
     // not available yet
-    
+
 
 
 }
@@ -400,6 +407,8 @@ acc1.requestLoan(1000);
 acc1.approveLoan(1000);
 console.log(acc1.getMovements());
 console.log(acc1);
+
+// Chaining
 
 
 
