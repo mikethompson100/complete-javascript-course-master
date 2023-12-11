@@ -343,6 +343,7 @@ class Account {
         this.owner = owner;
         this.currency = currency;
         this.pin = pin;
+        // protected property
         this._movements = [];
         this.locale = navigator.language;
 
@@ -350,6 +351,10 @@ class Account {
     }
 
     // PUBLIC INTERFACE
+    getMovements() {
+        return this._movements;
+    }
+
     deposit(val) {
         this._movements.push(val);
     }
@@ -374,7 +379,7 @@ acc1.deposit(250);
 acc1.withdrawal(140);
 acc1.requestLoan(1000);
 acc1.approveLoan(1000);
-
+console.log(acc1.getMovements());
 
 
 
