@@ -410,7 +410,7 @@ console.log(acc1);
 
 // Chaining
 
-
+acc1.deposit(300).deposit(500).withdrawal(35).requestLoan(25000).withdrawal(4000);
 
 
 
