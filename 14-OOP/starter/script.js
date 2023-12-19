@@ -228,7 +228,7 @@ Student.prototype.constructor = Student;
 console.log(Student.prototype.constructor); // This almost showed Person and not Student
 
 // Coding challenge #3 - #219
-
+/* 
 const Car = function(make, speed) {
     this.make = make;
     this.speed = speed;
@@ -261,7 +261,7 @@ const kit = new EV("Kit", 120, 99);
 kit.chargeBattery(100);
 console.log("kit- ", kit);
 kit.brake();
-kit.accelerate();
+kit.accelerate(); */
 
 class PersonCL {
     constructor(fullName, birthyear){
@@ -414,7 +414,56 @@ acc1.deposit(300).deposit(500).withdrawal(35).requestLoan(25000).withdrawal(4000
 
 // Coding challenge #4
 
+class CarCl {
+    constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+    };
+};
 
+class EVCl extends CarCl {
+    _charge = this.charge;
+    constructor(make, speed, charge) {
+        super(make, speed);
+        this.charge = charge;
+    }        
+    
+    chargeBattery = function(chargeTo) {  // Then add methods 
+        this._charge = chargeTo;
+    };
+    accelerate = function() {  // Then add methods 
+        this.speed += 20;
+        this._charge--;
+        console.log(`The car sped up to ${this.speed} and decreased its charge to ${this._charge}`)
+    };
+    brake = function() {
+        this.speed -= 5;
+        console.log('Speed decreased by 5 to ', this.speed);
+    };
+};
+
+    //EVCl.prototype = Object.create(CarCl.prototype);  // Empty object initially
+   /*  EVCl.prototype.chargeBattery = function(chargeTo) {  // Then add methods 
+        this._charge = chargeTo;
+    };
+    EVCl.prototype.accelerate = function() {  // Then add methods 
+        this.speed += 20;
+        this._charge--;
+        console.log(`The car sped up to ${this.speed} and decreased its charge to ${this._charge}`)
+    };
+
+    EVCl.prototype.brake = function() {
+    this.speed -= 5;
+    console.log('Speed decreased by 5 to ', this.speed);
+    }; */
+console.log(CarCl.prototype);
+console.log(EVCl.prototype);
+
+const kit = new EVCl("Kit", 120, 99);
+kit.chargeBattery(100);
+console.log("kit- ", kit);
+kit.brake();
+kit.accelerate();
 
 
 
