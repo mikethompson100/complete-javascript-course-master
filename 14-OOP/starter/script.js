@@ -422,20 +422,21 @@ class CarCl {
 };
 
 class EVCl extends CarCl {
-    _charge = this.charge;
+    #charge = this.charge;
     constructor(make, speed, charge) {
         super(make, speed);
-        this.charge = charge;
+        this.#charge = charge;
     }        
     
     chargeBattery = function(chargeTo) {  // Then add methods 
-        this._charge = chargeTo;
+        this.#charge = chargeTo;
+        console.log(`The car was charged to ${this.#charge}`)
         return this;
     };
     accelerate = function() {  // Then add methods 
         this.speed += 20;
-        this._charge--;
-        console.log(`The car sped up to ${this.speed} and decreased its charge to ${this._charge}`)
+        this.#charge--;
+        console.log(`The car sped up to ${this.speed} and decreased its charge to ${this.#charge}`)
         return this;
     };
     brake = function() {
@@ -462,11 +463,8 @@ class EVCl extends CarCl {
 console.log(CarCl.prototype);
 console.log(EVCl.prototype);
 
-const kit = new EVCl("Kit", 120, 99);
-kit.chargeBattery(100);
-console.log("kit- ", kit);
-kit.brake();
-kit.accelerate().brake().brake();
+const kit = new EVCl("Rivian", 120, 25);
+console.log(kit.accelerate().accelerate().accelerate().brake().chargeBattery(100).accelerate());
 
 
 
