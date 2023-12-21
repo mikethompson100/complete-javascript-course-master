@@ -430,15 +430,18 @@ class EVCl extends CarCl {
     
     chargeBattery = function(chargeTo) {  // Then add methods 
         this._charge = chargeTo;
+        return this;
     };
     accelerate = function() {  // Then add methods 
         this.speed += 20;
         this._charge--;
         console.log(`The car sped up to ${this.speed} and decreased its charge to ${this._charge}`)
+        return this;
     };
     brake = function() {
         this.speed -= 5;
         console.log('Speed decreased by 5 to ', this.speed);
+        return this;
     };
 };
 
@@ -463,7 +466,7 @@ const kit = new EVCl("Kit", 120, 99);
 kit.chargeBattery(100);
 console.log("kit- ", kit);
 kit.brake();
-kit.accelerate();
+kit.accelerate().brake().brake();
 
 
 
