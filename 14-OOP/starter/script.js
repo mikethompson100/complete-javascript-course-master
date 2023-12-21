@@ -171,7 +171,7 @@ sarah.calcAge(); */
 // Starting Coding Challenge #2
 // Same as first challenge but with ES6 class
 
-/* class CarCL {
+class CarCl {
     constructor(make, speed) {
         this.make = make;
         this.speed = speed;
@@ -191,9 +191,9 @@ sarah.calcAge(); */
          this.speed = speed * 1.6;
     }
 };
-
+/*
 const subaru = new CarCL('Outback', 120);
-console.log(subaru); */
+console.log(subaru); 
 
 
 const Person = function(firstName, birthYear) {
@@ -414,15 +414,15 @@ acc1.deposit(300).deposit(500).withdrawal(35).requestLoan(25000).withdrawal(4000
 
 // Coding challenge #4
 
-class CarCl {
+/* class CarCl {
     constructor(make, speed) {
     this.make = make;
     this.speed = speed;
     };
-};
+}; */
 
 class EVCl extends CarCl {
-    #charge = this.charge;
+    #charge;
     constructor(make, speed, charge) {
         super(make, speed);
         this.#charge = charge;
@@ -463,9 +463,9 @@ class EVCl extends CarCl {
 console.log(CarCl.prototype);
 console.log(EVCl.prototype);
 
-const kit = new EVCl("Rivian", 120, 25);
+const rivian = new EVCl("Rivian", 120, 25);
 console.log(kit.accelerate().accelerate().accelerate().brake().chargeBattery(100).accelerate());
-
+console.log(kit.speedUS);
 
 
 
