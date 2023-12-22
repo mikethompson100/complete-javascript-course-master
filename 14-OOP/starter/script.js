@@ -464,8 +464,8 @@ console.log(CarCl.prototype);
 console.log(EVCl.prototype);
 
 const rivian = new EVCl("Rivian", 120, 25);
-console.log(kit.accelerate().accelerate().accelerate().brake().chargeBattery(100).accelerate());
-console.log(kit.speedUS);
+console.log(rivian.accelerate().accelerate().accelerate().brake().chargeBattery(100).accelerate());
+console.log(rivian.speedUS);
 
 
 
