@@ -18,7 +18,7 @@ describe('calculateTotal', () => {
             new BasketItem(events[1], 4),
             new BasketItem(events[2], 2),
         ];
-        });
+        });ggg
 
     test("Test calculates total basket price when no discount applied", () => {
      
