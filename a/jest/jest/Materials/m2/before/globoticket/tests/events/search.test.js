@@ -21,6 +21,10 @@ describe('getEvents', () => {
         expect(filterResults).toEqual([expectedEvent1, expectedEvent2, expectedEvent3]);
 
         expect(searchPredicateMock).toHaveBeenCalled();
+
+        expect(searchPredicateMock.mock.calls.length).toBe(7);
+
+        expect(searchPredicateMock.mock.calls[0][0]).toBe(events[0]);
     });
 });
 
