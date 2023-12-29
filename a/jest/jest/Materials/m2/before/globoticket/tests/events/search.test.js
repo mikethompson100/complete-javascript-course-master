@@ -15,5 +15,10 @@ describe('getEvents', () => {
             new Event(6, "Jump Around", 30.01, 1000, 1000),
             expectedEvent3
         ]
+
+        const filterResults = getEvents(events, searchPredicateMock);
+
+        expect(filterResults).toEqual([expectedEvent1, expectedEvent2, expectedEvent3]);
     });
 });
+
