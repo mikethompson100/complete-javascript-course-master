@@ -18,7 +18,7 @@ describe('calculateTotal', () => {
             new BasketItem(events[1], 4),
             new BasketItem(events[2], 2),
         ];
-        });ggg
+        });
 
     test("Test calculates total basket price when no discount applied", () => {
      
@@ -36,6 +36,22 @@ describe('calculateTotal', () => {
 });
 
 describe('showAdverts', () => {
+    
+    let events = [];
+    let items = [];
+        beforeEach(() => {
+        events = [
+            new Event(1, "A Night At The Proms", 2500.00, 2500, 2500),
+            new Event(2, "Taylor Swift", 50.00, 5500, 2500),
+            new Event(3, "Rage Against The Machine", 35.00, 2500, 2500),
+        ];
+
+        items = [
+            new BasketItem(events[0], 1),
+            new BasketItem(events[1], 4),
+            new BasketItem(events[2], 2),
+        ];
+        });
     test("Does not show adverts for premium users", () => {
 
         const total = basket.calculateTotal(items, 800);
