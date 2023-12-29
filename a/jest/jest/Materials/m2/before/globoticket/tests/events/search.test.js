@@ -19,6 +19,8 @@ describe('getEvents', () => {
         const filterResults = getEvents(events, searchPredicateMock);
 
         expect(filterResults).toEqual([expectedEvent1, expectedEvent2, expectedEvent3]);
+
+        expect(searchPredicateMock).toHaveBeenCalled();
     });
 });
 
