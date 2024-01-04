@@ -9,7 +9,9 @@ request.open('GET', "https://restcountries.com/v2/name/portugal")
 request.send();
 
 request.addEventListener('load', function() {
-    
+    console.log(this.responseText);
+    const [data] = JSON.parse(this.responseText);
+    console.log(data);
 })
 
 
