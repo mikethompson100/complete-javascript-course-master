@@ -73,10 +73,14 @@ const getCountryAndNeighbor = function(country) {
         if (!neighbor) return;
         
         /// Render country 2
-        const request = new XMLHttpRequest();  // old school way
-        request.open('GET', `https://restcountries.com/v2/name/${country}`)
-        request.send();
+        const request2 = new XMLHttpRequest();  // old school way
+        request2.open('GET', `https://restcountries.com/v2/alpha/${neighbor}`)
+        request2.send();
         
+        request2.addEventListener('load', function() {
+            console.log(JSON.parse(this.responseText));
+
+        })
     });
 };
 
