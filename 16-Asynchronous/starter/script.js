@@ -68,12 +68,19 @@ const getCountryAndNeighbor = function(country) {
         renderCountry(data);
     
         // Get neighbor country (2)
-        const neighbor = data.borders;
-        console.log(neighbor);
+        const neighbor = data.borders?.[0];
+        
+        if (!neighbor) return;
+        
+        /// Render country 2
+        const request = new XMLHttpRequest();  // old school way
+        request.open('GET', `https://restcountries.com/v2/name/${country}`)
+        request.send();
+        
     });
 };
 
 
         getCountryAndNeighbor('portugal');
         getCountryAndNeighbor('usa');
-        getCountryAndNeighbor('germany');
+        getCountryAndNeighbor('australia');
