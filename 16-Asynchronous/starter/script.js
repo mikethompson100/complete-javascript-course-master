@@ -3,15 +3,16 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
+const getCountryData = function(country) {
 //////////////////////////////////////
 const request = new XMLHttpRequest();  // old school way
-request.open('GET', "https://restcountries.com/v2/name/portugal")
+request.open('GET', `https://restcountries.com/v2/name/${country}`)
 request.send();
 
 request.addEventListener('load', function() {
     const [data] = JSON.parse(this.responseText);
     console.log(data);
-});
+
 
 const html = `
 <article class="country">
@@ -25,10 +26,12 @@ const html = `
 </div>
 </article>`;
 
-
-
-
-
+countriesContainer.insertAdjacentHTML('beforeend', html);
+countriesContainer.style.opacity = 1;
+});
+};
+getCountryData('portugal');
+getCountryData('usa');
 
 
 
