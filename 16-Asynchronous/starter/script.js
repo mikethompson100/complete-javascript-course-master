@@ -87,21 +87,16 @@ const getCountryAndNeighbor = function(country) {
 };
 
         //getCountryAndNeighbor('portugal');
-        getCountryAndNeighbor('usa');
-        //getCountryAndNeighbor('australia');
+ 
 
+        // FETCH 
 
-        
-
-/*      const request = new XMLHttpRequest();  // old school way
-        request.open('GET', `https://restcountries.com/v2/name/${country}`)
-        request.send(); 
-*/
-
-
-
-
-
+        const getCountryData = function(country) {
+            fetch(`https://restcountries.com/v2/name/${country}`).then(function(response) {
+                console.log(response);
+            });
+        };
+        getCountryData('portugal');
 
 
 
