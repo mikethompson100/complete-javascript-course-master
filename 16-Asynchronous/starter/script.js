@@ -86,7 +86,23 @@ const getCountryAndNeighbor = function(country) {
     });
 };
 
-
         //getCountryAndNeighbor('portugal');
         getCountryAndNeighbor('usa');
         //getCountryAndNeighbor('australia');
+
+
+        
+
+/*      const request = new XMLHttpRequest();  // old school way
+        request.open('GET', `https://restcountries.com/v2/name/${country}`)
+        request.send(); 
+*/
+
+
+
+
+
+
+
+
+        
