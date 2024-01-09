@@ -34,10 +34,10 @@ getCountryData('portugal');
 getCountryData('usa');
 getCountryData('germany'); */
 
-const renderCountry = function(data) {
+const renderCountry = function(data, className = '') {
     
     const html = `
-    <article class="country">
+    <article class="country ${className}">
     <img class="country__img" src="${data.flag}" />
     <div class="country__data">
       <h3 class="country__name">${data.name}</h3>
@@ -78,13 +78,15 @@ const getCountryAndNeighbor = function(country) {
         request2.send();
         
         request2.addEventListener('load', function() {
-            console.log(JSON.parse(this.responseText));
+            const data2 = JSON.parse(this.responseText);
+            console.log(data2);
+            renderCountry(data2, 'neighbour');
 
         })
     });
 };
 
 
-        getCountryAndNeighbor('portugal');
+        //getCountryAndNeighbor('portugal');
         getCountryAndNeighbor('usa');
-        getCountryAndNeighbor('australia');
+        //getCountryAndNeighbor('australia');
