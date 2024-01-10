@@ -6,7 +6,7 @@ const countriesContainer = document.querySelector('.countries');
 
 const renderError = function(msg) {
     countriesContainer.insertAdjacentText('beforeend', msg);
-    countriesContainer.style.opacity = 1;
+
 }
 
 /* 
@@ -56,7 +56,7 @@ const renderCountry = function(data, className = '') {
     </article>`;
     
     countriesContainer.insertAdjacentHTML('beforeend', html);
-    countriesContainer.style.opacity = 1;
+
 
 };
 
@@ -99,26 +99,34 @@ const getCountryAndNeighbor = function(country) {
 
         const getCountryData = function (country) {
           fetch(`https://restcountries.com/v2/name/${country}`)
-            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+                if(!response.ok) 
+                throw new Error('Country not found.')
+                return response.json()
+            })
             .then(data => {
               renderCountry(data[0]);
               const neighbor = data[0].borders?.[0];
               if (!neighbor) return;
               return fetch(`https://restcountries.com/v2/alpha/${neighbor}`)
             })
-            .then(response => response.json())
+            .then(response => response.json()
+            )
             .then(data => renderCountry(data, 'neighbour'))
             .catch(err => {
-                console.error(`${err} xxx`)
-                renderError(err.message);
-            });
+                renderError(`Oh snap! GENERIC ERROR: ${err.message}`);
+            })
+            .finally(() => {
+                countriesContainer.style.opacity = 1;
+            })
             };
 
             btn.addEventListener('click', function() {
                 getCountryData('portugal');
             });
         
-
+            //getCountryData('raven');
 
 
         
