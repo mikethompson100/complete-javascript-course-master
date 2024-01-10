@@ -134,12 +134,12 @@ const getCountryAndNeighbor = function(country) {
 
 // CODING CHALLENGE #1:
 
-const whereAmI = function(lat,lng) {
-    return fetch(`https://geocode.xyz/52.508,13.381?geoit=json`)
+const whereAmI = function(lat,lon) {
+    return fetch(`https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}`)
         .then((response) =>  response.json())
-        .then(data => console.log(data))
+        .then((data) => console.log(`You are in ${data.address.city}, ${data.address.country}`))
         .catch(err => console.log(err))
-    };
+};
 
 
 console.log(`Final: `, whereAmI(52.508,13.381));
