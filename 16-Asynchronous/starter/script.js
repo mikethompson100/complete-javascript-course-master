@@ -91,14 +91,19 @@ const getCountryAndNeighbor = function(country) {
 
         // FETCH 
 
-        const getCountryData = function(country) {
-            fetch(`https://restcountries.com/v2/name/${country}`).then(function(response) {
-                return response.json();
-            }).then(function(data) {
-                console.log(data[0]);
-                renderCountry(data[0]);
-            });
-        };
+        const getCountryData = function (country) {
+          fetch(`https://restcountries.com/v2/name/${country}`)
+            .then((response) => response.json())
+            .then((data) => {
+              renderCountry(data[0]);
+              const neighbor = data[0].borders?.[0];
+              if (!neighbor) return;
+              return fetch(`https://restcountries.com/v2/alpha/${neighbor}`)
+            })
+            .then((response) => response.json())
+            .then((data) => renderCountry(data, 'neighbour'))
+            };
+
         getCountryData('portugal');
 
 
