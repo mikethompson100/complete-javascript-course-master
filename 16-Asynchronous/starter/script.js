@@ -2,6 +2,13 @@
 
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
+
+
+const renderError = function(msg) {
+    countriesContainer.insertAdjacentText('beforeend', msg);
+    countriesContainer.style.opacity = 1;
+}
+
 /* 
 const getCountryData = function(country) {
 //////////////////////////////////////
@@ -88,15 +95,11 @@ const getCountryAndNeighbor = function(country) {
 
         //getCountryAndNeighbor('portugal');
  
-
         // FETCH 
 
         const getCountryData = function (country) {
           fetch(`https://restcountries.com/v2/name/${country}`)
-            .then(
-                response => response.json(),
-                err => alert(err)
-                )
+            .then(response => response.json())
             .then(data => {
               renderCountry(data[0]);
               const neighbor = data[0].borders?.[0];
@@ -105,6 +108,10 @@ const getCountryAndNeighbor = function(country) {
             })
             .then(response => response.json())
             .then(data => renderCountry(data, 'neighbour'))
+            .catch(err => {
+                console.error(`${err} xxx`)
+                renderError(err.message);
+            });
             };
 
             btn.addEventListener('click', function() {
