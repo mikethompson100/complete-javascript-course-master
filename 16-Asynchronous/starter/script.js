@@ -93,18 +93,24 @@ const getCountryAndNeighbor = function(country) {
 
         const getCountryData = function (country) {
           fetch(`https://restcountries.com/v2/name/${country}`)
-            .then((response) => response.json())
-            .then((data) => {
+            .then(
+                response => response.json(),
+                err => alert(err)
+                )
+            .then(data => {
               renderCountry(data[0]);
               const neighbor = data[0].borders?.[0];
               if (!neighbor) return;
               return fetch(`https://restcountries.com/v2/alpha/${neighbor}`)
             })
-            .then((response) => response.json())
-            .then((data) => renderCountry(data, 'neighbour'))
+            .then(response => response.json())
+            .then(data => renderCountry(data, 'neighbour'))
             };
 
-        getCountryData('portugal');
+            btn.addEventListener('click', function() {
+                getCountryData('portugal');
+            });
+        
 
 
 
