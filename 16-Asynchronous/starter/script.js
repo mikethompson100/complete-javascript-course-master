@@ -41,6 +41,13 @@ getCountryData('portugal');
 getCountryData('usa');
 getCountryData('germany'); */
 
+
+
+
+
+
+
+/* 
 const renderCountry = function(data, className = '') {
     
     const html = `
@@ -59,7 +66,6 @@ const renderCountry = function(data, className = '') {
 
 
 };
-
 
 const getCountryAndNeighbor = function(country) {
     //////////////////////////////////////
@@ -92,8 +98,7 @@ const getCountryAndNeighbor = function(country) {
         })
     });
 };
-
-        //getCountryAndNeighbor('portugal');
+ 
  
         // FETCH 
         const getJSON = function(url, errorMsg = `Something went wrong.`) {
@@ -102,15 +107,10 @@ const getCountryAndNeighbor = function(country) {
                 return response.json();
             });
         };
+*/
 
+/*
         const getCountryData = function (country) {
-        /*   fetch(`https://restcountries.com/v2/name/${country}`)
-            .then(response => {
-                console.log(response);
-                if(!response.ok) 
-                throw new Error('Country not found. 404 error')
-                return response.json()
-            }) */
             getJSON(`https://restcountries.com/v2/name/${country}`, '-- Country not found. --')
             .then(data => {
               renderCountry(data[0]);
@@ -126,12 +126,29 @@ const getCountryAndNeighbor = function(country) {
                 countriesContainer.style.opacity = 1;
             })
             };
-
+ 
             btn.addEventListener('click', function() {
                 getCountryData('australia');
-            });
-        
+            }); */
             //getCountryData('raven');
+
+// CODING CHALLENGE #1:
+
+const whereAmI = function(lat,lng) {
+    return fetch(`https://geocode.xyz/52.508,13.381?geoit=json`).then(function(response) {
+        if(!response.ok) throw new Error(`error in the code. ${response.status}`)
+        console.log(response.json());
+        return response.json();
+    })  
+    .catch(err => {
+        renderError(`[Oh snap! GENERIC ERROR: ${err.message}]`);
+    });
+}
+
+console.log(`Final: `, whereAmI(52.508,13.381));
+
+//https://geocode.xyz/${lat},${lng}?geoit=json
+// https://geocode.xyz/52.508,13.381?geoit=json
 
 
         
