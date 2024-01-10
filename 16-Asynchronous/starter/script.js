@@ -135,15 +135,12 @@ const getCountryAndNeighbor = function(country) {
 // CODING CHALLENGE #1:
 
 const whereAmI = function(lat,lng) {
-    return fetch(`https://geocode.xyz/52.508,13.381?geoit=json`).then(function(response) {
-        if(!response.ok) throw new Error(`error in the code. ${response.status}`)
-        console.log(response.json());
-        return response.json();
-    })  
-    .catch(err => {
-        renderError(`[Oh snap! GENERIC ERROR: ${err.message}]`);
-    });
-}
+    return fetch(`https://geocode.xyz/52.508,13.381?geoit=json`)
+        .then((response) =>  response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+    };
+
 
 console.log(`Final: `, whereAmI(52.508,13.381));
 
