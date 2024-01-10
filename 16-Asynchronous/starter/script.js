@@ -115,7 +115,7 @@ const getCountryAndNeighbor = function(country) {
             .then(data => {
               renderCountry(data[0]);
               const neighbor = data[0].borders?.[0];
-              if (!neighbor) return;
+              if (!neighbor) throw new Error('No neighbors found!');
               return getJSON(`https://restcountries.com/v2/alpha/${neighbor}`, '-- Border country not found!!! ---')
             })
             .then(data => renderCountry(data, 'neighbour'))
@@ -128,7 +128,7 @@ const getCountryAndNeighbor = function(country) {
             };
 
             btn.addEventListener('click', function() {
-                getCountryData('portugal');
+                getCountryData('australia');
             });
         
             //getCountryData('raven');
