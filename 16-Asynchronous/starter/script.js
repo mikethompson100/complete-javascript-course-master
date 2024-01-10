@@ -96,36 +96,31 @@ const getCountryAndNeighbor = function(country) {
         //getCountryAndNeighbor('portugal');
  
         // FETCH 
-const getJSON = function(url, erroeMsg = `Something went wrong.`) {
-    return fetch(url).then(response => {
-        if(!response.ok) throw new Error(`${errorMsg} (${response.status})`);
-        return response.json();
-    });
-};
+        const getJSON = function(url, errorMsg = `Something went wrong.`) {
+            return fetch(url).then(response => {
+                if(!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+                return response.json();
+            });
+        };
 
         const getCountryData = function (country) {
-          fetch(`https://restcountries.com/v2/name/${country}`)
+        /*   fetch(`https://restcountries.com/v2/name/${country}`)
             .then(response => {
                 console.log(response);
                 if(!response.ok) 
                 throw new Error('Country not found. 404 error')
                 return response.json()
-            })
+            }) */
+            getJSON(`https://restcountries.com/v2/name/${country}`, '-- Country not found. --')
             .then(data => {
               renderCountry(data[0]);
               const neighbor = data[0].borders?.[0];
               if (!neighbor) return;
-              return fetch(`https://restcountries.com/v2/alpha/${neighbor}`)
-            })
-            .then(response => {
-                console.log(response);
-                if(!response.ok) 
-                throw new Error('Border country not found. 404 error')
-                return response.json()
+              return getJSON(`https://restcountries.com/v2/alpha/${neighbor}`, '-- Border country not found!!! ---')
             })
             .then(data => renderCountry(data, 'neighbour'))
             .catch(err => {
-                renderError(`Oh snap! GENERIC ERROR: ${err.message}`);
+                renderError(`[Oh snap! GENERIC ERROR: ${err.message}]`);
             })
             .finally(() => {
                 countriesContainer.style.opacity = 1;
