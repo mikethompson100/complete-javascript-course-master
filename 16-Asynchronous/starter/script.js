@@ -47,7 +47,7 @@ getCountryData('germany'); */
 
 
 
-/* 
+
 const renderCountry = function(data, className = '') {
     
     const html = `
@@ -66,7 +66,7 @@ const renderCountry = function(data, className = '') {
 
 
 };
-
+ 
 const getCountryAndNeighbor = function(country) {
     //////////////////////////////////////
     // AJAX call country 1
@@ -97,7 +97,7 @@ const getCountryAndNeighbor = function(country) {
 
         })
     });
-};
+}; 
  
  
         // FETCH 
@@ -107,9 +107,7 @@ const getCountryAndNeighbor = function(country) {
                 return response.json();
             });
         };
-*/
 
-/*
         const getCountryData = function (country) {
             getJSON(`https://restcountries.com/v2/name/${country}`, '-- Country not found. --')
             .then(data => {
@@ -126,7 +124,7 @@ const getCountryAndNeighbor = function(country) {
                 countriesContainer.style.opacity = 1;
             })
             };
- 
+ /*
             btn.addEventListener('click', function() {
                 getCountryData('australia');
             }); */
@@ -136,13 +134,19 @@ const getCountryAndNeighbor = function(country) {
 
 const whereAmI = function(lat,lon) {
     return fetch(`https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}`)
-        .then((response) =>  response.json())
-        .then((data) => console.log(`You are in ${data.address.city}, ${data.address.country}`))
-        .catch(err => console.log(err))
+        .then(function(response) { 
+            if(response.status === 403) throw new Error('[[ 403 ERROR ]]');
+            return response.json()
+        })
+        .then(function(data) {
+        console.log(`You are in ${data.address.city}, ${data.address.country}`)
+        return getCountryData(data.address.country);
+        })   
+        .catch(err => console.log(`ERR: `, err))
 };
 
 
-console.log(`Final: `, whereAmI(52.508,13.381));
+console.log(`Final: `, whereAmI(-33.933, 18.474));
 
 //https://geocode.xyz/${lat},${lng}?geoit=json
 // https://geocode.xyz/52.508,13.381?geoit=json
