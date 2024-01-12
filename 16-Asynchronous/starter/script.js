@@ -48,7 +48,7 @@ getCountryData('germany'); */
 
 
 
-const renderCountry = function(data, className = '') {
+/* const renderCountry = function(data, className = '') {
     
     const html = `
     <article class="country ${className}">
@@ -123,7 +123,7 @@ const getCountryAndNeighbor = function(country) {
             .finally(() => {
                 countriesContainer.style.opacity = 1;
             })
-            };
+            }; */
  /*
             btn.addEventListener('click', function() {
                 getCountryData('australia');
@@ -132,7 +132,7 @@ const getCountryAndNeighbor = function(country) {
 
 // CODING CHALLENGE #1:
 
-const whereAmI = function(lat,lon) {
+/* const whereAmI = function(lat,lon) {
     return fetch(`https://geocode.maps.co/reverse?lat=${lat}&lon=${lon}`)
         .then(function(response) { 
             if(response.status === 403) throw new Error('[[ 403 ERROR ]]');
@@ -146,10 +146,27 @@ const whereAmI = function(lat,lon) {
 };
 
 
-console.log(`Final: `, whereAmI(-33.933, 18.474));
+console.log(`Final: `, whereAmI(-33.933, 18.474)); */
 
 //https://geocode.xyz/${lat},${lng}?geoit=json
 // https://geocode.xyz/52.508,13.381?geoit=json
 
+console.log("Test start");
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+console.log('Test end');
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
