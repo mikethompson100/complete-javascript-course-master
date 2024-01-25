@@ -151,18 +151,28 @@ console.log(`Final: `, whereAmI(-33.933, 18.474)); */
 //https://geocode.xyz/${lat},${lng}?geoit=json
 // https://geocode.xyz/52.508,13.381?geoit=json
 
-console.log("Test start");
+/* console.log("Test start");
 setTimeout(() => console.log('0 sec timer'), 0);
-Promise.resolve('Resolved promise 1').then(res => console.log(res));
+Promise.resolve('Resolved promise 1').then(res => console.log('resp1: ', res));
 console.log('Test end');
 
+Promise.resolve('Resolved promise 2').then(res=>{
+    for (let i=0; i< 10000000000; i++) {};
+    console.log('resp2: ', res);
+}); */
 
+const lotteryPromise = new Promise(function(resolve, reject) {
+    let z = Math.random();
+    if(z >= 0.5) {
+        resolve("You win!!!");  // Sets promise to fullfilled status
+        // The result of the promise gets passed into the resolve() function so it can be passed to 
+        // the then handler.
+    } else {
+        reject('You lose your money. :( ');
+    }
+});
 
-
-
-
-
-
+lotteryPromise.then(res => console.log(res)).catch(err=> console.error(err));
 
 
 
