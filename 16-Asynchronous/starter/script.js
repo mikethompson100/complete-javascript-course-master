@@ -162,18 +162,28 @@ Promise.resolve('Resolved promise 2').then(res=>{
 }); */
 
 const lotteryPromise = new Promise(function(resolve, reject) {
-    let z = Math.random();
-    if(z >= 0.5) {
-        resolve("You win!!!");  // Sets promise to fullfilled status
-        // The result of the promise gets passed into the resolve() function so it can be passed to 
-        // the then handler.
-    } else {
-        reject('You lose your money. :( ');
-    }
+    console.log(`Lottery draw is happening...`);
+    setTimeout(function(){
+        let z = Math.random();
+        if(z >= 0.5) {
+            resolve("You win!!!");  // Sets promise to fullfilled status
+            // The result of the promise gets passed into the resolve() function so it can be passed to 
+            // the then handler.
+        } else {
+            reject('You lose your money. :( ');
+        }
+    },2000)
 });
 
-lotteryPromise.then(res => console.log(res)).catch(err=> console.error(err));
+//lotteryPromise.then(result => console.log(result)).catch(err=> console.error(err));
 
+lotteryPromise
+  .then(function (result) {
+    console.log(result);
+  })
+  .catch(function (err) {
+    console.error(err);
+  });
 
 
 
