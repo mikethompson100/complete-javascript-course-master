@@ -160,7 +160,7 @@ Promise.resolve('Resolved promise 2').then(res=>{
     for (let i=0; i< 10000000000; i++) {};
     console.log('resp2: ', res);
 }); */
-
+/* 
 const lotteryPromise = new Promise(function(resolve, reject) {
     console.log(`Lottery draw is happening...`);
     setTimeout(function(){
@@ -173,20 +173,54 @@ const lotteryPromise = new Promise(function(resolve, reject) {
             reject('You lose your money. :( ');
         }
     },2000)
-});
+}); */
 
 //lotteryPromise.then(result => console.log(result)).catch(err=> console.error(err));
 
-lotteryPromise
-  .then(function (result) {
+/* lotteryPromise.then(function (result) {
     console.log(result);
   })
   .catch(function (err) {
     console.error(err);
-  });
+  }); */
 
+/// Promisifying SetTimeout
+/* const wait = function(seconds) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, seconds * 1000);
+    });
+};
 
+wait(5)
+    .then(() => {
+    console.log(`I waited for 5 seconds`);
+    return wait(2);
+  })
+  .then(() => console.log('I waited for 2 seconds.'))
+ */
 
+//Promise.resolve('ABC').then(x=>console.log(x));
+//Promise.reject(new Error('Problem!')).catch(x=>console.error(x));
 
+const aPromise = new Promise(function(resolve, reject) {
+        let z = Math.random();
+        console.log(z);
+        if(z >= 0.5) {
+            resolve("You win!!!"); 
+        } else {
+            reject(new Error("You lose your money. :( "));
+        }
+});
+
+//console.log(aPromise.then((e)=> console.log(e)).catch(err=> console.error(err)));
+console.log(
+  aPromise
+    .then(function(e) {
+      console.log(e);
+    })
+    .catch(function(err) {
+      console.error(err);
+    })
+);
 
 
