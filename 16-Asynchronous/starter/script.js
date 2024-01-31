@@ -202,7 +202,7 @@ wait(5)
 //Promise.resolve('ABC').then(x=>console.log(x));
 //Promise.reject(new Error('Problem!')).catch(x=>console.error(x));
 
-const aPromise = new Promise(function(resolve, reject) {
+/* const aPromise = new Promise(function(resolve, reject) {
         let z = Math.random();
         console.log(z);
         if(z >= 0.5) {
@@ -210,10 +210,10 @@ const aPromise = new Promise(function(resolve, reject) {
         } else {
             reject(new Error("You lose your money. :( "));
         }
-});
+}); */
 
 //console.log(aPromise.then((e)=> console.log(e)).catch(err=> console.error(err)));
-console.log(
+/* console.log(
   aPromise
     .then(function(e) {
       console.log(e);
@@ -221,6 +221,19 @@ console.log(
     .catch(function(err) {
       console.error(err);
     })
-);
+); */
 
 
+/// Promisifying SetTimeout
+const request = fetch('https://restcountries.com/v2/alpha/esp');
+console.log(request);
+
+const getCountryData = function(country) {
+    fetch(`https://restcountries.com/v2/alpha/${country}`)
+    .then(function(response){
+        console.log(response);
+    })
+    .catch((err)=> console.log("ERR: ", err));
+};
+
+getCountryData('esp');
