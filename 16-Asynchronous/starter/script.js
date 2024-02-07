@@ -225,7 +225,7 @@ wait(5)
 
 
 /// Promisifying SetTimeout
-const request = fetch('https://restcountries.com/v2/alpha/esp');
+/* const request = fetch('https://restcountries.com/v2/alpha/esp');
 console.log(request);
 
 const getCountryData = function(country) {
@@ -236,4 +236,27 @@ const getCountryData = function(country) {
     .catch((err)=> console.log("ERR: ", err));
 };
 
-getCountryData('esp');
+getCountryData('esp'); */
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+    fetch(`https://restcountries.com/v2/name/esp`)
+    .then(function(response) {
+        //console.log(response);
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    });
+});
+
+console.log(lotteryPromise);
+
+/*   .then(function(response) {
+    console.log(response);
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+  });
+ */
+
