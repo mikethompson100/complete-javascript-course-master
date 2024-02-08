@@ -246,6 +246,9 @@ const lotteryPromise = new Promise(function (resolve, reject) {
     })
     .then(function(data) {
         console.log(data);
+    })
+    .catch( (error) => {
+         console.log("ERROR!!! - ", error);
     });
 });
 
