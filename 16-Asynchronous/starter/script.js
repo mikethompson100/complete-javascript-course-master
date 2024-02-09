@@ -202,7 +202,7 @@ wait(5)
 //Promise.resolve('ABC').then(x=>console.log(x));
 //Promise.reject(new Error('Problem!')).catch(x=>console.error(x));
 
-/* const aPromise = new Promise(function(resolve, reject) {
+/*const aPromise = new Promise(function(resolve, reject) {
         let z = Math.random();
         console.log(z);
         if(z >= 0.5) {
@@ -210,7 +210,7 @@ wait(5)
         } else {
             reject(new Error("You lose your money. :( "));
         }
-}); */
+});*/
 
 //console.log(aPromise.then((e)=> console.log(e)).catch(err=> console.error(err)));
 /* console.log(
@@ -238,7 +238,7 @@ const getCountryData = function(country) {
 
 getCountryData('esp'); */
 
-const lotteryPromise = new Promise(function (resolve, reject) {
+/* const lotteryPromise = new Promise(function (resolve, reject) {
     fetch(`https://restcountries.com/v2/name/esp`)
     .then(function(response) {
         //console.log(response);
@@ -252,7 +252,7 @@ const lotteryPromise = new Promise(function (resolve, reject) {
     });
 });
 
-console.log(lotteryPromise);
+console.log(lotteryPromise); */
 
 /*   .then(function(response) {
     console.log(response);
@@ -262,4 +262,18 @@ console.log(lotteryPromise);
     console.log(data);
   });
  */
+
+const lotteryPromise = new Promise(function(resolve, reject) {
+    console.log("Lottery draw is happening.");
+    setTimeout(function() {
+        if(Math.random() >= 0.5) {
+            resolve('You win!');
+        }
+        else {
+            reject(new Error('You lost your money.'));
+        }
+    }, 2000);
+});
+
+lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
 
