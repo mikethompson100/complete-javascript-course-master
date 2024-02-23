@@ -356,7 +356,7 @@ wait(5)
   );
 console.log('Getting position'); */
 
-let getPosition = function() {
+const getPosition = function() {
   return new Promise(function(resolve,reject) {
 /*     navigator.geolocation.getCurrentPosition(
       position => resolve(position), 
@@ -366,13 +366,12 @@ let getPosition = function() {
   });
 };
 
-//getPosition().then(pos => console.log(pos));
+getPosition().then(pos => console.log(pos));
 
 const whereAmI = function() {
   getPosition()
   .then(pos => {
       const { latitude: lat, longitude: lng } = pos.coords;
-console.log(lat, long);
       return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
     })
   .then(res => {
