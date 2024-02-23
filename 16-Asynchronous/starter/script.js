@@ -263,20 +263,6 @@ console.log(lotteryPromise); */
   });
  */
 
-/* const lotteryPromise = new Promise(function(resolve, reject) {
-    console.log("Lottery draw is happening.");
-    setTimeout(function() {
-        if(Math.random() >= 0.5) {
-            resolve('You win!');
-        }
-        else {
-            reject(new Error('You lost your money.'));
-        }
-    }, 2000);
-});
-
-lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
- */
 
 /* const fetchPromise = fetch(
     "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.jsonn",
@@ -294,7 +280,7 @@ lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
       console.error(`Could not get products: ${error}`);
     }); */
 
-    const fetchPromise1 = fetch(
+/*     const fetchPromise1 = fetch(
         "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json",
       );
       const fetchPromise2 = fetch(
@@ -312,4 +298,52 @@ lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
         })
         .catch((error) => {
           console.error(`Failed to fetch: ${error}`);
-        });
+        }); */
+
+        
+const lotteryPromise = new Promise(function(resolve, reject) {
+    console.log("Lottery draw is happening.");
+    setTimeout(function() {
+        if(Math.random() >= 0.5) {
+            resolve('You win!');
+        }
+        else {
+            reject(new Error('You lost your money.'));
+        }
+    }, 2000);
+});
+
+lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
+
+/* lotteryPromise.then(function (result) {
+    console.log(result);
+  })
+  .catch(function (err) {
+    console.error(err);
+  });  */
+
+/// Promisifying SetTimeout
+ const wait = function(seconds) {
+    return new Promise(function(resolve) {
+        setTimeout(resolve, seconds * 1000);
+    });
+};
+
+wait(5)
+  .then(() => {
+    console.log(`I waited for 5 seconds`);
+    return wait(2);
+  })
+  .then(() => {
+    console.log(`I waited for 2 seconds`);
+    return wait(2);
+  })
+  .then(() => {
+    console.log(`I waited for 2 seconds`);
+    return wait(2);
+  })
+  .then(() => {
+    console.log(`I waited for 2 seconds`);
+  });
+
+  
