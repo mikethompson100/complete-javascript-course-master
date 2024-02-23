@@ -346,4 +346,7 @@ wait(5)
     console.log(`I waited for 2 seconds`);
   });
 
+  Promise.resolve('abc').then(x => console.log(x));
+  Promise.reject(new Error('Problem!')).catch(x => console.error(x));
+  console.error(x);
   
