@@ -301,7 +301,7 @@ console.log(lotteryPromise); */
         }); */
 
         
-const lotteryPromise = new Promise(function(resolve, reject) {
+/* const lotteryPromise = new Promise(function(resolve, reject) {
     console.log("Lottery draw is happening.");
     setTimeout(function() {
         if(Math.random() >= 0.5) {
@@ -313,7 +313,7 @@ const lotteryPromise = new Promise(function(resolve, reject) {
     }, 2000);
 });
 
-lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
+lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err)); */
 
 /* lotteryPromise.then(function (result) {
     console.log(result);
@@ -323,7 +323,7 @@ lotteryPromise.then(res=>console.log(res)).catch(err=>console.error(err));
   });  */
 
 /// Promisifying SetTimeout
- const wait = function(seconds) {
+ /* const wait = function(seconds) {
     return new Promise(function(resolve) {
         setTimeout(resolve, seconds * 1000);
     });
@@ -348,5 +348,25 @@ wait(5)
 
   Promise.resolve('abc').then(x => console.log(x));
   Promise.reject(new Error('Problem!')).catch(x => console.error(x));
-  console.error(x);
-  
+  console.error(x); */
+
+/* navigator.geolocation.getCurrentPosition(
+  position => console.log(position), 
+  err => console.error(err)
+  );
+console.log('Getting position'); */
+
+let loadScriptPromise = function() {
+  return new Promise((resolve,reject) => {
+    navigator.geolocation.getCurrentPosition(
+      position => console.log(position), 
+      err => console.error(err)
+      );
+  });
+};
+const returned = loadScriptPromise();
+console.log(returned);
+
+
+
+
